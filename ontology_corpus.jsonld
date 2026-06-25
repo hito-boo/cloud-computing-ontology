@@ -1,0 +1,1118 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "concepts": "http://host/ontology/cloud-computing#",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "year": "schema:datePublished",
+    "doi": "schema:identifier",
+    "journal": "schema:isPartOf",
+    "abstract": "schema:abstract",
+    "keywords": {
+      "@id": "schema:keywords",
+      "@container": "@list"
+    },
+    "objective": {
+      "@id": "concepts:hasObjective",
+      "@container": "@list"
+    },
+    "problem": {
+      "@id": "concepts:hasProblem",
+      "@container": "@list"
+    },
+    "methodology": {
+      "@id": "concepts:hasMethodology",
+      "@container": "@list"
+    },
+    "contributions": {
+      "@id": "concepts:hasContribution",
+      "@container": "@list"
+    },
+    "futureWork": {
+      "@id": "concepts:hasFutureWork",
+      "@container": "@list"
+    },
+    "references": {
+      "@id": "schema:citation",
+      "@container": "@list"
+    }
+  },
+  "@graph": [
+    {
+      "id": "urn:article:1-s2-0-s0167404813001703-main",
+      "type": "schema:ScholarlyArticle",
+      "title": "Achieving an effective, scalable and privacy-preserving data sharing service in cloud computing",
+      "authors": [
+        "Xin Dong",
+        "Jiadi Yu",
+        "Yuan Luo",
+        "Yingying Chen",
+        "Guangtao Xue",
+        "Minglu Li"
+      ],
+      "year": "2014",
+      "doi": "10.1016/j.cose.2013.12.002",
+      "journal": "computers & security",
+      "abstract": "Data sharing in the cloud, fueled by favorable trends in cloud technology, is emerging as apromising technique for allowing users to conveniently access data. However, the growing\nnumber of enterprises and customers who stores their data in cloud servers is increasingly\nchallenging users' privacy and the security of data. This paper focuses on providing adependable and secure cloud data sharing service that allows users dynamic access to theirdata. In order to achieve this, we propose an effective, scalable and flexible privacy-preserving data policy with semantic security, by utilizing ciphertext policy attribute-based encryption (CP-ABE) combined with identity-based encryption (IBE) techniques. Inaddition to ensuring robust data sharing security, our policy succeeds in preserving theprivacy of cloud users and supports efficient and secure dynamic operations including, butnot limited to, file creation, user revocation and modification of user attributes. Securityanalysis indicates that the proposed policy is secure under the generic bilinear groupmodel in the random oracle model and enforces fine-grained access control, full collusion\nresistance and backward secrecy. Furthermore, performance analysis and experimental\nresults show that the overheads are as light as possible.",
+      "keywords": [
+        "Data security",
+        "Data sharing",
+        "Privacy-preserving",
+        "Attribute-based encryption",
+        "Scalability",
+        "Cloud computing"
+      ],
+      "objective": [
+        "This paper focuses on providing adependable and secure cloud data sharing service that allows users dynamic access to theirdata.",
+        "In this paper, we propose an effective, scalable and flexible privacy-preserving data sharing scheme in the cloud, thatensures both semantic security and effective availability of user data."
+      ],
+      "problem": [
+        "Compared to a traditional PKC, the IBE schemeeliminates the issue of searching for a recipient's public key,but has a key escrow problem.",
+        "Moreover, Samarati and di Vimercati (2010) discusses some main privacy issues to be addressed in data outsourcing, ranging from data confidentiality to datautility.",
+        "Problem statement 3.1."
+      ],
+      "methodology": [
+        "The only requirement for a user is a connected terminal.By employing a combination of virtualization techniques, service-oriented computing and other emerging technologies, cloud computing can be categorized into three types of \"X as aservice (XaaS)\" pay-as-you-go services: the Platform as aService (PaaS) model, e.g. Microsoft Azure (Mic) , where users can deploy their own applications and tools to the cloud;Infrastructure as a Service (IaaS), e.g. Amazon EC2 (Ama) , where users can utilize cloud services provided by the CSP to deploy arbitrary software; and Software as a Service (SaaS), e.g. Google App Engine (Goo) , where users use applications provided by the CSP that run on the cloud infrastructure.",
+        "To preserve privacy and guarantee data confidentiality against the cloud, the scheme employs a cryptographicprimitive, named cipher-text policy attribute-basedencryption (CP-ABE) and combines it with an identity-based encryption (IBE) technique; each data file is described by a set of meaningful attributes, allowing each user to be assigned anaccess structure that defines the scope of data files they canhave access to.",
+        "As such, we were able to discover the proxy re-encryption techniques applied in CP-ABE byWang et al. (2010) and Yu et al. (2010b) ."
+      ],
+      "contributions": [
+        "Therefore, the maincontributions of this paper can be summarized as follows: 1."
+      ],
+      "futureWork": [
+        "Following the current research, we willimplement the proposed privacy-preserving and effective cloud data sharing service in a real CSP platform for future work."
+      ],
+      "references": [
+        "Amazon web services. Retrieved online from, http://aws.amazon. com/ .",
+        "Armbrust M, Fox A, Griffith R, Joseph AD, Katz RH, Konwinski A, et al. Above the clouds: a berkeley view of cloud computing [Technical report]. Berkeley: EECS Department, University ofCalifornia; 2009 [Tech. Rep. UCB/EECS-2009-28] .",
+        "Arrington M. Gmail disaster: reports of mass email deletions [Retrieved online on 28 December 2006 from], http://www. techcrunch.com/2006/12/28/gmail-disasterreports-ofmass-email-deletions/ ; 2006.",
+        "Ateniese G, Di Pietro R, Mancini L, Tsudik G. Scalable and efficient provable data possession. In: Proceedings of the 4thinternational conference on security and privacy incommunication Netowrks (SecureComm). ACM; 2008. pp. 901 e10.",
+        "Beimel A. Secure schemes for secret sharing and key distribution [Ph.D. thesis]. Haifa, Israel: Israel Institute of Technology, Technion; 1996 .",
+        "Bethencourt J, Sahai A, Waters B. Ciphertext-policy attributebased encryption. In: IEEE Symposium on security and privacy(SP). IEEE; 2007. pp. 321 e34.",
+        "Boneh D, Franklin M. Identity-based encryption from the weil pairing. In: Advances in Cryptology eCRYPTO. Springer; 2001. pp. 213 e29.",
+        "Boneh D, Boyen X, Goh EJ. Hierarchical identity based encryption with constant size ciphertext. In: Advances in Cryptology eEUROCRYPT. Springer; 2005. pp. 562 e78.Fig. 7 eThe cost of symmetric encryption algorithms. Table 3 eCommunication costs in KP-ABE-based schemes and our scheme. Scheme Communication costs KP-ABE-based jIjþ2 log jIjþð jIjþ1ÞlogjG1jþlogjG2jþData Ours jIj2þlogjIjþð2jIjþ1ÞlogjG1jþ jIjþ1 ðÞ logjG2jþDataTable 4 eCiphertext size in KP-ABE-based schemes and our scheme. Scheme Ciphertext size KP-ABE-based jIjþjIjlogjG1jþlogjG2jþData Ours 2 jIjlogjG1jþjIjlogjG2jþDatacomputers & security 42 (2014) 151 e164 162",
+        "Chase M. Multi-authority attribute based encryption. In: Theory of cryptography (TCC). Springer; 2007. pp. 515 e34.",
+        "Chase M, Chow S. Improving privacy and security in multiauthority attribute-based encryption. In: Proceedings of the16th ACM conference on computer and communicationssecurity (CCS). ACM; 2009. pp. 121 e30.",
+        "Cocks C. An identity based encryption scheme based on quadratic residues. In: Cryptography and coding (IMACC). Springer; 2001.pp. 360 e3. De Capitani di Vimercati S, Foresti S, Jajodia S, Paraboschi S,",
+        "Samarati P. Over-encryption: management of access controlevolution on outsourced data. In: Proceedings of the 33rdinternational conference on very large data bases (VLDB). VLDB endowment; 2007. pp. 123 e34. De Capitani di Vimercati S, Foresti S, Jajodia S, Paraboschi S,",
+        "Samarati P. Encryption policies for regulating access tooutsourced data. ACM Trans Database Syst (TODS) 2010;35(2):12:1 e12:46 .",
+        "Erway C, Ku ¨pc¸u¨A, Papamanthou C, Tamassia R. Dynamic provable data possession. In: Proceedings of the 16th ACMconference on computer and communications security (CCS). ACM; 2009. pp. 213 e22. Google app engine. Retrieved online from, http://code.google. com/appengine/ .",
+        "Goyal V, Pandy O, Sahai A, Waters B. Attribute-based encryption for fine-grained access control of encrypted data. In:Proceedings of the 13th ACM conference on computer andcommunications security (CCS). ACM; 2006. pp. 89 e98.",
+        "Horwitz J, Lynn B. Toward hierarchical identity-based encryption. In: Advances in Cryptology eEUROCRYPT. Springer; 2002. pp. 466 e81.",
+        "Lewko A, Waters B. Decentralizing attribute-based encryption. In: Advances in Cryptology eEUROCRYPT. Springer; 2011. pp. 568 e88.",
+        "Li M, Yu S, Ren K, Lou W. Securing personal health records in cloud computing: patient-centric and fine-grained data access control in multi-owner settings. In: International conferencesecurity and privacy in communication networks(SecureComm). Springer; 2010. pp. 89 e106.",
+        "Liu Z, Cao Z. On efficiently transferring the linear secret-sharing scheme matrix in ciphertext-policy attribute-basedencryption; 2010 [Technical Report; Cryptology ePrint Archive,Report 2010/374] . Microsoft azure. Retrieved online from, http://www.microsoft. com/azure . Mu¨ller S, Katzenbeisser S, Eckert C. Distributed attribute-based encryption. In: Information security and cryptology (ICISC). Springer; 2009. pp. 20 e36.",
+        "Ostrovsky R, Sahai A, Waters B. Attribute-based encryption with non-monotonic access structures. In: Proceedings of the 14th ACM conference on computer and communications security (CCS). ACM; 2007. pp. 195 e203.",
+        "Sahai A, Waters B. Fuzzy identity-based encryption. In: Advances in Cryptology eEUROCRYPT 2005. Springer; 2005. pp. 557 e73.",
+        "Samarati P, De Capitani di Vimercati S. Data protection in outsourcing scenarios: issues and directions. In: Proceedings of the 5th ACM Symposium on information, computer and communications security (ASIACCS). ACM; 2010. pp. 1 e14.",
+        "Shah M, Baker M, Mogul J, Swaminathan R. Auditing to keep online storage services honest. In: Proceedings of the 11th USENIX workshop on hot topics in operating systems. USENIX Association; 2007. pp. 1 e6.",
+        "Shamir A. Identity-based cryptosystems and signature schemes. In: Advances in cryptology. Springer; 1985. pp. 47 e53.",
+        "Shaniqng G, Yingpei Z. Attribute-based signature scheme. In: International conference on information security andassurance (ISA). IEEE; 2008. pp. 509 e11.Wang G, Liu Q, Wu J. Hierarchical attribute-based encryption for fine-grained access control in cloud storage services. In: Proceedings of the 17th ACM conference on computer and communications security (CCS). ACM; 2010. pp. 735 e7.",
+        "Wang G, Liu Q, Wu J. Achieving fine-grained access control for secure data sharing on cloud servers. Concurrency Comput Pract Exp 2011;23(12):1443 e64.",
+        "Waters B. Ciphertext-policy attribute-based encryption: an expressive, efficient, and provably secure realization. In: Public key cryptography (PKC). Springer; 2011. pp. 53 e70.",
+        "Yu S, Wang C, Ren K, Lou W. Achieving secure, scalable, and finegrained data access control in cloud computing. In:International conference on computer communications (INFOCOM). IEEE; 2010a. pp. 1 e9.",
+        "Yu S, Wang C, Ren K, Lou W. Attribute based data sharing with attribute revocation. In: Proceedings of the 5th ACMSymposium on information, computer and communications security (ASIACCS). ACM; 2010b. pp. 261 e70."
+      ]
+    },
+    {
+      "id": "urn:article:1-s2-0-s0167404815000577-main",
+      "type": "schema:ScholarlyArticle",
+      "title": "Parallel search over encrypted data under attribute based encryption on the Cloud Computing",
+      "authors": [
+        "Thouraya Bouabana-Tebibel",
+        "Abdellah Kaci"
+      ],
+      "year": "2015",
+      "doi": "10.1016/j.cose.2015.04.007",
+      "journal": "computers & security",
+      "abstract": "Data confidentiality in the Cloud Computing is a very challenging task. Encryption is one ofthe most secure methods ensuring this task, and searchable encryption techniques areused to search on encrypted data without the need for decryption. But, despite this securemeasure some leaks may appear when searching over data. In this article, we propose toimprove confidentiality of outsourced data. We are particularly interested in reinforcingthe access control on the search result, when the search is performed over encrypted data.The property behind this aspect of security is known as ACAS (Access Control AwareSearch) principle. We present a hybridization of Searchable Encryption and Attribute BasedEncryption techniques in order to satisfy the ACAS property. The proposed model supports\na personalized and secure multi-user access to outsourced data, presenting high search\nperformance. It deals with multi-keywords searches and is designed to speed up the searchtime by taking advantage of High Performance Computing, which is widely used in CloudComputing. Two Attribute Based Encryption techniques are considered on the side of theCloud and some conducted experiments show the efficiency of the proposed method.",
+      "keywords": [
+        "Attribute based encryption",
+        "Cloud computing",
+        "Cryptographic access control",
+        "Searchable encryption"
+      ],
+      "objective": [
+        "The purpose of this work is to improve the SE-ACAS technique proposed in Kaci and Bouabana-Tebibel (2014), Kaci et al. (2014) with a view to integrate access control with search on encrypted data, such that users receive only the resultsthey are authorized to access."
+      ],
+      "problem": [
+        "However, despite the benefits provided by theCloud migration, new problems and challenges arise like inter-provider data portability, energy conservation, and se-curity ( Rong et al., 2013 ).",
+        "To overcome this problem, Song et al. (2000) proposed a pioneering work dealing with search on encrypted data."
+      ],
+      "methodology": [
+        "However, approaches for searching on encrypted data, also known as Searchable Encryption methods, present a security breach.",
+        "In a Cloud Computing environment, the classical access control techniques, such as access control lists (ACLs), show their limits due to the huge number of resources and users.",
+        "A new encryption approach, based on descriptive attributes,called ABE (Attribute Based Encryption) was introduced."
+      ],
+      "contributions": [],
+      "futureWork": [],
+      "references": [
+        "Advanced Crypto Software Collection, http://hms.isi.jhu.edu/ acsc/cpabe .",
+        "Bethencourt J, Sahai A, Waters B. Ciphertext-policy attributebased encryption. In: IEEE symposium on security and privacy, 2007. SP '07; 2007. p. 321 e34.",
+        "Boneh D, Crescenzo GD, Ostrovsky R, Persiano G. Public key encryption with keyword search. In: Cachin C, Camenisch JL, editors. advances in cryptology eEUROCRYPT 2004. Berlin Heidelberg: Springer; 2004. p. 506 e22.Buyya R, Broberg J, Goscinski AM. Cloud computing: principles and paradigms. John Wiley &Sons; 2010 .",
+        "Cheng Y, Ren J, Wang Z, Mei S, Zhou J. Attributes Union in CP-abe algorithm for large Universe cryptographic access control. In:2012 second international conference on cloud and green computing (CGC); 2012. p. 180 e6.",
+        "Curtmola R, Garay J, Kamara S, Ostrovsky R. Searchable symmetric encryption: improved definitions and efficientconstructions. In: Proceedings of the 13th ACM conference on computer and communications security. New York, NY, USA: ACM; 2006. p. 79 e88. Goh E-J. Secure indexes. 2003 .",
+        "Goyal V, Pandey O, Sahai A, Waters B. Attribute-based encryption for Fine-grained access control of encrypted data. In: Proceedings ofthe 13th ACM conference on computer and communicationssecurity. New York, NY, USA: ACM; 2006. p. 89 e98. Matthew Green, JosepH ayo akinyele: https://code.google.com/p/ libfenc .Table 9 eQuery keywords distribution for xSE-ACAS. Scenario Occurrence of w1 Occurrence of w2 Occurrence of w3 Occurrence of w4 Occurrence of w5 Scenario1 50 45 40 35 30 Scenario2 100 90 80 70 60Scenario3 200 180 160 140 120Scenario4 300 270 240 210 180 Scenario5 500 450 400 350 300 Scenario6 700 630 560 490 420Scenario7 1000 900 800 700 600 Scenario8 3000 2700 2400 2100 1800 Scenario9 5000 4500 4000 3500 3000Scenario10 7000 6300 5600 4900 4200Scenario11 10 000 9000 8000 7000 6000 Scenario12 30 000 27 000 24 000 21 000 18 000 Scenario13 50 000 45 000 40 000 35 000 30 000Scenario14 70 000 63 000 56 000 49 000 42 000Scenario15 100 000 90 000 80 000 70 000 60 000 Scenario16 130 000 117 000 104 000 91 000 78 000 Scenario17 150 000 135 000 120 000 105 000 90 000 Fig. 15 eSearch time comparison between KP-ABE and CP-ABE.computers & security 54 (2015) 77 e91 90",
+        "Han F, Qin J, Zhao H, Hu J. A general transformation from KP-ABE to searchable encryption. Future Gener Comput Syst (FGCS), Elsevier 2014;30:107 e15.",
+        "Ibraimi L, Asim M, Petkovic M. Secure management of personal health records by applying attribute-based encryption. In:2009 6th international workshop on wearable micro and nano technologies for personalized health (pHealth); 2009. p. 71e4. Joseph Ayo Akinyele, Gary Belvin, Christina Garman, Matthew Pagano, Michael Rushanan, Paul Martin, Ian Miers, Matthew Green, Avi Rubin: http://www.charm-crypto.com .",
+        "Kaci A, Bouabana-Tebibel T. Access control Reinforcement over searchable encryption. In: The 15 thIEEE international conference on information reuse and integration eIEEE IRI 2014; 2014. San Francisco, USA .",
+        "Kaci A, Bouabana-Tebibel T, Challal Z. Access control aware search on the cloud computing. In: The third international conference on advances in computing, communication and informatics eICACCI 2014; 2014. New Delhi, India .",
+        "Kamara S, Lauter K. Cryptographic cloud storage. In: Proceedings of the 14th international conference on financial cryptograpy and data security. Berlin, Heidelberg: Springer-Verlag; 2010. p. 136e49.",
+        "Lounis A, Hadjidj A, Bouabdallah A, Challal Y. Secure medical architecture on the cloud using wireless sensor networks for emergency management. In: 2013 eighthinternational conference on broadband and wirelesscomputing, communication and applications (BWCCA); 2013. p. 248 e52.",
+        "Malek B, Miri A. Combining attribute-based and access systems. In: International conference on computational science andengineering, 2009. CSE '09; 2009. p. 305 e12.",
+        "Rong C, Nguyen ST, Jaatun MG. Beyond lightning: a survey on security challenges in cloud computing. Comput Electr Eng2013;39:47 e54.",
+        "Ruj S, Stojmenovic M, Nayak A. Privacy preserving access control with authentication for securing data in clouds. In: 2012 12thIEEE/ACM international symposium on cluster, cloud and gridcomputing (CCGrid); 2012. p. 556 e63.",
+        "Sahai A, Waters B. Fuzzy identity-based encryption. In: Proceedings of the 24th annual international conference ontheory and applications of cryptographic techniques. Berlin,Heidelberg (: Springer-Verlag; 2005. p. 457 e73.Shamir A. Identity-based cryptosystems and signature schemes. In: Blakley GR, Chaum D, editors. Advances in cryptology. Berlin Heidelberg: Springer; 1985. p. 47 e53.",
+        "Si X, Wang P, Zhang L. KP-abe based verifiable cloud access control scheme. In: 2013 12th IEEE international conference ontrust, security and privacy in computing and communications (TrustCom); 2013. p. 34 e41.",
+        "Singh A, Srivatsa M, Liu L. Search-as-a-service: outsourced search over outsourced storage. ACM Trans Web 2009;3(13):1 e13. 33 .",
+        "Song DX, Wagner D, Perrig A. Practical techniques for searches on encrypted data. In: 2000 IEEE symposium on security andprivacy, 2000. S P 2000. proceedings; 2000. p. 44 e55.",
+        "Tang Q. Search in encrypted data: theoretical models and practical applications, theory and practice of cryptography solutions for secure information systems. IGI; 2013. p. 84 e108.",
+        "Yin C, Zhang R. Access control for the smart meters based on abe. In: 2011 international conference on cyber-enabled distributed computing and knowledge discovery (CyberC); 2011. p. 79 e82.",
+        "Yu S, Ren K, Lou W. Attribute-based content distribution with hidden policy. In: 4th workshop on secure network protocols,2008. NPSec 2008; 2008. p. 39 e44. Thouraya Bouabana -Tebibel received a Ph.D. in Computer Science from USTHB University (Algeria) in collaboration with Pierre&Marie Curie University (France) in 2007. She has been an engineer/researcher for eight years and is now a full professor of computer science at Ecole Nationale Sup /C19erieure d 'Informatique in Algeria. She also is a researcher director at Laboratoire de Communication dans les Syst /C18emes Informatiques. She has successfully conducted numerous research projects and supervised BS, MS, and PhD theses. She has over 80 refereed publications anda book edited by Editions Universitaires Europ /C19eennes. Her research interests include formal methods, network security and information reuse and integration."
+      ]
+    },
+    {
+      "id": "urn:article:1-s2-0-s0167404816301377-main",
+      "type": "schema:ScholarlyArticle",
+      "title": "A survey of cloud computing data integrity schemes: Design challenges, taxonomy andfuture trends",
+      "authors": [
+        "Faheem Zafar",
+        "Abid Khan",
+        "Saif Ur Rehman Malik",
+        "Mansoor Ahmed",
+        "Adeel Anjum",
+        "Majid Iqbal Khan",
+        "Nadeem Javed",
+        "Masoom Alam",
+        "Fuzel Jamil"
+      ],
+      "year": "2017",
+      "doi": "10.1016/j.cose.2016.10.006",
+      "journal": "computers & security",
+      "abstract": "Cloud computing has gained tremendous popularity in recent years. By outsourcing computation and storage requirements to public providers and paying for the services used,customers can relish upon the advantages of this new paradigm. Cloud computing pro-vides with a compar ably lower -cost, scalable, a location-independent platform for managing\nclients' data. Compared to a traditional model of computing, which uses dedicated in-house infrastructure, cloud computing provides unprecedented benefits regarding cost andreliability. Cloud storage is a new cost-effective paradigm that aims at providing high avail-ability, reliability, massive scalability and data sharing. However, outsourcing data to a cloudservice provider introduces new challenges from the perspectives of data correctness andsecurity. Over the years, many data integrity schemes have been proposed for protectingoutsourced data. This paper aims to enhance the understanding of security issues associ-ated with cloud storage and highlights the importance of data integrity schemes for outsourceddata. In this paper, we have presented a taxonomy of existing data integrity schemes usefor cloud storage. A comparative analysis of existing schemes is also provided along witha detailed discussion on possible security attacks and their mitigations. Additionally, wehave discussed design challenges such as computational efficiency, storage efficiency, com-munication efficiency, and reduced I/O in these schemes. Furthermore, we have highlightedfuture trends and open issues, for future research in cloud storage security.",
+      "keywords": [
+        "Cloud computing security",
+        "Storage as a service",
+        "Data integrity",
+        "Privacy preserving audit",
+        "Communication complexity"
+      ],
+      "objective": [
+        "This paper aims to enhance the understanding of security issues associ-ated with cloud storage and highlights the importance of data integrity schemes for outsourceddata."
+      ],
+      "problem": [
+        "Fre-quent changes in cloud-based services also cause problems forusers. 4.Cloud storage provider stability Cloud storage claims to provide high availability.",
+        "Besides the said tradeoffs, security of data integrityschemes becomes a challenging problem when dynamic dataoperations (insert, update, and delete) are supported."
+      ],
+      "methodology": [
+        "Popular cloud-based storage ser-vices available today are Dropbox, One Drive, Amazon S3, GoogleDrive, Box, and Sugar Sync etc. Nowadays, to improve busi-ness strategies, organizations use analysis techniques over theirhistorical data ( Liu et al., 2014 ).",
+        "Ap-plication of these techniques extended from a single copy tomultiple copies of data ( Krzywiecki and Kuty, 2012 ), constraintbased data geolocation (CBDG) ( Rashid et al., 2013 ), multicloud (cloud of clouds) ( Cash et al., 2013 ), data deduplication (Zheng and Xu, 2012 ) and proof of ownership ( Zhu et al., 2012 ).",
+        "Researchers used homomorphic tags, bilinear pairing ( Wang and Zhang, 2014 ), algebraic signatures ( Yu et al., 2014 ), fountain codes ( Shi et al., 2013 ), erasure codes ( Chen, 2013 ), RS codes based on Cauchy matrices ( Chen and Curtmola, 2012b ) and other techniques as metadata for integrity verification."
+      ],
+      "contributions": [
+        "The key contributions of this paper are: 1.",
+        "Another sig-nificant contribution of this work is that it supports a largenumber of users without affecting the performance of theverification process ( Wang et al., 2012 ).Shen and Tzeng's (2011) scheme supports delegation of auditing authority; however, there is a restriction of re-delegation.",
+        "Other major contributions of this work areindependent metadata size, reduce disk seeks, and support fordynamic data."
+      ],
+      "futureWork": [
+        "Weestablish the timeline of the evolution of data integrity schemesand also identify future aspects that researchers can exploitto perform their future research."
+      ],
+      "references": [
+        "Al-Aqrabi H, Liu L, Xu J, Hill R, Antonopoulos N, Zhan Y. 2012, Investigation of IT security and compliance challenges insecurity-as-a-service for cloud computing, in \"Object/Component/Service-Oriented Real-Time DistributedComputing Workshops (ISORCW), 2012 15th IEEEInternational Symposium on\", pp. 124-29.",
+        "Albeshri A, Boyd C, Nieto J. Enhanced GeoProof: improved geographic assurance for data in the cloud. Int J Inf Secur2014;13(2):191-8.",
+        "ALzain M, Pardede E. 2011, Using multi shares for ensuring privacy in database-as-a-service, in \"System Sciences(HICSS), 2011 44th Hawaii International Conference on\", pp.1-9.",
+        "Arasu A, Blanas S, Eguro K, Joglekar M, Kaushik R, Kossmann D, et al. 2013, secure database-as-a-service with Cipherbase, in\"Proceedings of the 2013 ACM SIGMOD InternationalConference on Management of Data\", ACM, New York, NY,USA, pp. 1033-36.",
+        "Armbrust M, Fox A, Griffith R, Joseph AD, Katz RH, Konwinski A, et al. 2009, \"Above the clouds: a Berkeley view of cloudcomputing\"(UCB/EECS-2009-28), Technical report, EECSDepartment, University of California, Berkeley.",
+        "Ateniese G, Burns R, Curtmola R, Herring J, Kissner L, Peterson Z, et al. 2007, Pro vable data possession at untrusted stores, in \"Proceedings of the 14th ACM Conference on Computer andCommunications Security\", ACM, New York, NY, USA, pp. 598-609.",
+        "Ateniese G, Di Pietro R, Mancini LV, Tsudik G. 2008, Scalable and efficient pro vable data possession, in \"Proceedings of the 4th International Conference on Security and Privacy inCommunication Netowrks\", ACM, New York, NY, USA, pp. 9:1-9:10.",
+        "Ateniese G, Kamara S, Katz J. 2009, Proofs of storage from homomorphic identification protocols, in \"Proceedings of the15th International Conference on the Theory and Applicationof Cryptology and Information Security: Advances inCryptology\", Springer-Verlag, Berlin, Heidelberg, pp. 319-33.Ateniese G, Burns R, Curtmola R, Herring J, Khan O, Kissner L, et al. Remote data checking using pro vable data possession. ACM Trans Inf Syst Secur 2011;14(1):12:1-34.",
+        "Barsoum AF, Hasan MA. 2012, Integrity verification of multiple data copies over untrusted cloud servers, in \"Proceedings ofthe 2012 12th IEEE/ACM International Symposium on Cluster,Cloud and Grid Computing (Ccgrid 2012)\", IEEE ComputerSociety, Washington, DC, USA, pp. 829-34.",
+        "Bellare M, Keelveedhi S, Ristenpart T. 2013a, DupLESS: serveraided encryption for deduplicated storage, in \"Proceedings ofthe 22Nd USENIX Conference on Security\", USENIXAssociation, Berkeley, CA, USA, pp. 179-94.",
+        "Bellare M, Keelveedhi S, Ristenpart T. Message-locked encryption and secure deduplication. In: Johansson T, Nguyen P, editors.Advances in cryptology - EUROCRYPT 2013. Springer BerlinHeidelberg; 2013b. p. 296-312.",
+        "Birk D. Technical challenges of forensic investigations in cloud computing environments. Workshop on Cryptography andSecurity in Clouds. 2011.",
+        "Bowers KD, Juels A, Oprea A. 2009a, HAIL: a high-availability and integrity layer for cloud storage, in \"Proceedings of the 16thACM Conference on Computer and CommunicationsSecurity\", ACM, New York, NY, USA, pp. 187-98.",
+        "Bowers KD, Juels A, Oprea A. 2009b, Proofs of retrievability: theory and implementation, in \"Proceedings of the 2009 ACMWorkshop on Cloud Computing Security\", ACM, New York, NY,USA, pp. 43-54.",
+        "Cachin C, Haralambiev K, Hsiao H-C, Sorniotti A. 2013, Policybased secure deletion, in \"Proceedings of the 2013 ACMSIGSAC Conference on Computer and CommunicationsSecurity\", ACM, New York, NY, USA, pp. 259-70.",
+        "Calder B, Wang J, Ogus A, Nilakantan N, Skjolsvold A, McKelvie S, et al. 2011, Windows Azure Storage: a highly available cloudstorage service with strong consistency, in \"Proceedings ofthe T wenty-Third ACM Symposium on Operating SystemsPrinciples\", ACM, New York, NY, USA, pp. 143-57.",
+        "Cash D, Küpçü A, Wichs D. Dynamic proofs of retrievability via oblivious RAM. In: Johansson T, Nguyen PQ, editors. Advancesin cryptology - EUROCRYPT 2013. Springer Berlin Heidelberg;2013. p. 279-95.",
+        "Chaoling L, Yue C, Yanzhou Z. A data assured deletion scheme in cloud storage. IEEE Trans China Commun 2014;11(4):98-110.",
+        "Chen B, Curtmola R. 2012a, Robust dynamic pro vable data possession, in \"Distributed Computing Systems Workshops(ICDCSW), 2012 32nd International Conference on\", pp. 515-25.",
+        "Chen B, Curtmola R. 2012b, Robust dynamic remote data checking for public clouds, in \"Proceedings of the 2012 ACMConference on Computer and Communications Security\",ACM, New York, NY, USA, pp. 1043-45.",
+        "Chen B, Curtmola R, Ateniese G, Burns R. 2010, Remote data checking for network coding-based distributed storagesystems, in \"Proceedings of the 2010 ACM Workshop on CloudComputing Security Workshop\", ACM, New York, NY, USA, pp.31-42.",
+        "Chen L. Using algebraic signatures to check data possession in cloud storage. Future Gener Comput Syst 2013;29(7):1709-15.",
+        "Chen L, Zhou S, Huang X, Xu L. Data dynamics for remote data possession checking in cloud storage. Comput Electr Eng2013;39(7):2413-24.",
+        "Chen L, Guo G, Peng Z. A hill cipher-based remote data possession checking in cloud storage. Secur Commun Netw2014;7(3):511-18.",
+        "Chow R, Golle P, Jakobsson M, Shi E, Staddon J, Masuoka R, et al. 2009, Controlling data in the cloud: outsourcing computationwithout outsourcing control, in \"Proceedings of the 2009 ACMWorkshop on Cloud Computing Security\", ACM, New York, NY,USA, pp. 85-90.46 computers & security 65 (2017) 29-49",
+        "Curino C, Jones EPC, Popa RA, Malviya N, Wu E, Madden S, et al. Relational cloud: a database-as-a-service for the cloud.5th Biennial Conference on Innovative Data SystemsResearch, CIDR 2011, January 9-12, 2011 Asilomar, California.2011.",
+        "Curtmola R, Khan O, Burns R. 2008, Robust remote data checking, in \"Proceedings of the 4th ACM International Workshop onStorage Security and Surv ivability\", ACM, New York, NY, USA, pp. 63-68.",
+        "Curtmola R, Khan O, Burns R, Ateniese G. 2008, MR-PDP: multiple-replica pro vable data possession, in \"ICDCS '08 Proceedings of the 2008 The 28th International Conference onDistributed Computing Systems\", pp. 411-20.",
+        "Deswarte Y, Quisquater J-J, Saïdane A. Remote integrity checking. In: Jajodia S, Strous L, editors. Integrity and internal control ininformation systems VI. Springer US; 2004. p. 1-11 Gazzoni, E.L.; Luiz, D.; Filho, G.; Sérgio, P.; Barreto, L. M. & Politécnica, E.(2006), \"Demonstrating Data Possession and Uncheatable DataTransfer\".",
+        "Dodis Y, Vadhan S, Wichs D. Proofs of retrievability via hardness amplification. In: Reingold O, editor. Theory of cryptography.Springer Berlin Heidelberg; 2009. p. 109-27.",
+        "Erway C, Küpçü A, Papamanthou C, Tamassia R. 2009, Dynamic provable data possession, in \"Proceedings of the 16th ACM Conference on Computer and Communications Security\",ACM, New York, NY, USA, pp. 213-22.",
+        "Esiner E, Kachkeev A, Braunfeld S, Küpçü A, Özkasap Ö. FlexDPDP: FlexList-based optimized dynamic pro vable data possession, Cryptology ePrint Archive, Report 2013/645.Available from: https://eprint.iacr.org/2013/645 [Accessed 10 July 2015].",
+        "Etemad M, Küpçü A. 2013, Transparent, distributed, and replicated dynamic pro vable data possession, in \"Proceedings of the 11th International Conference on AppliedCryptography and Network Security\", Springer-Verlag, Berlin,Heidelberg, pp. 1-18.",
+        "Frenot S, Ponge J. 2012, LogOS: an automatic logging framework for service-oriented architectures, in \"Software Engineeringand Advanced Applications (SEAA), 2012 38th EUROMICROConference on\", pp. 224-227.",
+        "Fu DL, Peng XG, Yang YL. Trusted validation for geolocation of cloud data. Comput J 2014;doi:10.1093/comjnl/bxu144.",
+        "Gondree M, Peterson ZN. 2013, Geolocation of data in the cloud, in \"Proceedings of the Third ACM Conference on Data andApplication Security and Privacy\", ACM, New York, NY, USA,pp. 25-36. González-Manzano L, Orfila A. An efficient confidentialitypreserving proof of ownership for deduplication. J NetwComput Appl 2015;50:49-59.",
+        "Habib A, Khanam T, Palit R. 2013, Simplified File Assured Deletion (SFADE) - a user friendly overlay approach for data security incloud storage system, in \"Advances in Computing,Communications and Informatics (ICACCI), 2013 InternationalConference on\", pp. 1640-44.",
+        "Hammad R, Wu C-S. 2014, Provenance as a service: a data-centric approach for real-time monitoring, in \"Big Data (BigDataCongress), 2014 IEEE International Congress on\", pp. 258-65.",
+        "Han S, Liu S, Chen K, Gu D. Proofs of retrievability based on MRD codes. In: Huang X, Zhou J, editors. Information securitypractice and experience. Springer International Publishing;2014. p. 330-45.",
+        "Harnik D, Pinkas B, Shulman-Peleg A. Side channels in cloud services: deduplication in cloud storage. IEEE Secur Privacy2010;8(6):40-7.",
+        "Hildebrandt M. Location data, purpose binding and contextual integrity: what's the message? In: Floridi L, editor. Protectionof information and the right to privac y-an e w equilibrium? Springer International Publishing; 2014. p. 31-62.Hussain M, Abdulsalam H. 2011, SECaaS: security as a service for cloud-based applications, in \"Proceedings of the SecondKuwait Conference on e-Services and e-Systems\", ACM, NewYork, NY, USA, pp. 8:1-8:4.",
+        "Jiang T, Chen X, Li J, Wong D, Ma J, Liu J. TIMER: secure and reliable cloud storage against data re-outsourcing. In: HuangX, Zhou J, editors. Information security practice andexperience. Springer International Publishing; 2014.p. 346-58.",
+        "Kent K, Chevalier S, Grance T, Dang H. Guide to integrating forensic techniques into incident response. NIST SpecialPublication 2006: 800-86.",
+        "Khan SM, Hamlen KW. Computation certification as a service in the cloud. Cluster, Cloud and Grid Computing (CCGrid), 201313th IEEE/ACM International Symposium on. IEEE, 2013. Krzywiecki Ł, Kuty M. 2012, Proof of possession for cloud storage via lagrangian interpolation techniques, in \"Proceedings ofthe 6th International Conference on Network and SystemSecurity\", Springer-Verlag, Berlin, Heidelberg, pp. 305-19.",
+        "Kwon O, Koo D, Shin Y, Yoon H. A secure and efficient audit mechanism for dynamic shared data in cloud storage.Scientific World J 2014;2014:doi:10.1155/2014/820391. ArticleID 820391. Latesh Kumar K, Lawrance R. Novel approach: deduplication for backup systems using data block size. In: Jain LC, Behera HS,Mandal JK, Mohapatra DP, editors. Computational intelligencein data mining, vol. 1. Springer India; 2015. p. 365-73. Lee N-Y, Chang Y-K. 2011, Hybrid pro vable data possession at untrusted stores in cloud computing, in \"Proceedings of the2011 IEEE 17th International Conference on Parallel andDistributed Systems\", IEEE Computer Society, Washington,DC, USA, pp. 638-45.",
+        "Liu C, Ranjan R, Yang C, Zhang X, Wang L, Chen J. 2014 , MuR- DPA: Top-down levelled multi-replica Merkle Hash Tree basedsecure public auditing for dynamic big data storage on cloud,Computers, IEEE Transactions on PP(99), 1-1.",
+        "Liu F, Gu D, Lu H. 2011, An improved dynamic pro vable data possession model, in \"Cloud Computing and IntelligenceSystems (CCIS), 2011 IEEE International Conference on\", pp.290-95.",
+        "Luo W, Bai G. 2011, Ensuring the data integrity in cloud data storage, in \"Cloud Computing and Intelligence Systems(CCIS), 2011 IEEE International Conference on\", pp. 240-43.",
+        "Luxton DD, Kayl RA, Mishkind MC. mHealth data security: the need for HIPAA-compliant standardization. Telemed J EHealth 2012;18(4):284-8. doi:10.1089/tmj.2011.0180.",
+        "Miao M, Jiang T, You I. Payment-based incentive mechanism for secure cloud deduplication. Int J Inf Manag 2015;35(3):379-86.",
+        "Mohan A, Katti R. 2012, Pro vable data possession using Sigmaprotocols, in \"Trust, Security and Privacy in Computing andCommunications (TrustCom), 2012 IEEE 11th InternationalConference on\", pp. 565-72.",
+        "Nabeel M, Bertino E. 2012, Privacy preserving delegated access control in the storage as a service model, in \"InformationReuse and Integration (IRI), 2012 IEEE 13th InternationalConference on\", pp. 645-52.",
+        "Nepal S, Chen S, Yao KJ, Thilakanathan D. DIaaS: data integrity as a service in the cloud. Cloud Computing (CLOUD), 2011 IEEEInternational Conference on. IEEE, 2011.",
+        "Oualha N, Leneutre J, Roudier Y. Verifying remote data integrity in peer-to-peer data storage: a comprehensive survey ofprotocols. Peer Peer Netw Appl 2012;5(3):231-43.",
+        "Paladi N, Aslam M, Gehrmann C. 2014, Trusted geolocation-aware data placement in infrastructure clouds, in \"Trust,Security and Privacy in Computing and Communications(TrustCom), 2014 IEEE 13th International Conference on\",pp. 352-60.47 computers & security 65 (2017) 29-49",
+        "Peterson ZNJ, Gondree M, Beverly R. 2011, A position paper on data sovereignty: the importance of geolocating data in thecloud, in \"Proceedings of the 3rd USENIX Conference on HotTopics in Cloud Computing\", USENIX Association, Berkeley,CA, USA, pp. 9-9.",
+        "Popa RA, Lorch JR, Molnar D, Wang HJ, Zhuang L. 2011, Enabling security in cloud storage SLAs with CloudProof, in\"Proceedings of the 2011 USENIX Conference on USENIXAnnual Technical Conference\", USENIX Association, Berkeley,CA, USA, pp. 31-31.",
+        "Rahumed A, Chen H, Tang Y, Lee P, Lui J. 2011, A secure cloud backup system with assured deletion and version control, in\"Parallel Processing Workshops (ICPPW), 2011 40thInternational Conference on\", pp. 160-67.",
+        "Rashid F, Miri A, Woungang I. 2013, Proof of retrieval and ownership protocols for enterprise-level data deduplication,in \"Proceedings of the 2013 Conference of the Center forAdvanced Studies on Collaborative Research\", IBM Corp.,Riverton, NJ, USA, pp. 81-90.",
+        "Reardon J, Basin D, Capkun S. 2013, SoK: secure data deletion, in \"Security and Privacy (SP), 2013 IEEE Symposium on\", pp. 301-15.",
+        "Ristenpart T, Tromer E, Shacham H, Savage S. 2009, Hey, you, get off of my cloud: exploring information leakage in third-partycompute clouds, in \"Proceedings of the 16th ACM Conferenceon Computer and Communications Security\", ACM, New York,NY, USA, pp. 199-212.",
+        "Sarkar S, Safavi-Naini R. 2013, Proofs of Retrievability via Fountain Code, in \"Proceedings of the 5th InternationalConference on Foundations and Practice of Security\",Springer-Verlag, Berlin, Heidelberg, pp. 18-32.",
+        "Seibold M, Kemper A. Database as a service. Datenbank- Spektrum 2012;12(1):59-62.",
+        "Shacham H, Waters B. Compact proofs of retrievability. In:",
+        "Pieprzyk J, editor. Advances in cryptology - ASIACRYPT 2008.Springer Berlin Heidelberg; 2008. p. 90-107. Shen S-T, Tzeng W-G. 2011, Delegable pro vable data possession for remote data in the clouds, in \"Proceedings of the 13thInternational Conference on Information andCommunications Security\", Springer-Verlag, Berlin,Heidelberg, pp. 93-111.",
+        "Shi E, Stefanov E, Papamanthou C. 2013, Practical dynamic proofs of retrievability, in \"Proceedings of the 2013 ACM SIGSACConference on Computer and Communications Security\",ACM, New York, NY, USA, pp. 325-36.",
+        "Sookhak M, Talebian H, Ahmed E, Gani A, Khan MK. A review on remote data auditing in single cloud server: taxonomy andopen issues. J Netw Comput Appl 2014;43:121-41.",
+        "Squicciarini AC, Petracca G, Bertino E. 2013, Adaptive data protection in distributed systems, in \"Proceedings of the ThirdACM Conference on Data and Application Security andPrivacy\", ACM, New York, NY, USA, pp. 365-76.",
+        "Stefanov E, van Dijk M, Juels A, Oprea A. 2012, Iris: a scalable cloud file system with efficient integrity checks, in\"Proceedings of the 28th Annual Computer SecurityApplications Conference\", ACM, New York, NY, USA, pp. 229-38.",
+        "Sundareswaran S, Squicciarini A, Lin D. Ensuring distributed accountability for data sharing in the cloud. IEEE TransDependable Secure Comput 2012;9(4):556-68.",
+        "Tang Y, Lee P, Lui J, Perlman R. Secure overlay cloud storage with access control and assured deletion. IEEE Trans DependableSecure Comput 2012;9(6):903-16.",
+        "Tate SR, Vishwanathan R, Everhart L. 2013, Multi-user dynamic proofs of data possession using trusted hardware, in\"Proceedings of the Third ACM Conference on Data andApplication Security and Privacy\", ACM, New York, NY, USA,pp. 353-64.Wang B, Li B, Li H. 2012, Knox: privacy-preserving auditing for shared data with large groups in the cloud, in \"Proceedings ofthe 10th International Conference on Applied Cryptographyand Network Security\", Springer-Verlag, Berlin, Heidelberg,pp. 507-25.",
+        "Wang C, Wang Q, Ren K, Lou W. 2010, Privacy-preserving public auditing for data storage security in cloud computing, in\"Proceedings of the 29th Conference on InformationCommunications\", IEEE Press, Piscataway, NJ, USA,pp. 525-33.",
+        "Wang H. Proxy provable data possession in public clouds. IEEE Trans Serv Comput 2013;6(4):551-9.",
+        "Wang H. 2014, Identity-based distributed pro vable data possession in multi-cloud storage, Services Computing, IEEETransactions on PP(99), 1-1.",
+        "Wang H, Zhang Y. On the knowledge soundness of a cooperative provable data possession scheme in multicloud storage. IEEE Trans Parallel Distr Syst 2014;25(1):264-7.",
+        "Wang Q, Wang C, Li J, Ren K, Lou W. 2009, Enabling public verifiability and data dynamics for storage security in cloudcomputing, in \"Proceedings of the 14th European Conferenceon Research in Computer Security\", Springer-Verlag, Berlin,Heidelberg, pp. 355-70.",
+        "Wei L, Zhu H, Cao Z, Dong X, Jia W, Chen Y, et al. Security and privacy for storage and computation in cloud computing. InfSci 2014;258:371-86.",
+        "Worku S, Ting Z, Zhi-Guang Q. 2012, Survey on cloud data integrity proof techniques, in \"Information Security (AsiaJCIS), 2012 Seventh Asia Joint Conference on\", pp. 85-91.",
+        "Xiong J, Yao Z, Ma J, Liu X, Li Q. 2013, A secure document selfdestruction scheme: an ABE approach, in \"High PerformanceComputing and Communications 2013 IEEE InternationalConference on Embedded and Ubiquitous Computing(HPCC_EUC), 2013 IEEE 10th International Conference on\",pp. 59-64.",
+        "Xu J, Chang E-C. 2012, Towards efficient proofs of retrievability, in \"Proceedings of the 7th ACM Symposium on Information,Computer and Communications Security\", ACM, New York,NY, USA, pp. 79-80.",
+        "Yang K, Jia X. Data storage auditing service in cloud computing: challenges, methods and opportunities. World Wide Web2012;15(4):409-28.",
+        "Yu Y, Ni J, Au MH, Liu H, Wang H, Xu C. Improved security of a dynamic remote data possession checking protocol for cloudstorage. Expert Syst Appl 2014;41(17):7789-96.",
+        "Yu Y, Ni J, Ren J, Wu W, Chen L, Xia Q. Improvement of a remote data possession checking protocol from algebraic signatures.In: Huang X, Zhou J, editors. Information security practiceand experience. Springer International Publishing; 2014.p. 359-72.",
+        "Yuan J, Yu S. 2013, Proofs of retrievability with public verifiability and constant communication cost in cloud, in \"Proceedings ofthe 2013 International Workshop on Security in CloudComputing\", ACM, New York, NY, USA, pp. 19-26.",
+        "Zawoad S, Dutta AK, Hasan R. 2013, SecLaaS: secure logging-as-aservice for cloud forensics, in \"Proceedings of the 8th ACMSIGSAC Symposium on Information, Computer andCommunications Security\", ACM, New York, NY, USA, pp. 219-30.",
+        "Zawoad S, Dutta A, Hasan R. Towards building forensics enabled cloud through secure logging-as-a-service, in Dependable andSecure Computing, IEEE Transactions on , vol.PP, no.99, pp.1-1,2015.",
+        "Zhang Y, Blanton M. 2013, Efficient dynamic pro vable possession of remote data via balanced update trees, in \"Proceedings ofthe 8th ACM SIGSAC Symposium on Information, Computerand Communications Security\", ACM, New York, NY, USA,pp. 183-94.48 computers & security 65 (2017) 29-49",
+        "Zheng Q, Xu S. 2011, Fair and Dynamic Proofs of Retrievability, in \"Proceedings of the First ACM Conference on Data andApplication Security and Privacy\", ACM, New York, NY, USA,pp. 237-48.",
+        "Zheng Q, Xu S. 2012, Secure and Efficient Proof of Storage with Deduplication, in \"Proceedings of the Second ACM Conferenceon Data and Application Security and Privacy\", ACM, NewYork, NY, USA, pp. 1-12.",
+        "Zheng Z, Zhu J, Lyu M. 2013, Service-generated big data and big data-as-a-service: an overview, in \"Big Data (BigDataCongress), 2013 IEEE International Congress on\", pp. 403-10.",
+        "Zhu Y, Wang H, Hu Z, Ahn G-J, Hu H, Yau SS. 2010, Efficient provable data possession for hybrid clouds, in \"Proceedings of the 17th ACM Conference on Computer and CommunicationsSecurity\", ACM, New York, NY, USA, pp. 756-58.",
+        "Zhu Y, Hu H, Ahn G-J, Han Y, Chen S. 2011, Collaborative integrity verification in hybrid clouds, in \"Collaborative Computing:Networking, Applications and Work Sharing(CollaborateCom), 2011 7th International Conference on\", pp.191-200.",
+        "Zhu Y, Wang H, Hu Z, Ahn G-J, Hu H, Yau SS. 2011, Dynamic audit services for integrity verification of outsourced storages inclouds, in \"Proceedings of the 2011 ACM Symposiumon Applied Computing\", ACM, New York, NY, USA,pp. 1550-57.",
+        "Zhu Y, Hu H, Ahn G-J, Yau SS. Efficient audit service outsourcing for data integrity in clouds. J Syst Softw 2012;85(5):1083-95.",
+        "Zhu Y, Hu H, Ahn G-J, Yu M. Cooperative pro vable data possession for integrity verification in multicloud storage.IEEE Trans Parallel Distr Syst 2012;23(12):2231-44."
+      ]
+    },
+    {
+      "id": "urn:article:1-s2-0-s016740481730144x-main",
+      "type": "schema:ScholarlyArticle",
+      "title": "Sticky policies approach within cloud computing",
+      "authors": [
+        "Grzegorz Spyra",
+        "William J. Buchanan",
+        "Elias Ekonomou"
+      ],
+      "year": "2017",
+      "doi": "10.1016/j.cose.2017.07.005",
+      "journal": "computers & security",
+      "abstract": "This paper discusses a secure document sharing approach, which addresses confidentiality, integrity and authenticity concerns related to cloud-based data sharing. This researchis focused on a secure construct that would integrate with other cloud ready standards andproducts for data protection. Sticky policies, recently considered as one of the preferred clouddata protection techniques, are here combined with standardized OOXML data package. Thedefined model leverages the Identity Based Encryption (IBE) scheme to attach sticky poli-cies to the data. This paper also shows several security features and functions that are suitablefor secure data sharing in the cloud. Technologies used for proposed construction are notnew, therefore only their unique combination with AES key derived from XACML sticky policyvia IBE and OOXML wrapper constitutes novelty of this research.",
+      "keywords": [
+        "IRM",
+        "Sticky policies",
+        "IBE",
+        "Cloud security",
+        "XACML",
+        "Cryptography"
+      ],
+      "objective": [],
+      "problem": [
+        "Using IRM with properly designed infrastructure of distributed trust authorities (TA) couldaddress problem of data sharing and data migration betweenCSPs and other data sharing parties."
+      ],
+      "methodology": [
+        "Without right dedicated information security techniques for cloud, it is rather hardto protect information.",
+        "On the other side, just a few months earlier, another group of Microsoft researchers provedthat database CryptDB encryption, previously acknowledgedas a secure data protection technique can be broken with asingle trick ( Naveed et al., 2015 ).",
+        "Database encryption approach is highly ef-ficient from indexing perspective, however single vulnerabilitymay compromise entire database security and divulge vastamount of sensitive information."
+      ],
+      "contributions": [],
+      "futureWork": [],
+      "references": [
+        "Abbas A, Khan S. A review on the state-of-the-art privacy preserving approaches in e-health clouds. IEEE J Biomed HealInformatics 2014;2194:1. doi:10.1109/JBHI.2014.2300846.",
+        "Anderson A. XACML Profile for Role Based Access Control (RBAC), Version 2.0. vol. 1. 2004. Apple, Barclays Capital, BP, The British Library, Essilor, Intel, et al. Information technology - Document description andprocessing languages - Office Open XML File Formats - Part 2:Open Packaging Conventions. 138, 2006.",
+        "Bertocci V. Modern authentication with Azure Active Directory for web applications. Redmond, Washington: Microsoft Press;2016.",
+        "Boldyreva A, Goyal V, Kumar V. Identity-based encryption with efficient revocation. Proc 15th ACM Conf Comput CommunSecur - CCS '08:417, 2008. doi:10.1145/1455770.1455823.",
+        "Boneh D, Franklin M. Identity-based encryption from the Weil pairing. SIAM J Comput 2003;32:586-615.",
+        "Brown J, Blough DM. Distributed Enforcement of Sticky Policies with Flexible Trust. High Perform. Comput. Commun. (HPCC),2015 IEEE 7th Int. Symp. Cybersp. Saf. Secur. (CSS), 2015 IEEE12th Int. Conf. Embed. Softw. Syst. (ICESS), 2015 IEEE 17th Int.Conf., New York: IEEE Xplore, p. 1202-9, 2015. doi:10.1109/HPCC-CSS-ICESS.2015.235.",
+        "Cantor S, Kemp J, Philpott R, Security RSA, Hughes J, Origin A, et al. Assertions and Protocols for the OASIS SecurityAssertion Markup Language (SAML) V2.0. 2005.",
+        "Cha JC, Cheon JH. An identity-based signature from gap diffiehellman groups. Int Assoc Cryptologic Res 2002;18-30.doi:10.1007/3-540-36288-6_2.",
+        "Chen L, Jordan S, Liu Y -K, Moody D, Peralta R, Perlner R, et al. NISTIR 8105 Draft - Report on Post-Quantum Cryptography.2016. ContentGuard. eXtensible rights Markup Language (XrML) 2. 0 Specification Part II: Core Schema:1-46, 2001.",
+        "Dowlin N, Gilad-Bachrach R, Laine K, Lauter K, Naehrig M,",
+        "Wernsing J. Manual for Using Homomorphic Encryption forBioinformatics. Microsoft Research; 2015.",
+        "Ducas L, Lyubashevsky V, Prest T. Efficient identity-based encryption over NTRU lattices. ASIACRYPT 2014;8874:22-41.doi:10.1007/978-3-662-45608-8_2.",
+        "Fan CI, Huang VSM, Ruan HM. Arbitrary-state attribute-based encryption with dynamic membership. IEEE Trans Comput2014;63:1951-61. doi:10.1109/TC.2013.83.",
+        "Ferraiolo D, Chandramouli R, Kuhn R, Hu V. Extensible Access Control Markup Language (XACML) and Next GenerationAccess Control (NGAC). ABAC '16 Proc. 2016 ACM Int. Work.Attrib. Based Access Control Pages 13-24, New York, NY , USA:ACM New York, NY , USA, p. 13-24, 2016. doi:10.1145/2875491.2875496.",
+        "Gasparini L. XACML and Risk-Aware Access Control. Aberdeen: 2013.",
+        "Hur J, Noh DK. Attribute-based access control with efficient revocation in data outsourcing systems. IEEE Trans ParallelDistrib Syst 2011;22:1214-21. doi:10.1109/TPDS.2010.203.",
+        "Jain A, Farkas C. Ontology-Based Authorization Model for XML Data in Distributed Systems. Digit. Rights Manag., IGI Global;p. 210-36. 2013. doi:10.4018/978-1-4666-2136-7.ch012.",
+        "Karjoth G, Schade A. Serialization of XACML policies. US8458764 B2, 2013.",
+        "Karjoth G, Schunter M, Waidner M. Platform for enterprise privacy practices: privacy-enabled management ofcustomer data. In: Dingledine R, Syverson P, editors. Priv.Enhancing Technol, vol. 2482. Heidelberg, Germany: SpringerBerlin Heidelberg; 2002. p. 69-84 doi:10.1007/3-540-36467-6_6.374 computers & security 70 (2017) 366-375",
+        "Le XH, Doll T, Barbosu M, Luque A, Wang D. An enhancement of the role-based access control model to facilitate informationaccess management in context of team collaboration andworkflow. J Biomed Inform 2012;45:1084-107. doi:10.1016/j.jbi.2012.06.001.",
+        "Leimbach T, Hallinan D, Bachlechner D, Weber A, Jaglo M,",
+        "Hennen L, et al. Potential and Impacts of Cloud ComputingServices and Social Network Websites. 2014.",
+        "Li M, Yu S, Zheng Y, Ren K, Lou W. Scalable and secure sharing of personal health records in cloud computing using attribute-based encryption. IEEE Trans PARALLEL Distrib Syst2012;XX:1-14.",
+        "Li S, Zhang T, Gao J, Park Y. A Sticky Policy Framework for Big Data Security. 2015 IEEE First Int. Conf. Big Data Comput. Serv.Appl., Redwood City: IEEE Xplore, p. 130-7, 2015. doi:10.1109/BigDataService.2015.71.",
+        "Lockhart H, Parducci B. JSON Profile of XACML 3.0 Version 1.0 2014:1-34.",
+        "Luna J, Suri N, Iorga M, Karmel A. Leveraging the potential of cloud security service-level agreements through standards.IEEE Cloud Comput 2015;2:32-40. doi:10.1109/MCC.2015.52.",
+        "Lynn B. Authenticated Identity-Based Encryption. 2002.Martin L, Peet A. Oracle information rights management 11g managing information everywhere it is stored and used.Management 2010;23. Microsoft Corporation. XrML;747717:2-3, 2008.Mohammad J, DeCouteau D. Cross-Enterprise Security and Privacy Authorization (XSPA) Profile of SAML v2 . 0 forHealthcare Version 2 .0 Committee Specification Draft 01/.2014.",
+        "Naveed M, Kamara S, Wright CV. Inference Attacks on Property- Preserving Encrypted Databases. Proc. 22nd ACM SIGSACConf. Comput. Commun. Secur. - CCS '15, New York, NY , USA:ACM; p. 644-55. 2015. doi:10.1145/2810103.2813651.",
+        "Nigel PS, Rijmen V, Warinschi B, Watson G. Algorithms, Key Sizes and Parameters Report. Heraklion: 2014. OECD. Recommendation of the Council concerning Guidelines governing the Protection of Privacy and Transborder Flows ofPersonal Data:11-37, 2013.",
+        "Okupski K. Bitcoin developer reference. The Netherlands: Eindhoven; 2015.",
+        "Pearson S, Bramhall P. HP Laboratories. Towards Accountable Management of Identity and Privacy: Sticky Policies andEnforceable Tracing Services Marco Casassa Mont. 14th Int.Work. Database Expert Syst. Appl., IEEE Computer Society;2003.",
+        "Pearson S, Reed A, Mont MC, Kounga GLD, Chen L. Policy-based data management US 9203621 B2. US9203621 B2, 2015.",
+        "Reimsbach-Kounatze C. The Proliferation of \" Big Data \" and Implications for Official Statistics and Statistical AgenciesChristian Reimsbach-Kounatze. 2015. doi:10.1787/5js7t9wqzvg8-en.",
+        "Sahai A, Waters B. Fuzzy identity-based encryption. Annu Int Conf Theory 2005;457-73.Saldhana A, Tappetla A, Anderson A, Nadalin A, Parducci B,",
+        "Forster C, et al. eXtensible Access Control Markup Language(XACML) Version 3.0. 2013.",
+        "Scott M. On the efficient implementation of pairing-based protocols. Cryptogr Coding:296-308, 2011. doi:10.1007/978-3-642-25516-8_18.",
+        "Sergey S, Sieber M, Norden M. Azure RMS Security Evaluation Guide. Microsoft; 2015.",
+        "Shamir A. How to share a secret. Commun ACM 1979;22:612-13.",
+        "Shamir A. Identity-based cryptosystems and signature schemes. In: Blakley GR, Chaum D, editors. Adv. Cryptol, vol. 196.Heidelberg, Germany: Springer Berlin Heidelberg; 1985. p. 47-53 doi:10.1007/3-540-39568-7_5.",
+        "Yang K, Jia X. ABAC: attribute-based access control. Secur. Cloud Storage Syst. New York, NY: Springer New York; 2014. p. 39-58doi:10.1007/978-1-4614-7873-7.",
+        "Yao D, Fazio N, Dodis Y, Lysyanskaya A. ID-based encryption for complex hierarchies with applications to forward securityand broadcast encryption. Proc. 11th ACM Conf. Comput.Commun. Secur. - CCS '04, New York, New York, USA: ACMPress, p. 354, 2004. doi:10.1145/1030083.1030130."
+      ]
+    },
+    {
+      "id": "urn:article:1-s2-0-s0167404817301591-main",
+      "type": "schema:ScholarlyArticle",
+      "title": "Trust or consequences? Causal effects of perceived risk and subjective norms on cloudtechnology adoption",
+      "authors": [
+        "Shuyuan Mary Ho",
+        "Mónica Ocasio-Velázquez",
+        "Cheryl Booth"
+      ],
+      "year": "2017",
+      "doi": "10.1016/j.cose.2017.08.004",
+      "journal": "computers & security",
+      "abstract": "Cloud computing has become a popular alternative information curation solution for organizations. As more corporate proprietary information is stored in the Cloud, concerns aboutCloud information security have also increased. This study investigates the causal effectof perceived risk and subjective norms on users' trust intention to adopt Cloud technol-ogy. A partial least squares structural equation modeling (PLS-SEM) analysis was performedto assess latent variables and examine moderating effects to Cloud technology adoption.Our findings suggest that a user's perceived risk and subjective norms have a significanteffect on their trust intention vis-a-vis Cloud adoption, which leads to their decision onwhether to adopt the Cloud technology. While a user's attitudes do influence their inten-tion to trust the Cloud, their attitude is not moderated by either perceived risk or subjectivenorms. On the other hand, a user's perceived risk of the Cloud environment predomi-nately moderates their knowledge and perceived behavioral control, which results in theirknowledge and perceived behavioral control not having a direct effect on their intentionto trust the Cloud. Moreover, a user's subjective norms predicate their trust intention, whichfurther moderates their knowledge and perceived behavioral control to trust and to adoptCloud technology.",
+      "keywords": [
+        "Cloud technology adoption",
+        "Intention to trust",
+        "Perceived risk",
+        "Theory of planned behavior",
+        "Technology acceptance model",
+        "PLS-SEM"
+      ],
+      "objective": [
+        "This study investigates the causal effectof perceived risk and subjective norms on users' trust intention to adopt Cloud technol-ogy."
+      ],
+      "problem": [
+        "Their overarchingconcern is the risk of losing control of their data ( Yeh and Chang, 2007 ).Liu et al. (2008) discussed this problem and noted that, while the adoption of Cloud and other virtualization tech-nology has significantly enhanced IT usage and performancewithin organizations, it has also clearly led to an increase inorganizational decision makers'/ IT managers' concerns aboutthe intangible, undefined boundaries of the Cloud and the in-crease in risk to data security and integrity ( Liu et al., 2008 )."
+      ],
+      "methodology": [
+        "These factors - along with perceived riskand subjective norms (e.g., influence from friends or organi-zational seniors) - form the core of our investigation.582 computers & security 70 (2017) 581-595 In the section below, we compare and critique two theoretical frameworks - Technology Adoption Models (TAM) andthe Theory of Planned Behavior (TPB) - that provide insight intohow these different factors influence a user's intention to trustthe adoption of Cloud computing services. 2.1.",
+        "Although TAM can be considered a fairly straightforward approach to understanding users' technology adoption behav-ior, Mathieson (1991) raised several significant criticisms of Davis's (1989) initial TAM framework.",
+        "Theoretical frameworks Our research model assumes in the first instance that, by design,the Cloud is both useful and easy to use."
+      ],
+      "contributions": [
+        "This research further contributes to the practitioners' community in both the private and public sectors."
+      ],
+      "futureWork": [],
+      "references": [
+        "Ajzen I. From intentions to actions: a theory of planned behavior. In: Kuhl J, Beckmann J, editors. Action-control: from cognitionto behavior. Springer Series in Social Psychology. Springer-Verlag Berlin Heidelberg; 1985. p. 11-39.",
+        "Ajzen I. Attitudes, traits, and actions: dispositional prediction of behavior in personality and social psychology. In: BerkowitzL, editor. Advances in experimental social psychology, vol. 20.New York, NY: Academic Press; 1987. p. 1-63.",
+        "Ajzen I. The theory of planned behavior. Organ Behav Hum Decis Process 1991;50(2):179-211. doi:10.1016/0749-5978(91)90020-T.",
+        "Ajzen I. Perceived behavioral control, self-efficacy, locus of control, and the Theory of Planned Behavior. J Appl SocPsychol 2002;32(4):665-83. doi:10.1111/j.1559-1816.2002.tb00236.x.",
+        "Ajzen I. Manstead T, editor. Attitudes, personality and behaviour. 2nd ed. New York, NY: McGraw-Hill Education; 2005.",
+        "Ajzen I, Fishbein M. Understanding attitudes and predicting social behavior. 1st ed. Prentice Hall; 1980.Armbrust M, Fox A, Griffith R, Joseph AD, Katz R, Konwinski A, et al. A view of cloud computing. Commun ACM 2010;53(4):50-8. doi:10.1145/1721654.1721672.",
+        "Bandura A. Social cognitive theory of self-regulation. Organ Behav Hum Decis Process 1991;50:248-87.",
+        "Chau PYK, Hu PJ-H. Information technology acceptance by individual professionals: a model comparison approach.Decis Sci 2001;32(4):699-719. doi:10.1111/j.1540-5915.2001.tb00978.x.",
+        "Chau PYK, Tam KY. Organizational adoption of open systems: a \"technology-push, need-pull\" perspective. Inf Manag2000;37(5):229-39. doi:10.1016/S0378-7206(99)00050-6.",
+        "Compeau DR, Higgins CA. Computer self-efficacy: development of a measure and initial test. MIS Q 1995;19(2):189-211.",
+        "Courtney JF. Decision making and knowledge management in inquiring organizations: toward a new decision-makingparadigm for DSS. Decis Support Syst 2001;31(1):17-38. de Guinea AO, Markus ML. Why break the habit of a lifetime? Rethinking the roles of intention, habit, and emotion incontinuing information technology use. MIS Q 2009;33(3):433-44. doi:10.2307/20650303.",
+        "Davis FD. Perceived usefulness, perceived easy of use, and user acceptance of information technology. MIS Q 1989;13(3):319-40. doi:10.2307/249008.",
+        "Dinev T, Hart P. Internet privacy concerns and their antecedents - measurement validity and a regression model. Behav InfTechnol 2004;23(6):413-22. doi:10.1080/01449290410001715723.",
+        "Dinev T, Hart P. Internet privacy concerns and social awareness as determinants of intention to transact. Int J ElectronCommer 2005;10(2):7-29.",
+        "Dinev T, Hart P. An extended privacy calculus model for e-commerce transactions. Inf Syst Res 2006;17(1):61-80.",
+        "Edmondson AC, Winslow AB, Bohmer RMJ, Pisano GP. Learning how and learning what: effects of tacit and codifiedknowledge on performance improvement followingtechnology adoption. Decis Sci 2003;34(2):197-224. doi:10.1111/1540-5915.02316.",
+        "Elie-Dit-Cosaque C, Pallud J, Kalika M. The influence of individual, contextual, and social factors on perceivedbehavioral control of information technology: a field theoryapproach. J Manag Inf Syst 2011;28(3):201-34. doi:10.2753/MIS0742-1222280306.",
+        "Garfinkel SL. The cybersecurity risk. Commun ACM 2012;55(6):29- 32. doi:10.1145/2184319.2184330.",
+        "Gefen D, Karahanna E, Straub DW. Trust and TAM in online shopping: an integrated model. MIS Q 2003;27(1):51-90.",
+        "Hair JF, Sarstedt M, Ringle CM, Mena JA. An assessment of the use of partial least squares structural equation modeling inmarketing research. J Acad Mark Sci 2012;40(3):414-33.doi:10.1007/s11747-011-0261-6.",
+        "Hair JF, Hult GTM, Ringle CM, Sarstedt M. A primer on partial least squares structutal equeation modeling (PLS-SEM).1st ed. Thousand Oaks: CA: SAGE Publications, Inc; 2014.",
+        "Hair JF, Hult GTM, Ringle CM, Sarstedt M. A primer on partial least squares structural equation modeling (PLS-SEM).2nd (Kindle) ed. Thousand Oaks: CA: SAGE Publications, Inc;2017.",
+        "He J, King W. The role of user participation in information systems development: implications from a meta-analysis.J Manag Inf Syst 2008;25(1):301-31. doi:10.2753/MIS0742-1222250111. Hong S-J, Tam KY. Understanding the adoption of multipurpose information appliances: the case of mobile data services. InfSyst Res 2006;17(2):162-79. doi:10.2307/23015773.",
+        "Ifinedo P. Understanding information systems security policy compliance: an integration of the theory of planned behaviorand the protection motivation theory. Comput Secur2012;31(1):83-95. doi:10.1016/j.cose.2011.10.007.593 computers & security 70 (2017) 581-595",
+        "Jones K. Trust as an affective attitude. Ethics 1996;107(1):4-25.",
+        "Kamal MM, Bigdeli AZ, Themistocleous M. Investigating factors influencing local government decision makers while adoptingintegration technologies (IntTech). Inf Manag 2015;52(2):135-50. doi:10.1016/j.im.2014.06.007.",
+        "Keil M, Tan BCY, Wei K-K, Saarinen T, Tuunainen V, Wassenaar A. A cross-cultural study on escalation of commitmentbehavior in software projects. MIS Q 2000;24(2):299-325.doi:10.2307/3250940.",
+        "Kock N. One-tailed or two-tailed P values in PLS-SEM? Int J eCollab 2015;11(2):1-7. doi:10.4018/ijec.2015040101.",
+        "Komiak SYX, Benbasat I. Understanding customer trust in agent-mediated electronic commerce, web-mediatedelectronic commerce, and traditional commerce. Inf TechnolManag 2004;5(1-2):181-207. doi:10.1023/B:ITEM.0000008081.55563.d4.",
+        "Komiak SYX, Benbasat I. The effects of personalization and familiarity on trust and adoption of recommendation agents.MIS Q 2006;30(4):941-60.",
+        "Lacohee H, Phippen AD, Furnell SM. Risk and restitution: assessing how users establish online trust. Comput Secur2006;25(7):486-93. doi:10.1016/j.cose.2006.09.001. Lai J-Y. How reward, computer self-efficacy, and perceived power security affect knowledge management systems success:an empirical investigation in high-tech companies. J Am SocInf Sci Technol 2009;6(2):332-47. doi:10.1002/asi.20982.",
+        "Legris P, Ingham J, Collerette P. Why do people use information technology? A critical review of the technology acceptancemodel. Inf Manag 2003;40(3):191-204. doi:10.1016/S0378-7206(01)00143-4.",
+        "Lewis W, Agarwal R, Sambamurthy V. Sources of influence on beliefs about information technology use: an empirical studyof knowledge workers. MIS Q 2003;27(4):657-78.",
+        "Liu C, Sia C-L, Wei K-K. Adopting organizational virtualization in B2B firms: an empirical study in Singapore. Inf Manag2008;45(7):429-37. doi:10.1016/j.im.2008.06.005.",
+        "Marston S, Li Z, Bandyopadhyay S, Zhang J, Ghalsasi A. Cloud computing - the business perspective. Decis Support Syst2011;51(1):176-89. doi:10.1016/j.dss.2010.12.006.",
+        "Mathieson K. Predicting user intentions: comparing the technology acceptance model with the Theory of PlannedBehavior. Inf Syst Res 1991;2(3):173-91. doi:10.1287/isre.2.3.173. NIST SP 800-144. Guidelines on security and privacy in public cloud computing. National Institute of Standards andTechnology Special Publication SP 800-144; 2011. (SpecialPublication SP 800-144). Available from: http://nvlpubs.nist .gov/nistpubs/Legacy/SP/nistspecialpublication800-144.pdf . NIST SP 800-145. The NIST definition of cloud computing. National Institute of Standards of Technology SpecialPublication SP 800-145; 2011. (Special Publication SP 800-145).Available from: http://nvlpubs.nist.gov/nistpubs/Legacy/SP/ nistspecialpublication800-145.pdf .",
+        "Oliveira T, Thomas M, Espadanal M. Assessing the determinants of cloud computing adoption: an analysis of themanufacturing and services sectors. Inf Manag2014;51(5):497-510. doi:10.1016/j.im.2014.03.006.",
+        "Pavlou PA. Consumer acceptance of electronic commerce: integrating trust and risk with the technology acceptancemodel. Int J Electron Commer 2003;7(3):101-34.",
+        "Pavlou PA, Fygenson M. Understanding and predicting electronic commerce adoption: an extension of the theory of plannedbehavior. MIS Q 2006;30(1):115-43.",
+        "Raju PS, Lonial SC, Mangold WG. Differential effects of subjective knowledge, objective knowledge, and usage experience ondecision making: an exploratory investigation. J ConsumPsychol 1995;4(2):153-80. doi:10.1207/s15327663jcp0402_04.Ransbotham S, Mitra S. Choice and chance: a conceptual model of paths to information security compromise. Inf Syst Res2009;20(1):121-39. doi:10.1287/isre.1080.0174.",
+        "Ring PS, van de Ven AH. Developmental processes of cooperative interorganizational relationships. Acad Manage Rev1994;19(1):90-118.",
+        "Schepers J, Wetzels M. A meta-analysis of the technology acceptance model: investigating subjective norm andmoderation effects. Inf Manag 2007;44(1):90-103. doi:10.1016/j.im.2006.10.007.",
+        "Schultze U. A confessional account of an ethnography about knowledge work. MIS Q 2000;24(1):3-41. Shiau W-L, Chau PYK. Understanding behavioral intention to use a cloud computign classroom: a multiple model comparisonapproach. Inf Manag 2016;53(4):355-65. doi:10.1016/j.im.2015.10.004.",
+        "Shropshire J, Warkentin M, Sharma S. Personality, attitudes, adn intentions: predicting initial adoption of information securitybehavior. Comput Secur 2015;49:177-91. doi:10.1016/j.cose.2015.01.002.",
+        "Son I, Lee D, Lee J-N, Chang YB. Market perception on cloud computing initiatives in organizations: an extended resource-based view. Inf Manag 2014;51(6):653-69. doi:10.1016/j.im.2014.05.006.",
+        "Straub DW, Keil M, Brenner W. Testing the technology acceptance model across cultures: a three country study. InfManag 1997;33(1):1-11. doi:10.1016/S0378-7206(97)00026-8.",
+        "Tang C, Liu J. Selecting a trusted cloud service provider for your SaaS program. Comput Secur 2015;50:60-73. doi:10.1016/j.cose.2015.02.001.",
+        "Taylor S, Todd PA. Understanding information technology usage: a test of competing models. Inf Syst Res 1995;6(2):144-76.doi:10.1287/isre.6.2.144.",
+        "Venkatesh V, Davis FD. A theoretical extension of the technology acceptance model: four longtudinal field studies. Manage Sci2000;46(2):186-204. doi:10.1287/mnsc.46.2.186.11926.",
+        "Venkatesh V, Goyal S. Expectation disconfirmation and technology adoption: polynomial modeling and responsesurface analysis. MIS Q 2010;34(2):281-303. doi:10.2307/20721428.",
+        "Venkatesh V, Morris MG. Why don't men ever stop to ask for directions? Gender, social influence, and their role intechnology acceptance and usage behavior. MIS Q 2000;24(1):115-39. doi:10.2307/3250981.",
+        "Venkatesh V, Morris MG, Davis GB, Davis FD. User Acceptance of information technology: toward a unified view. MIS Q2003;27(3):425-78. doi:10.2307/30036540.",
+        "Ward BT, Sipior JC. The Internet jurisdiction risk of cloud computing. Inf Syst Manag 2010;27(4):334-9. doi:10.1080/10580530.2010.514248. Yeh Q-J, Chang AJ-T. Threats and countermeasures for information system security: a cross-industry study. InfManag 2007;44(5):480-91. doi:10.1016/j.im.2007.05.003."
+      ]
+    },
+    {
+      "id": "urn:article:1-s2-0-s0167404818301895-main",
+      "type": "schema:ScholarlyArticle",
+      "title": "SNAPS: Towards building snapshot based provenance system for virtual machines in the cloud environment",
+      "authors": [
+        "BKSP Kumar Raju",
+        "G Geethakumari"
+      ],
+      "year": "2019",
+      "doi": "10.1016/j.cose.2019.05.020",
+      "journal": "computers & security",
+      "abstract": "Recent threats in cloud show the necessity to perform forensics in the cloud environment. \nBut performing forensic investigation in the cloud is different from traditional digital forensics. Cloud characteristics like multi-tenancy, rapid elasticity, diversity, and complexity raise \nadditional challenges for cloud forensics. For each cloud Virtual Machine (VM), there will \nbe several evidences like vdisk, vRAM, Snapshots, Volumes, Service logs, and VM logs. The \nforensic challenges differ from one evidence to the other. In this paper, we look at the challenges of snapshot acquisition and analysis . In reality, snapshots for a VM may not always \nexist. To increase their availability, we suggest the use of Cloud Forensic Readiness (CFR) \nmodels in which the snapshots are collected before the actual incident. The captured snapshots have to be transferred to the investigators environment via network. Since the cloud \nVM snapshots will be generally of huge size, transferring them elsewhere for processing \nmay lead to the problem of data gravity. We resolve this problem by designing a framework \nnamed SNAPS (Snapshots based Provenance Aware System) which is derived from the existing spatio-temporal models and then customized to suit cloud forensic investigation. The \nmotivation behind proposing SNAPS is to generate provenance for each object in the target \nvirtual machine using its multiple snapshots. Moreover, SNAPS can be used to address various forensic challenges starting from simple to complex ones. Few of those were illustrated \nwith the VM snapshots acquired from the Openstack Cloud Environment.",
+      "keywords": [
+        "Cloud computing",
+        "Digital forensics",
+        "Snapshot acquisition",
+        "Snapshot analysis",
+        "Forensic readiness"
+      ],
+      "objective": [
+        "In this paper, we look at the challenges of snapshot acquisition and analysis .",
+        "In this paper, we intend to solve the challenges of investigation when the VM snapshots are used as the evidence."
+      ],
+      "problem": [
+        "Since the cloud VM snapshots will be generally of huge size, transferring them elsewhere for processing may lead to the problem of data gravity.",
+        "We resolve this problem by designing a framework named SNAPS (Snapshots based Provenance Aware System) which is derived from the existing spatio-temporal models and then customized to suit cloud forensic investigation.",
+        "S. No. Challenges in Snapshot acquisition and analysis Sections in which we address these challenges 1 Snapshots act as one of the richest source of evidences during forensic investigation but they may not be available in all the cases."
+      ],
+      "methodology": [
+        "The difficulties in the issue of data gravity would get worse when the evidences of huge size have to be acquired from the cloud and processed at the investigator's environment. • Anti-forensics: Techniques used as countermeasures for the forensic analysis.",
+        "These techniques can complicate the entire forensic process. • Cloud service Provider (CSP): CSP owns and maintains the cloud resources and rent them to the users with less cost. • Intruder: A person who violates the underlying policies of the environment (here cloud) and performs suspicious activities or attacks. • Tenant: A tenant can have a single user or multiple users.",
+        "Once any attack or suspicious activity is accomplished by the intruder then his usual task is to follow appropriate anti-forensic techniques through which the possibility of him being caught may be reduced and sometimes made impossible ( Harris, 2006 )."
+      ],
+      "contributions": [],
+      "futureWork": [],
+      "references": [
+        "Almulla S ,Ir aqi Y ,J ones A . A distributed snapshot framework for digital forensics evidence extraction and event reconstruction from cloud environment. Proceedings of the IEEE 5th international conference on cloud computing technology and science (CloudCom), 2013 . Alqahtany S ,et al . A forensic acquisition and analysis system for IAAS. Cluster Comput 2016;19.1:439-53 . Amerini I ,et al . A sift-based forensic method for copy move attack detection and transformation recovery. IEEE Trans Inf Forens Secur 2011;6.3:1099-110 . Amazon EBS snapshots, (accessed) june. 2016. Available at: EBSSnapshots.html . Balduzzi M ,Zaddach J ,Balzarotti D ,Kir da E ,Lour eir o S . A security analysis of amazons elastic compute cloud service. Proceedings of the symposium on applied computing. ACM; 2012. p. 1427-34 . Battistoni R ,Di Pietro R ,Lombar di F . CURE: Towards enforcing a reliable timeline for cloud forensics: model, architecture, and experiments. Comput. Commun. 2016;91:29-43 . Backup Azure virtual Machines, 2016. July Available at: backup- azure- vms/ . Belorkar A ,Geethakumari G . Regeneration of events using system snapshots for cloud forensic analysis. Proceedings of the annual IEEE india conference. IEEE, 2011 .2011 Chen Y ,Sion R . Costs and security in clouds. Lecture notes of computer science. Springer, 2017 . Das S . ProTrack: A simple provenance tracking filesystem. MIT, 2016 .",
+        "Dykstra J., Alan T.S. Understanding issues in cloud forensics: two hypothetical case studies. 2011. Fernndez CD ,Rolando GPM ,Sar a LGA . Some limitations of spatio temporal source models. Brain Topogr 1995;7.3:233-43 . Gehani A ,Tariq D . SPADE: support for provenance auditing in distributed environments. Proceedings of the 13th international middleware conference. New York, Inc.: Springer-Verlag, 2012 .",
+        "Grimes RA. 7 sneak attacks used by today's most devious hackers. Available at: http://www.infoworld.com/article/ 2610239/malware/7- sneak- attacks- used- by- todays-most devious devious-hackers.html .",
+        "Gruschka N., Jensen M. Attack surfaces: a taxonomy for attacks on cloud services. Proceedings of the IEEE CLOUD 2010. Harris R . Arriving at an anti-forensics consensus: examining how to define and control the anti-forensics problem. In: Proceedings of the DFRWS; 2006. p. 44-9 .Digital Investig. 3, Supplement. Hernández-Campos F ,et al . Spatio-temporal modeling of traffic workload in a campus WLAN. Proceedings of the 2nd annual international workshop on Wireless internet. ACM, 2006 .",
+        "Higgins K. Dropbox, Wordpress used as cloud cover in new apt attacks. 2013. In: http://www.darkreading.com/ attacksbreaches/dropbox-wordpress- used- as- cloud- coverin/ 240158057 , accessed 22-07-2013. Inci SM . Seriously, get off my cloud! cross-VM RSA key recovery in a public cloud. Proceedings of the IACR cryptology, 2015 . Kebande VR ,Venter HS . A cloud forensic readiness model using a Botnet as a service. Proceedings of the international conference on digital security and forensics (DigitalSec2014). The Society of Digital Information and Wireless Communication, 2014 . Khalil IM ,Khreishah A ,Azeem M . Cloud computing security: a survey. Computers 2014;3.1:1-35 . 86 (2019) 92-111 111 Khan S ,et al . Cloud log forensics: foundations, state of the art, and future directions. ACM Comput Surv (CSUR) 2016;49.1:7 .",
+        "Linthicum D.D.S. Cloud data security comes with hefty price tag.",
+        "Retrieved from, https://searchcloudcomputing.techtarget. com/feature/Cloud- data- security- comes- at- a- cost . Marco DL ,K ec hadi MT ,Ferrucci F . Cloud forensic readiness: foundations. In: Digital forensics and cyber crime. Springer International Publishing; 2013. p. 237-44 .",
+        "Mell P., Grance T. The NIST definition of cloud computing. 2011. Kiran-Kumar MR ,Mac ko P ,Seltzer MI . Provenance for the cloud. FAST 2010;10 . NIST. NIST cloud computing forensic science challenges. 2014. June http://csrc.nist.gov/publications/drafts/nistir-8006/ draft _ nistir _ 8006.pdf . Pelekis N . Literature review of spatio-temporal database models. Knowl Eng Rev 2004;19(03):235-74 . Raju KB ,Geethakumari G . An advanced forensic readiness model for the cloud environment. Proceedings of the international conference on computing, communication and automation (ICCCA), 2016 . Rani RD ,Geethakumari G . An efficient approach to forensic investigation in cloud using VM snapshots. Proceedings of the international conference on pervasive computing (ICPC), 2015 . Roussev V . Cloud forensics tool development studies & future outlook. Digit. Investig 2016 . Sarala R . Information security risk assessment under uncertainty using dynamic Bayesian networks. Int J Res Eng Technol 2014:304-9 . Stamford, Conn. 2016. Jan http://www.gartner.com/newsroom/ id/3188817 . Subashini S ,Ka vitha V . A survey on security issues in service delivery models of cloud computing. J Netw Comput Appl 2011;34(1):1-11 .",
+        "Sutte J. Twitter hack raises questions about cloud computing. 2009. In: http://edition.cnn.com/2009/TECH/07/16/ twitter.hack/ , accessed 21-07-2013.The Register, Amazon cloud hosts nasty banking trojan. 2011.",
+        "Wagner A. ProFS: a lightweight provenance file system. 2012.",
+        "Weins K. 2016. May http://www.rightscale.com/blog/cloudindustry- insights/new- devops- trends- 2016- state- cloudsurvey . Witti H ,et al . Security governance in multi-cloud environment: a systematic mapping study. Proceedings of the 12th world congress on services (SERVICES), 2016 . Zissis D ,Lekkas D . Addressing cloud computing security issues. Future Gen Comput Syst 2012;28(3):583-92 . Geethakumari joined BITS Pilani, Hyderabad Campus in 2008 as a faculty with the Department of Computer Science and Information Systems. Prior to joining BITS, she worked as a faculty at the National Institute of Technology, Warangal (Department of CSE)."
+      ]
+    },
+    {
+      "id": "urn:article:1-s2-0-s0167404818303948-main",
+      "type": "schema:ScholarlyArticle",
+      "title": "A self-protecting agents based model for high-performance mobile-cloud computing",
+      "authors": [
+        "Pelin Angin",
+        "Bharat Bhargava",
+        "Rohit Ranchal"
+      ],
+      "year": "2018",
+      "doi": "10.1016/j.cose.2018.04.011",
+      "journal": "computers & security",
+      "abstract": "Mobile-cloud computing (MCC) allows devices with resource and battery limitations to \nachieve computation-intensive tasks in real-time. While this new paradigm of computing \nseems beneficial for real-time mobile computing, existing MCC models mainly rely on keeping full clones of program code at remote sites and unstandardized/uninteroperable environments, hampering wider adoption. Moreover, the security risks arising from offloading \ndata and code to an untrusted platform and the computational overhead introduced by \ncomplex security mechanisms stand as deterrents for adoption of MCC at large. In this \npaper, we present a context-dependent computation-offloading model for MCC, which is \nbased on application segments packed into autonomous agents. This approach only requires isolated execution containers in the cloud to provide a runtime environment for \nthe agents, and minimal involvement of the mobile platform during the computation process. The agents in the proposed model are able to protect themselves from tampering \nusing integrity-checkpointing and an authenticated encryption-based communication \nmechanism. Experiments with two mobile applications demonstrate the effectiveness of \nthe approach for high-performance, secure MCC.",
+      "keywords": [
+        "Mobile-cloud computing",
+        "Tamper resistance",
+        "Autonomous agents",
+        "Performance",
+        "Security"
+      ],
+      "objective": [
+        "In this paper, we present a context-dependent computation-offloading model for MCC, which is based on application segments packed into autonomous agents.",
+        "In this paper we present a mobile-cloud computation model based on autonomous agent-based application modules, which are augmented with performance checkpoints for self-performance evaluation and integrity verification units for dynamic detection and reporting of code tampering."
+      ],
+      "problem": [
+        "Recent work on this problem has resulted in frameworks with various partitioning and optimization techniques.",
+        "The other major obstacle for wider adoption of MCC is the security risks associated with sending sensitive data and code 77 (2018) 380-396 381 to an untrusted platform, including but not limited to the following: • Lack of control on resources and multi-tenancy of different users' applications on the same physical machine make cloud platforms vulnerable to attacks ( Feng et al., 2011 ). • In addition to privacy issues, programs running in the cloud are prone to tampering with code, data, execution flow and communication, as well as masquerading attacks ( Chou, 2013 ). • Mobile code can navigate through multiple platforms before returning to the origin, giving rise to the end-to-end security problem, which involves decreasing control with every further hop in the chain of platforms ( Ali et al., 2015 )."
+      ],
+      "methodology": [
+        "Recent work on this problem has resulted in frameworks with various partitioning and optimization techniques.",
+        "However, most of these frameworks impose strict requirements on the cloud side, such as a full clone of the application code or special application management software, hindering wide applicability in public clouds.",
+        "Achieving ultimate flexibility and performance in mobile-cloud computing is contingent upon the availability of a secure computing framework capable of dynamic decision making with regards to the execution location of different program partitions."
+      ],
+      "contributions": [
+        "The main contributions of this paper are as follows: • We present an effective and easy-to-adopt dynamic computation offloading model for high-performance MCC. • We present a dynamic performance estimation model that allows for tracking and relocation of offloaded computation to ensure optimal performance under varying mobilecloud context. • We propose a tamper resistance model for MCC that allows for dynamic integrity-checking and migration of offloaded computation to ensure trustworthiness of results received from a cloud platform. • The proposed computation offloading and protection model relies on lightweight, transparent mechanisms for application code transformation/augmentation, allowing for low response time overhead and high interoperability."
+      ],
+      "futureWork": [],
+      "references": [
+        "Abera T ,Asokan N ,Da vi L ,Ekberg JE ,Nyman T ,P a v er d A , Sadeghi AR ,Tsudik G . C-flat: control-flow attestation for embedded systems software. Proceedings of the ACM conference on computer and communications security (CCS); 2016. p. 743-54 .",
+        "Ali M ,Khan SU ,Vasilakos AV . Security in cloud computing. Inf Sci 2015;305(C):357-83 .Jun.",
+        "Angin P ,Bhar ga v a B . An agent-based optimization framework for mobile-cloud computing. J Wirel Mob Netw Ubiquitous Comput Dependable Appl 2013;4(2):1-17 .",
+        "Angin P ,Bhar ga v a B ,Jin Z . A self-cloning agents based model for high-performance mobile-cloud computing. Proceedings of the IEEE international conference on cloud computing (CLOUD'15); 2015. p. 301-8 .",
+        "Asokan N ,Brasser FF ,Ibrahim A ,Sade ghi AR ,Schunter M , Tsudik G ,Wachsmann C . SEDA: scalable embedded device attestation.. Proceedings of the ACM conference on computer and communications security (CCS); 2015. p. 964-75 . AspectJ, http://eclipse.org/aspectj/ . [Accessed: 5 January 2018].",
+        "Bate I ,Bernat G ,Murphy G ,Puschner P . Low-level analysis of a portable java byte code WCET analysis framework. Proceedings of the seventh IEEE international conference on real-time computing systems and applications; 2000. p. 39-46 .",
+        "Bellare M ,Namprempre C . Authenticated encryption: relations among notions and analysis of the generic composition paradigm. J Cryptol 2008;21(4):469-91 .",
+        "Brenner M ,Wiebelitz J ,v on Voigt G ,Smith M . Secret program execution in the cloud applying homomorphic encryption. Proceedings of the fifth IEEE international conference on digital ecosystems and technologies (DEST'11); 2011. p. 114-19 .",
+        "Chang H ,Atallah MJ . Protecting software code by guards. Security and privacy in digital rights management. Springer; 2002. p. 160-75 .",
+        "Chess D ,Harrison C ,Kershenbaum A . Mobile agents: are they a good idea?. In: Vitek J, Tschudin C, editors. Mobile object systems towards the programmable internet. Springer, 1997 . Chou TS . Security threats on cloud computing vulnerabilities. Int J Comput Sci Inf Technol 2013;5(3):79-88 .",
+        "Chow R ,Jakobsson M ,Masuoka R ,Molina J ,Niu Y ,Shi E ,Song Z . Authentication in the clouds: a framework and its application to mobile users. Proceedings of the ACM workshop on cloud computing security; 2010. p. 1-6 .",
+        "Chun B ,Ihm S ,Maniatis P ,Naik M ,Patti A . Clonecloud: elastic execution between mobile device and cloud. Proceedings of the sixth ACM european conference on computer systems (Eurosys'11); 2011. p. 301-14 .",
+        "Collberg C ,Na gr a J . Surreptitious software: obfuscation, watermarking, and tamperproofing for software protection. Addison-Wesley Professional; 2009 .",
+        "Cuervo E ,Balasubramanian A ,Cho D ,W olman A ,Sar oiu S , Chandra R ,Bahl P . Maui: making smartphones last longer with code offload. Proceedings of the eighth ACM international conference on mobile systems, applications, and services (mobisys'10); 2010. p. 49-62 . Darnok, K. (2018). http://darnok.org/programming/ face-recognition . [Accessed January 07].",
+        "Eldefrawy K ,Tsudik G ,Francillon A ,Perito D . Smart: secure and minimal architecture for (establishing dynamic) root of trust.. Proceedings of NDSS, 2012 .",
+        "Feng Z ,Bai B ,Zhao B ,Su J . Shrew attack in cloud data center networks. Proceedings of seventh international conference on mobile ad-hoc and sensor networks, (MSN); 2011. p. 441-5 .",
+        "Francillon A ,Nguy en Q ,Rasmussen KB ,Tsudik G . A minimalist approach to remote attestation.. Proceedings of DATE; 2014. p. 1-6 . Grew, D. M., & Viega, J. (2004). The galois/counter mode of operation (GCM). NIST Special Publication 800-38DNIST. GSM Arena. Motorola Atrix 4G. (2018). [Accessed January 05].",
+        "Heffner K ,Collberg C . The obfuscation executive. Information security. Springer; 2004. p. 428-40 .",
+        "Huang D ,W ang P ,Niy ato D . A dynamic offloading algorithm for mobile computing. IEEE Trans Wirel Commun 2012;11(6):1991-5 .J une .",
+        "Ibrahim A ,Sade ghi AR ,Tsudik G ,Zeitouni S . DARPA: device attestation resilient to physical attacks.. Proceedings of wiSEC. ACM; 2016. p. 171-82 . Amazon Web Services Inc., Amazon Web Services Inc.Amazon elastic compute cloud. http://aws.amazon.com/ec2 . [Accessed: 7 January 2018].",
+        "Jochen M ,Marv el L ,Pollock L . A framework for tamper detection marking of mobile applications. Proceedings of the international symposium on software reliability engineering(ISSRE); 2003. p. 143-53 .",
+        "Karnik NM ,Tripathi AR . Security in the Ajanta mobile agent system. Softw Pract Exp 2001;31:301-29 .",
+        "Katz J ,Yung M . Unforgeable encryption and chosen ciphertext secure modes of operation. Fast software encryption. Springer; 2001. p. 284-99 .",
+        "Kosta S ,A ucinas A ,Hui P ,Mortier R ,Zhang X . Thinkair: dynamic resource allocation and parallel execution in the cloud for mobile code offloading. Proceedings of the thirty first IEEE international conference on computer communications (INFOCOM'12); 2012. p. 945-53 .",
+        "Kovah X ,Kallenberg C ,Weathers C ,Herzog A ,Albin M , Butterworth J . New results for timing-based attestation.. Proceedings of the IEEE symposium on security and privacy (s&p); 2011. p. 239-53 . Telecom Italia Lab, Java agent development framework.",
+        "Lin X ,W ang Y ,Xie Q ,P edr am M . Energy and performance-aware task scheduling in a mobile cloud computing environment. Proceedings of the seventh IEEE international conference on cloud computing (CLOUD'14). IEEE; 2014. p. 192-9 .",
+        "McCune JM ,Li Y ,Qu N ,Zhou Z ,Datta A ,Gligor VD ,Perrig A . Trustvisor: efficient TCB reduction and attestation.. Proceedings of the IEEE symposium on security and privacy (S&P); 2010. p. 143-58 .Trusted Platform Module, Trusted Platform Module. trusted _ platform _ module _ tpm _ summary . [Accessed: 5 January 2018]. Påhlsson, N. (e). Aspect-oriented programming. 2002 [Accessed: 5 January 2018].",
+        "Parno B ,McCune JM ,Perrig A . Bootstrapping trust in commodity computers.. Proceedings of the IEEE symposium on security and privacy (s&p); 2010. p. 414-29 .",
+        "Ristenpart T ,T r omer E ,Shac ham H , Savage S . Hey, you, get off of my cloud: Exploring information leakage in third-party compute clouds. Proceedings of the sixteenth ACM conference on computer and communications security; 2009. p. 199-212 . Roth V . Programming satan's agents. Electron Notes Theor Comput Sci 2002;63:124-39 .",
+        "Sander T ,Tsc hudin CF . Protecting mobile agents against malicious hosts. Mobile agents and security. Springer; 1998. p. 44-60 . Vigna, G., Cassell, B., & Fayram, D., An intrusion detection system for aglets. Proceedings of the sixth International Conference on Mobile Agents (MA '02), 2002, 64-77.",
+        "Xiao S ,Gong W . Mobility can help: Protect user identity with dynamic credential. Proceedings of the eleventh IEEE international conference on mobile data management (MDM'10); 2010. p. 378-80 .",
+        "Yang L ,Cao J ,T ang S ,Li T ,Chan AT . A framework for partitioning and execution of data stream applications in mobile cloud computing. Proceedings of the fifth IEEE international conference on cloud computing (CLOUD'12); 2012. p. 794-802 .",
+        "Zhang X ,Schiffman J ,Gibbs S ,Kunjithapatham A ,J eong S . Securing elastic applications on mobile devices for cloud computing. Proceedings of the ACM workshop on cloud computing security; 2009. p. 127-34 .",
+        "Zhou Z ,Huang D . Efficient and secure data storage operations for mobile cloud computing. Proceedings of the eighth IEEE international conference on network and service management (CNSM'12); 2012. p. 37-45 . Pelin Angin is an assistant professor of Computer Engineering at Middle East Technical University, Turkey. She received her BS degree in Computer Engineering at Bilkent University in 2007 and her PhD degree in Computer Science at Purdue University in 2013. Her research interests lie in the fields of mobile-cloud computing, cloud computing security, distributed systems and data mining. Bharat Bhargava is a professor of the Department of Computer Science with a courtesy appointment in the School of Electrical and Computer Engineering at Purdue University. His research focuses on security and privacy issues in distributed systems. He is a Fellow of the Institute of Electrical and Electronics Engineers and of the Institute of Electronics and Telecommunication Engineers. In 1999, he received the IEEE Technical Achievement Award for his decade long contributions to foundations of adaptability in communication and distributed systems. He serves on seven editorial boards of international journals. He also serves the IEEE Computer Society on Technical Achievement Award and Fellow committees. Rohit Ranchal is a researcher and technical lead in the Watson Health business unit at IBM. Dr. Ranchal received his PhD from Purdue University in 2015 where he was affiliated with Computer Science and CERIAS. His research interests include cloud and service computing systems with a focus on resilient, secure architectures, and healthcare solutions."
+      ]
+    },
+    {
+      "id": "urn:article:1-s2-0-s0167404818310629-main",
+      "type": "schema:ScholarlyArticle",
+      "title": "Designing an efficient security framework for detecting intrusions in virtual network of cloud computing",
+      "authors": [
+        "Rajendra Patil",
+        "Harsha Dudeja",
+        "Chirag Modi"
+      ],
+      "year": "2019",
+      "doi": "10.1016/j.cose.2019.05.016",
+      "journal": "computers & security",
+      "abstract": "Cloud computing has grown for various IT capabilities such as IoTs, Mobile Computing, \nSmart IT, etc. However, due to the dynamic and distributed nature of cloud and vulnerabilities existing in the current implementations of virtualization, several security threats \nand attacks have been reported. To address these issues, there is a need of extending traditional security solutions like firewall, intrusion detection/prevention systems which can \ncope up with high-speed network traffic and dynamic network configuration in the cloud. \nIn addition, identifying feasible network traffic features is a major challenge for an accurate \ndetection of the attacks. In this paper, we propose a hypervisor level distributed network \nsecurity (HLDNS) framework which is deployed on each processing server of cloud computing. At each server, it monitors the underlying virtual machines (VMs) related network traffic \nto/from the virtual network, internal network and external network for intrusion detection. \nWe have extended a binary bat algorithm (BBA) with two new fitness functions for deriving the feasible features from cloud network traffic. The derived features are applied to the \nRandom Forest classifier for detecting the intrusions in cloud network traffic and intrusion \nalerts are generated. The intrusion alerts from different servers are correlated to identify the \ndistributed attack and to generate new attack signature. For the performance and feasibility analysis, the proposed security framework is tested on the cloud network testbed at NIT \nGoa and using recent UNSW-NB15 and CICIDS-2017 intrusion datasets. We have performed \na comparative analysis of the proposed security framework in terms of fulfilling the cloud \nnetwork security needs.",
+      "keywords": [
+        "Cloud computing",
+        "Virtual network security",
+        "Intrusion detection",
+        "Binary bat algorithm",
+        "Random Forest"
+      ],
+      "objective": [
+        "In this paper, we propose a hypervisor level distributed network security (HLDNS) framework which is deployed on each processing server of cloud computing."
+      ],
+      "problem": [
+        "One of the traditional solutions to the above security problems is to deploy a firewall in the virtual network.",
+        "To address the above problems, we propose a hypervisor level distributed network security (HLDNS) framework which is deployed on each physical server of the cloud."
+      ],
+      "methodology": [
+        "To address the above problems, we propose a hypervisor level distributed network security (HLDNS) framework which is deployed on each physical server of the cloud.",
+        "For intrusion detection, it incorporates the feasible feature selection and machine learning technique.",
+        "The fitness function can be the accuracy of a classifier or a correlation technique deriving a relationship between feature and a class label."
+      ],
+      "contributions": [],
+      "futureWork": [
+        "Conclusions and future work Network security is a major concern for wide adoption of the cloud computing."
+      ],
+      "references": [
+        "Al Haddad Z ,Hanoune M ,Mamouni A . A collaborative network intrusion detection system (C-NIDS) in cloud computing. Int J Commun Netw Inf Secur 2016;8(3):130-6 .",
+        "Al-Zewairi M ,Almajali S ,A w ajan A . Experimental evaluation of a multi-layer feed-forward artificial neural network classifier for network intrusion detection system. In: Proceedings of the first IEEE international conference on new trends in computing sciences (ICTCS); 2017. p. 167-72 .",
+        "Arjunan K ,Modi CN . An enhanced intrusion detection framework for securing network layer of cloud computing. In: Proceedings of the IEEE Asia security and privacy conference; 2017. p. 1-10 .",
+        "Baig MM ,A w ais MM ,El-Alfy E-SM . A multiclass cascade of artificial neural network for network intrusion detection. J Intel Fuzzy Syst 2017;32(4):2875-83 .",
+        "Balamurugan V ,Saravanan R . Enhanced intrusion detection and prevention system on cloud environment using hybrid classification and OTS generation. J Netw Softw Tools Appl 2017;21(82):1-13 .",
+        "Bamakan SMH ,W ang H ,Shi Y . Ramp loss k-support vector classification-regression; a robust and sparse multi-class approach to the intrusion detection problem. Knowl Based Syst 2017;126:113-26 .",
+        "Barham P ,Dragovic B ,F r aser K ,Hand S ,Harris T ,Ho A , Neugebauer R ,Pr att I ,W arfield A . Xen and the art of virtualization. In: Proceedings of the 19th ACM Symposium on Operating Systems Principles; 2003. p. 164-77 . Breiman L . Random forests. Machine learning 2001;45(1):5-32 .",
+        "Breiman L ,Friedman J ,Olshen R ,Stone C . Classification and regression trees. Monterey, CA: Wadsworth and Brooks; 1984 .",
+        "Chakraborty B ,Kawamura A . A new penalty-based wrapper fitness function for feature subset selection with evolutionary algorithms. J Inf Telecommun 2018;2(2):163-80 .",
+        "Chiba Z ,Abghour N ,Moussaid K ,Rida M ,et al . A cooperative and hybrid network intrusion detection framework in cloud computing based on snort and optimized back propagation neural network. Procedia Comput Sci 2016;83:1200-6 .",
+        "Chowdhury NMK ,Boutaba R . Network virtualization: state of the art and research challenges. IEEE Commun Mag 2009;47(7):20-6 .",
+        "Dahiya P ,Sri v asta v a DK . A comparative evolution of unsupervised techniques for effective network intrusion detection in hadoop. In: Proceedings of the second international conference on advances in computing and data sciences; 2018. p. 279-87 . Enache A-C ,Sgar ciu V ,Petrescu-Ni ¸t ˘a A . Intelligent feature selection method rooted in binary bat algorithm for intrusion detection. In: Proceedings of the IEEE teth jubilee international symposium on applied computational intelligence and informatics (SACI); 2015. p. 517-21 .",
+        "Ficco M ,T asquier L ,A v ersa R . Intrusion detection in cloud computing. In: Proceedings of the eighth IEEE international conference on P2P, parallel, grid, cloud and internet computing (3PGCIC); 2013. p. 276-83 . 85 (2019) 402-422 421 Gharaee H ,Hosseinvand H . A new feature selection IDS based on genetic algorithm and svm. In: Proceedings of the eighth IEEE international symposium on telecommunications (IST); 2016. p. 139-44 . Han J . Data mining: Concepts and techniques. Morgan Kaufmann Publishers Inc.; 2005 .",
+        "Khammassi C ,Krichen S . A GA-LR wrapper approach for feature selection in network intrusion detection. Comput Secur 2017;70:255-77 .",
+        "McCanne S ,Jacobson V . The BSD packet filter: a new architecture for user-level packet capture. In: Proceedings of the winter USENIX conference; 1993. p. 259-70 .",
+        "Mirjalili S ,Mirjalili SM ,Y ang X-S . Binary bat algorithm. Neural Comput Appl 2014;25(3):663-81 .",
+        "Mishra P ,Pilli ES ,Varadharajan V ,Tupakula U . Out-vm monitoring for malicious network packet detection in cloud. In: Proceedings of the IEEE Asia security and privacy conference; 2017. p. 1-10 .",
+        "Mitra P ,Murthy C ,P al SK . Unsupervised feature selection using feature similarity. IEEE Trans Pattern Anal Mach Intel 2002;24(3):301-12 .",
+        "Modi C ,Patel D ,Borisaniya B ,Patel A ,Rajarajan M . A survey on security issues and solutions at different layers of cloud computing. J Supercomput 2013a;63(2):561-92 .",
+        "Modi C ,Patel D ,Borisaniya B ,Patel H ,Patel A ,Rajarajan M . A survey of intrusion detection techniques in cloud. J Netw Comput Appl 2013b;36(1):42-57 .",
+        "Modi CN ,Ac ha K . Virtualization layer security challenges and intrusion detection/prevention systems in cloud computing: a comprehensive review. J Supercomput 2017;73(3):1192-234 .",
+        "Moustafa N ,Creech G ,Sitniko v a E ,K eshk M . Collaborative anomaly detection framework for handling big data of cloud computing. In: Proceedings of the IEEE military communications and information systems conference; 2017. p. 1-6 .",
+        "Moustafa N ,Sla y J . Unsw-nb15: a comprehensive data set for network intrusion detection systems (unsw-nb15 network data set). In: Proceedings of the IEEE military communications and information systems conference (MilCIS); 2015. p. 1-6 .",
+        "Moustafa N ,Sla y J . The evaluation of network anomaly detection systems: Statistical analysis of the unsw-nb15 data set and the comparison with the kdd99 data set. Inf Secur J Glob Persp 2016;25(1-3):18-31 .",
+        "Nakamura RYM ,Pereira LAM ,Costa KA ,Rodrigues D ,P apa JP , Yang XS . BBA: a binary bat algorithm for feature selection. In: Proceedings of the twenty-fifth IEEE conference on graphics, patterns and images; 2012. p. 291-7 .",
+        "Patil R ,Dudeja H ,Ga w ade S ,Modi C . Protocol specific multi-threaded network intrusion detection system (PM-NIDS) for DoS/dDoS attack detection in cloud. In: Proceedings of the ninth IEEE international conference on computing, communication and networking technologies; 2018. p. 1-7 .",
+        "Rashedi E ,Nezamabadi-Pour H ,Sar y azdi S . BGSA: binary gravitational search algorithm. Nat Comput 2010;9(3):727-45 . Rezvani M . Assessment methodology for anomaly-based intrusion detection in cloud computing. J AI Data Min 2018;6(2):387-97 . Roesch M . Snort: Lightweight intrusion detection for networks. Proceedings of the LISA, 99; 1999. p. 229-38 . Rowland CH . Intrusion detection system, 2002 .US Patent 6405318 Sharafaldin I ,Lashkari AH ,Ghorbani AA . Toward generating a new intrusion detection dataset and intrusion traffic characterization.. In: Proceedings of the forth international conference on information systems security and privacy (ICISSP); 2018. p. 108-16 .",
+        "Singh D ,Patel D ,Borisaniya B ,Modi C . Collaborative IDS framework for cloud. Int J Netw Secur 2016;18(4):699-709 .",
+        "Subashini S ,Ka vitha V . A survey on security issues in service delivery models of cloud computing. J Netw Comput Appl 2011;34(1):1-11 .",
+        "Taha AM ,Mustapha A ,Chen S-D . Naive Bayes-guided bat algorithm for feature selection. Sci World J 2013;2013:1-9 .",
+        "Vieira K ,Schulter A ,W estphall C ,W estphall C . Intrusion detection techniques in grid and cloud computing environment. IEEE IT Profess 2010;12(4):38-43 .",
+        "Vijayanand R ,Devaraj D ,Kannapiran B . Intrusion detection system for wireless mesh network using multiple support vector machine classifiers with genetic-algorithm-based feature selection. Comput Secur 2018;77:304-14 . Watson G . A comparison of header and deep packet features when detecting network intrusions. DRUM Technical Report; 2018 .",
+        "Yang B ,Lu Y ,Zhu K ,Y ang G ,Liu J ,Y in H . Feature selection based on modified bat algorithm. IEICE Trans Inf Syst 2017;100(8):1860-9 . Yang X-S . A new metaheuristic bat-inspired algorithm. In: Proceedings of the nature inspired cooperative strategies for optimization (NICSO 2010). Springer; 2010. p. 65-74 . Yang X-S . Bat algorithm: Literature review and applications. Int J Bioinspired Comput 2013;5(3):1-9 .",
+        "Yu L ,Liu H . Feature selection for high-dimensional data: a fast correlation-based filter solution. In: Proceedings of the twentieth international conference on machine learning (ICML-03); 2003. p. 856-63 .",
+        "Zhang J ,Zulkernine M ,Haque A . Random-forests-based network intrusion detection systems. IEEE Trans Syst Man Cybern Part C Appl Rev 2008;38(5):649-59 . Mr. Rajendra Patil is presently a full-time research scholar in the department of computer science and engineering at National Institute of Technology Goa since 2015. He has received B.E. degree in computer science and engineering from Shivaji University, Maharashtra, India in 2008, M.Tech. degree in computer science and engineering from National Institute of Technology Surathkal, India in 2014. His research interests include Cloud Computing, Virtualization Security, Network Security. He has significant contribution in the field of cloud computing security. Ms. Harsha Dudeja is presently working as a Research Fellow at National Institute of Technology Goa under the DST, SERB, GOI funded research project titled \"Designing out of VM Monitoring based Virtual Machine Introspection Framework for securing virtual environment of cloud computing\" (ECR/2017/001221). She has received B.Tech and M.Tech degrees in the field of computer science and engineering from Rajasthan Technical University, India in the year 2013 and 2017, respectively. Her research interests include Cloud Computing security, Data Mining, Machine Learning and Security. Dr. Modi Chirag Navinchandra obtained his Ph.D. (2010-2014) and M.Tech (2008-2010) in Computer Engineering from National Institute of Technology Surat (NIT Surat), India and did his B.E, in Computer Engineering from Sardar Patel University, India. He is currently working as an assistant professor in the department of computer science and engineering at National Institute of Technology Goa, India. His research interest includes Information Security and Privacy, Cryptography, Cloud Security, Network Security, Intrusion Detection and prevention and Blockchain and DLT. He has published many papers in reputed journals and international conference proceedings, with good number of citations. He has received the Young scientist award in specialization of Cloud Computing (2015) from VIFRA, Chennai, India. He holds Best Review Paper Award (2015), from Journal of Network and Computer Applications (JNCA), Elsevier, San Diego, USA. It is a active member in many of the journal editorial board and review committees. He holds research funded project titled \"Designing out of VM Monitoring based Virtual Machine Introspection Framework for securing virtual environment of cloud computing\"(ECR/2017/001221) from the DST, SERB, GOI."
+      ]
+    },
+    {
+      "id": "urn:article:1-s2-0-s0167404821000845-main",
+      "type": "schema:ScholarlyArticle",
+      "title": "Optimized extreme learning machine for detecting DDoS attacks in cloud computing",
+      "authors": [
+        "Gopal Singh Kushwah",
+        "Virender Ranga"
+      ],
+      "year": "2021",
+      "doi": "10.1016/j.cose.2021.102260",
+      "journal": "computers & security",
+      "abstract": "Distributed denial of service (DDoS) attack is a serious security threat to cloud computing \nthat affects the availability of cloud services. Therefore, defending against these attacks becomes imperative. In this paper, we present a DDoS attack detection system based on an improved Self-adaptive evolutionary extreme learning machine (SaE-ELM). SaE-ELM model is \nimproved by incorporating two more features. Firstly, it can adapt the best suitable crossover \noperator. Secondly, it can automatically determine the appropriate number of hidden layer \nneurons. These features improve the learning and classification capabilities of the model. \nThe proposed system is evaluated using four datasets namely, NSL-KDD, ISCX IDS 2012, \nUNSW-NB15, and CICIDS 2017. It achieves the detection accuracy of 86.80%, 98.90%, 89.17%, \nand 99.99% with NSL-KDD, ISCX IDS 2012, UNSW-NB15, and CICIDS 2017 datasets, respectively. The experiments show that the performance of the proposed attack detection system \nis better than the system based on original SaE-ELM and state-of-the-art techniques. However, it shows a longer training time than SaE-ELM based system.",
+      "keywords": [
+        "Cloud computing",
+        "DDoS attack",
+        "Artificial neural network",
+        "Extreme learning machine",
+        "Differential evolution"
+      ],
+      "objective": [
+        "In this paper, we present a DDoS attack detection system based on an improved Self-adaptive evolutionary extreme learning machine (SaE-ELM)."
+      ],
+      "problem": [
+        "To overcome these problems, optimization of input-hidden link weights and hidden biases for ELM are proposed in the literature."
+      ],
+      "methodology": [
+        "Furthermore, the automatic determination of the appropriate number of hidden layer neurons is also incorporated using the technique proposed in Eshtay et al., 2020 , which eliminates the need for manual setting.",
+        "Related work In Rathore and Park (2018) , the authors proposed a method based on the combination of extreme learning machine and semi-supervised fuzzy c-means algorithm.",
+        "The ELM is trained using the training dataset and the membership degree of samples in the unlabeled dataset is computed using semisupervised c-means."
+      ],
+      "contributions": [],
+      "futureWork": [],
+      "references": [
+        "Aamir M ,Zaidi SMA . Clustering based semi-supervised machine learning for DDoS attack classification. J. King Saud Univ. Comput. Inf. Sci. 2019 .",
+        "Acan A ,Altincay H ,T ekol Y ,Unveren A . A genetic algorithm with multiple crossover operators for optimal frequency assignment problem, 1. IEEE; 2003. p. 256-63 .December Aleti A ,Moser I . A systematic literature review of adaptive parameter control methods for evolutionary algorithms. ACM Comput. Surv. (CSUR) 2016;49(3):1-35 .",
+        "Anagnostopoulos M ,Kambourakis G ,Kopanos P ,Louloudakis G , Gritzalis S . DNS amplification attack revisited. Comput. Secur. 2013;39:475-85 . António CC . A study on synergy of multiple crossover operators in a hierarchical genetic algorithm applied to structural optimisation. Struct. Multidiscip. Optim. 2009;38(2):117-35 .",
+        "Belouch M ,El Hadaj S ,Idhammad M . A two-stage classifier approach using RepTree algorithm for network intrusion detection. Int. J. Adv. Comput. Sci. Appl. 2017;8(6):389-94 .",
+        "Cao J ,Lin Z ,Huang GB . Self-adaptive evolutionary extreme learning machine. Neural Process. Lett. 2012;36(3):285-305 .",
+        "Catillo M ,Rak M ,Villano U . Discovery of dos attacks by the ZED-IDS anomaly detector. J. High Speed Netw. 2019;25(4):349-65 .",
+        "Eiben AE ,Smith JE . Introduction to Evolutionary Computing. Springer; 2015 .",
+        "Eshtay M ,Faris H ,Obeid N . Improving extreme learning machine by competitive swarm optimization and its application for medical diagnosis problems. Expert Syst. Appl. 2018;104:134-52 .",
+        "Eshtay M ,Faris H ,Obeid N . A competitive swarm optimizer with hybrid encoding for simultaneously optimizing the weights and structure of extreme learning machines for classification problems. Int. J. Mach. Learn. & Cyber. 2020;11:1801-23 .",
+        "Gong C ,Y u D ,Zhao L ,Li X ,Li X . An intelligent trust model for hybrid DDoSdetection in software defined networks. Concurr. Comput. 2020;32(16):e5264 .",
+        "Han F ,Y ao HF ,Ling QH . An improved evolutionary extreme learning machine based on particle swarm optimization. Neurocomputing 2013;116:87-93 .",
+        "Hassanat AB ,Alkafaween EA . On enhancing genetic algorithms using new crossovers. Int. J. Comput. Appl. Technol. 2017;55(3):202-12 .",
+        "Herrera F ,Lozano M ,Sánchez AM . Hybrid crossover operators for real-coded genetic algorithms: an experimental study. Soft Comput. 2005;9(4):280-98 .",
+        "Kalliola A ,Mic he Y ,Oli v er I ,Holtmanns S ,Atli B ,Lendasse A , Aura T . Learning flow characteristics distributions with elm for distributed denial of service detection and mitigation. In: Proceedings of ELM-2016. Cham: Springer; 2018. p. 129-43 .",
+        "Kasongo SM ,Sun Y . A deep learning method with wrapper based feature extraction for wireless intrusion detection system. Comput. Secur. 2020;92:101752 .",
+        "Kaya Y., Uyar M.. A novel crossover operator for genetic algorithms: ring crossover. arXiv preprint arXiv:1105.0355 Khammassi C ,Krichen S . A GA-LR wrapper approach for feature selection in network intrusion detection. Comput. Secur. 2017;70:255-77 .",
+        "Kushwah GS ,Ali ST . Distributed denial of service attacks detection in cloud computing using extreme learning machine. Int. J. Commun. Netw. Distrib. Syst. 2019;23(3):328-51 .",
+        "Kushwah GS ,Ranga V . Voting extreme learning machine based distributed denial of service attack detection in cloud computing. J. Inf. Secur. Appl. 2020;53:102532 .",
+        "Li Z ,W ei L ,Li W ,W ei L ,Chen M ,Lv M ,Gao N . Research on DDoS attack detection based on ELM in IoT environment. In: 2019 IEEE 10th International Conference on Software Engineering and Service Science (ICSESS). IEEE; 2019. p. 144-8 .October Mighan SN ,Kahani M . A novel scalable intrusion detection system based on deep learning. Int. J. Inf. Secur. 2020:1-17 .",
+        "Mohapatra P ,Chakravarty S ,Dash PK . An improved cuckoo search based extreme learning machine for medical data classification. Swarm Evol. Comput. 2015;24:25-49 .",
+        "Moustafa N ,Sla y J . UNSW-NB15: a comprehensive data set for network intrusion detection systems (UNSW-NB15 network data set. In: 2015 Military Communications and Information Systems Conference (MilCIS). IEEE; 2015. p. 1-6 .No v ember de Oliveira JFL ,Ludermir TB . An evolutionary extreme learning machine based on fuzzy fish swarms. In: Proceedings on the International Conference on Artificial Intelligence (ICAI); 2012. p. 1 .The Steering Committee of The World Congress in Computer Science, Computer Engineering and Applied Computing (WorldComp) Papamartzivanos D ,Mármol FG ,Kambourakis G . Dendron: genetic trees driven rule induction for network intrusion detection systems. Future Gene. Comput. Syst. 2018;79:558-74 .",
+        "Pavai G ,Geetha TV . A survey on crossover operators. ACM Comput. Surv. (CSUR) 2016;49(4):1-43 .",
+        "Prasad M ,Tripathi S ,Dahal K . An efficient feature selection based Bayesian and rough set approach for intrusion detection. Appl. Soft Comput. 2020a;87:105980 .",
+        "Prasad M ,Tripathi S ,Dahal K . Unsupervised feature selection and cluster center initialization based arbitrary shaped clusters for intrusion detection. Comput. Secur. 2020b;99:102062 .",
+        "Qin AK ,Suganthan PN . Self-adaptive differential evolution algorithm for numerical optimization, 2. IEEE; 2005. p. 1785-91 .Se ptember Rakha MA . On the Moore-Penrose generalized inverse matrix. Appl. Math. Comput. 2004;158(1):185-200 .",
+        "Rathore S ,P ark JH . Semi-supervised learning based distributed attack detection framework for IoT. Appl. Soft Comput. 2018;72:79-89 .",
+        "Roopak M ,T ian GY ,Chambers J . Multi-objective-based feature selection for DDoSattack detection in IoT networks. IET Netw. 2020;9(3):120-7 . Rossow C . In: NDSS. Amplification hell: Revisiting network protocols for DDoS abuse; 2014 .F ebruar y Sharafaldin I ,Lashkari AH ,Ghorbani AA . Toward generating a new intrusion detection dataset and intrusion traffic characterization. In: ICISSP; 2018. p. 108-16 .J an uar y Shiravi A ,Shiravi H ,Tavallaee M ,Ghorbani AA . Toward developing a systematic approach to generate benchmark datasets for intrusion detection. Comput. Secur. 2012;31(3):357-74 .",
+        "Smith JE ,F ogarty TC . Operator and parameter adaptation in genetic algorithms. Soft Comput. 1997;1(2):81-7 .",
+        "Tama BA ,Comuzzi M ,Rhee KH . TSE-IDS: a two-stage classifier ensemble for intelligent anomaly-based intrusion detection system. IEEE Access 2019;7:94497-507 .",
+        "Tavallaee M ,Ba gheri E ,Lu W ,Ghorbani AA . A detailed analysis of the KDD CUP 99 data set. In: 2009 IEEE Symposium on Computational Intelligence for Security and Defense Applications. IEEE; 2009. p. 1-6 .July Wang B ,Zheng Y ,Lou W ,Hou YT . DDoS attack protection in the era of cloud computing and software-defined networking. Comput. Netw. 2015;81:308-19 . Wright AH . Genetic algorithms for real parameter optimization, volume 1. Elsevier; 1991. p. 205-18 .",
+        "Xu Y ,Shu Y . Evolutionary extreme learning machine-based on particle swarm optimization. In: International Symposium on Neural Networks. Berlin, Heidelberg: Springer; 2006. p. 644-52 . May Yoon HS ,Moon BR . An empirical study on the synergy of multiple crossover operators. IEEE Trans. Evol. Comput. 2002;6(2):212-23 .",
+        "Zhu QY ,Qin AK ,Suganthan PN ,Huang GB . Evolutionary extreme learning machine. Pattern Recognit. 2005;38(10):1759-63 . Mr. Gopal Singh Kushwah received B.E. degree in Computer science and engineering from RGPV University Bhopal, India in 2008 and M.Tech. degree in Computer science and engineering from MNNIT Allahabad, India in 2011. He has worked for 3 years as an Assistant professor in IPS College of Technology and Management Gwalior, India. At present, he is pursuing Ph.D. in Computer Engineering from NIT Kurukshetra, India. His research interest covers denial of service attack defense, cloud computing, and machine learning. Dr. Virender Ranga has received his Ph.D. degree in 2016 from Computer Engineering Department of National Institute of Technology, Kurukshetra, Haryana, India followed by M.Tech. and B.Tech. degrees. He has published more than 70 research papers in various SCI/SCIE/SCOPUS Journals and reputed International Conferences in the area of Computer Communications. Presently, he is Assistant Professor in the Computer Engineering Department, National Institute of Technology Kurukshetra since 2008. He has been conferred by Young Faculty Award in 2016 for his excellent contributions in the field of Computer Communications. He has been acted as member of TPC in various International conferences of repute. He is a member of editorial board of various reputed journals like Journal of Applied Computer Science & Artificial Intelligence, International Journal of Advances in Computer Science and Information Technology (IJACSIT), Circulation in Computer Science (CCS), International Journal of Bio Based and Modern Engineering (IJBBME) and International Journal of Wireless Networks and Broadband Technologies. He has been acted as Guest Editor for a special issue published in International Journal of Sensors, Wireless Communications and Control (Bentham Science Publication). He is an active reviewer of many reputed journals of IEEE Transactions, IEEE Communications Surveys & Tutorials, Springer, Elsevier, Talyor & Francis, Wiley and InderScience. His research area includes Cloud Security, Wireless Sensor & Adhoc Networks Security, IoT Security, FANET Security, SDN Security, IoRT Security etc."
+      ]
+    },
+    {
+      "id": "urn:article:1-s2-0-s0167404821003977-main",
+      "type": "schema:ScholarlyArticle",
+      "title": "Cloud computing security: A survey of service-based models",
+      "authors": [
+        "Fatemeh Khoda Parast",
+        "Chandni Sindhav",
+        "Seema Nikam",
+        "Hadiseh Izadi Yekta",
+        "Kenneth B. Kent",
+        "Saqib Hakak"
+      ],
+      "year": "2022",
+      "doi": "",
+      "journal": "Computers & Security",
+      "abstract": "Cloud computing has recently attracted significant attention due to its economical and high-quality services. In the last decade, cloud services have inevitably entangled with businesses' and individuals' daily \nlives through products and services. On-demand, pay-per-use characteristics encourage corporations to \noutsource part of their businesses to accelerate their services and multiply value. The latest market tendency toward migration to cloud environments, started in 2019, indicates a flourishing trend in the next \nfew years. Despite the numerous benefits of the cloud computing model for businesses or individuals, \nsecurity issues still have been stated as the top cloud challenge in 2020. Although various factors affect \nsecurity, technologies enabling cloud computing such as virtualization and multitenancy, in addition to \non-demand characteristics, initiate new security entrances for malevolent activities. In this study, we surveyed service-based cloud computing security issues to establish the current state of the field. The main \ncontribution of this paper is to analyze the state of cloud security in the last decade and provide a unified \ntaxonomy of security issues over the three-layer model, i.e., IaaS, PaaS, and SaaS. \n©2 0 2 1 Elsevier Ltd. All rights reserved.",
+      "keywords": [
+        "Security",
+        "Cloud computing",
+        "Service-based cloud computing",
+        "IaaS",
+        "PaaS",
+        "SaaS"
+      ],
+      "objective": [
+        "In this study, we propose a security taxonomy based on the aforementioned security concerns."
+      ],
+      "problem": [
+        "HyperSafe, Trusted Cloud Computing Platform (TCCP) and Trusted Virtual Datacenter (TVD) are introduced as three countermeasures of the VM escape problem.",
+        "Hashizume et al. (2013) discussed three countermeasures to address the data breach problem, Fragmentation-Redundancy- Scattering (FRS), digital signatures, and homomorphic encryption.",
+        "However, applied technologies and complex architectures raise challenges that need to be addressed."
+      ],
+      "methodology": [
+        "The pillar concept of the cloud, pay-per-use, has attracted not only individuals but businesses to benefit from the new approach to make profits ( Becker et al., 2017; Bohn et al., 2011; Weinman, 2018 ).",
+        "These techniques implement resource sharing among users from a physical instance ( Sengupta et al., 2011; Verma and Kaushal, 2011 ). 2.1.1.",
+        "Virtualization Virtualization defines an abstract approach to create a computer, enabling resource partitioning in the cloud environment."
+      ],
+      "contributions": [
+        "The main contributions of this paper can be noted as follows. 1) Recent state-of-the-art service-based cloud vulnerabilities are presented. 2) A taxonomy of service-based cloud vulnerabilities and countermeasures is proposed. 3) Research challenges and future research directions are explored. 4) A classification of vulnerabilities and countermeasures is established. 5) Generic security issues in the service-based model are identified and enumerated.",
+        "The main contribution of this study is to provide a detailed understanding of the security vulnerabilities in the service-based cloud model."
+      ],
+      "futureWork": [],
+      "references": [
+        "Agarwal, V. , Kaushal, A.K. , Chouhan, L. , 2020. A survey on cloud computing security issues and cryptographic techniques. In: Social Networking and Computational Intelligence. Springer, pp. 119-134 .",
+        "Ali, M., Khan, S.U., Vasilakos, A.V., 2015. Security in cloud computing: opportunities and challenges. Inf. Sci. 305, 357-383. doi: 10.1016/j.ins.2015.01.025 .",
+        "Almorsy, M., Grundy, J.C., Müller, I., 2016. An Analysis of the Cloud Computing Security Problem. abs/1609.01107, http://arxiv.org/abs/1609.01107 Almutairy, N.M. , 2019. A taxonomy of virtualization security issues in cloud computing environments. Indian Journal of Science and Technology . Amato, F. , Moscato, F. , Moscato, V. , Colace, F. , 2018. Improving security in cloud by formal modeling of iaas resources. Future Generation Computer Systems 87, 754-764 .",
+        "Anwar, S., Inayat, Z., Zolkipli, M.F.B., Zain, J.M., Gani, A., Anuar, N.B., Khan, M.K.,",
+        "Chang, V., 2017. Cross-vm cache-based side channel attacks and proposed prevention mechanisms: a survey. J. Netw. Comput. Appl. 93, 259-279. doi: 10.1016/ j.jnca.2017.06.001 . Arora, P. , Wadhawan, R.C. , Ahuja, E.S.P. , 2012. Cloud computing security issues in infrastructure as a service. International journal of advanced research in computer science and software engineering 2 (1) .",
+        "Asvija, B., Eswari, R., Bijoy, M.B., 2019. Security in hardware assisted virtualization for cloud computing - state of the art issues and challenges. Comput. Networks 151, 68-92. doi: 10.1016/j.comnet.2019.01.013 .",
+        "Bach-Nutman, M., 2020. Understanding the Top 10 deldDel deliIns deltThinspace OWASP Vulnerabilities. abs/2012.09960 https://arxiv.org/abs/2012",
+        "Bahrami, M., Singhal, M., 2015. DCCSOA: A dynamic cloud computing serviceoriented architecture. In: 2015 IEEE International Conference on Information Reuse and Integration, IRI 2015, San Francisco, CA, USA, August 13-15, 2015. IEEE Computer Society, pp. 158-165. doi: 10.1109/IRI.2015.33 .",
+        "Barrowclough, J.P., Asif, R., 2018. Securing cloud hypervisors: a survey of the threats, vulnerabilities, and countermeasures. Secur. Commun. Networks 2018, 1681908:1-1681908:20. doi: 10.1155/2018/1681908 .",
+        "Basu, S., Bardhan, A., Gupta, K., Saha, P., Pal, M., Bose, M., Basu, K., Chaudhury, S.,",
+        "Sarkar, P., 2018. Cloud computing security challenges & solutions-a survey. In: IEEE 8th Annual Computing and Communication Workshop and Conference, CCWC 2018, Las Vegas, NV, USA, January 8-10, 2018. IEEE, pp. 347-356.",
+        "Bauman, E., Ayoade, G., Lin, Z., 2015. A survey on hypervisor-based monitoring: approaches, applications, and evolutions. ACM Comput. Surv. 48 (1), 10:1-10:33.",
+        "Becker, S., Brataas, G., Cecowski, M., Huljenic, D., Lehrig, S., Stupar, I., 2017. Introduction. In: Becker, S., Brataas, G., Lehrig, S. (Eds.), Engineering Scalable, Elastic, and Cost-Efficient Cloud Computing Applications - The CloudScale Method. Springer, pp. 3-21. doi: 10.1007/978- 3- 319- 54286- 7 _ 1 .",
+        "Bohn, R.B., Messina, J., Liu, F., Tong, J., Mao, J., 2011. NIST cloud computing reference architecture. In: World Congress on Services, SERVICES 2011, Washington, DC, USA, July 4-9, 2011. IEEE Computer Society, pp. 594-596. doi: 10.1109/SERVICES. 2011.105 .",
+        "Bouayad, A., Blilat, A., Mejhed, N.E.H., Ghazi, M.E., 2012. Cloud computing: Security challenges. In: 2012 Colloquium in Information Science and Technology, CIST 2012, Fez, Morocco, October 22-24, 2012. IEEE, pp. 26-31. doi: 10.1109/CIST.2012. 6388058 . Cabuk, S. , Dalton, C.I. , Edwards, A. , Fischer, A. ,2 0 0 8 . A comparative study on secure network virtualization. HP Laboratories .",
+        "Chawki, E.B., Ahmed, A., Zakariae, T., 2018. Iaas cloud model security issues on behalf cloud provider and user security behaviors. In: Yasar, A., Shakshuki, E.M. (Eds.), The 15th International Conference on Mobile Systems and Pervasive Computing (MobiSPC 2018) / The 13th International Conference on Future Networks and Communications (FNC-2018) / Affiliated Workshops, Gran Canaria, Spain, August 13-15, 2018. Elsevier, pp. 328-333. doi: 10.1016/j.procs.2018.07. 180 . Chouhan, P.K. , Yao, F. , Sezer, S. , 2015. Software as a service: Understanding security issues. In: 2015 Science and Information Conference (SAI). IEEE, pp. 162-170 .",
+        "Cook, B., 2018. Formal reasoning about the security of amazon web services. In:",
+        "Chockler, H., Weissenbacher, G. (Eds.), Computer Aided Verification - 30th International Conference, CAV 2018, Held as Part of the Federated Logic Conference, FloC 2018, Oxford, UK, July 14-17, 2018, Proceedings, Part I. Springer, pp. 38-47.",
+        "Coppolino, L., D'Antonio, S., Mazzeo, G., Romano, L., 2017. Cloud security: emerging threats and current solutions. Comput. Electr. Eng. 59, 126-140. doi: 10.1016/j. compeleceng.2016.03.004 . F. Khoda Parast, C. Sindhav, S. Nikam et al. Computers & Security 114 (2022) 102580 Deshmukh, R.V. , Devadkar, K.K. , 2015. Understanding ddos attack & its effect in cloud environment. Procedia Comput Sci 49, 202-210 . Diaby, T. , Rad, B.B. , 2017. Cloud computing: a review of the concepts and deployment models. International Journal of Information Technology and Computer Science 9 (6), 50-58 . Fernandes, D.A.B., Soares, L.F.B., Gomes, J.V.P., Freire, M.M., Inácio, P.R.M., 2014. Security issues in cloud environments: a survey. Int. J. Inf. Sec. 13 (2), 113-170. Flexera , 2020. Flexera 2020 state of the cloud report. Applied Computing and Informatics .",
+        "Freet, D., Agrawal, R., John, S., Walker, J.J., 2015. Cloud forensics challenges from a service model standpoint: IaaS, PaaS and SaaS. In: Chbeir, R., Manolopoulos, Y.,",
+        "Mammana, V.P., Modena, E.A., Traina, A.J.M., Filho, O.S.S., Badr, Y., Andrès, F. (Eds.), Proceedings of the 7th International Conference on Management of Computational and Collective Intelligence in Digital EcoSystems, Caraguatatuba, Brazil, October 25, - 29, 2015. ACM, pp. 148-155. doi: 10.1145/2857218.2857253 . George Amalarethinam, D. , Rajakumari, S. ,2 0 1 9 . A Survey on Security Challenges in Cloud Computing .",
+        "Ghobaei-Arani, M., Jabbehdari, S., Pourmina, M.A., 2018. An autonomic resource provisioning approach for service-based cloud applications: a hybrid approach. Future Gener. Comput. Syst. 78, 191-210. doi: 10.1016/j.future.2017.02.022 .",
+        "Gonzales, D., Kaplan, J.M., Saltzman, E., Winkelman, Z., Woods, D., 2017. Cloud-trust - a security assessment model for infrastructure as a service (iaas) clouds. IEEE Trans. Cloud Comput. 5 (3), 523-536. doi: 10.1109/TCC.2015.2415794 .",
+        "Grobauer, B., Walloschek, T., Stöcker, E., 2011. Understanding cloud computing vulnerabilities. IEEE Secur. Priv. 9 (2), 50-57. doi: 10.1109/MSP.2010.115 . Guerbouj, S.S.E., Gharsellaoui, H., Bouamama, S., 2019. A comprehensive survey on privacy and security issues in cloud computing, internet of things and cloud of things. Int. J. Serv. Sci. Manag. Eng. Technol. 10 (3), 32-44. doi: 10.4018/IJSSMET. 2019070103 .",
+        "Halboob, W., Abbas, H., Haouam, K., Yaseen, A., 2014. Dynamically changing service level agreements (slas) management in cloud computing. In: Huang, D.,",
+        "Jo, K., Wang, L. (Eds.), Intelligent Computing Methodologies - 10th International Conference, ICIC 2014, Taiyuan, China, August 3-6, 2014. Proceedings. Springer, pp. 434-443. doi: 10.1007/978- 3- 319- 09339- 0 _ 44 .",
+        "Hashizume, K., Rosado, D.G., Fernández-Medina, E., Fernández, E.B., 2013. An analysis of security issues for cloud computing. J. Internet Serv. Appl. 4 (1), 5:1-5:13.",
+        "Hay, B., Nance, K.L., Bishop, M., 2011. Storm clouds rising: Security challenges for iaas cloud computing. In: 44th Hawaii International International Conference on Systems Science (HICSS-44 2011), Proceedings, 4-7 January 2011, Koloa, Kauai, HI, USA. IEEE Computer Society, pp. 1-7. doi: 10.1109/HICSS.2011.386 .",
+        "Huang, W., Ganjali, A., Kim, B.H., Oh, S., Lie, D., 2015. The state of public infrastructure-as-a-service cloud security. ACM Comput. Surv. 47 (4), 68:1- 68:31. doi: 10.1145/2767181 .",
+        "Hwang, K., Bai, X., Shi, Y., Li, M., Chen, W., Wu, Y., 2016. Cloud performance modeling with benchmark evaluation of elastic scaling strategies. IEEE Trans. Parallel Distributed Syst. 27 (1), 130-143. doi: 10.1109/TPDS.2015.2398438 . IBM Cloud Education, 2021. IaaS vs PaaS vs SaaS, understand and compare the three most popular cloud computing service models. Isharufe, W. , Jaafar, F. , Butakov, S. , 2020. Study of security issues in platform-as-a-service (PAAS) cloud model. In: 2020 International Conference on Electrical, Communication, and Computer Engineering (ICECCE). IEEE, pp. 1-6 . Jabir, R.M. , Khanji, S.I.R. , Ahmad, L.A. , Alfandi, O. , Said, H. , 2016. Analysis of cloud computing attacks and countermeasures. In: 2016 18th International Conference on Advanced Communication Technology (ICACT). IEEE, pp. 117-123 .",
+        "Kamongi, P., Kotikela, S., Kavi, K., Gomathisankaran, M., Singhal, A., 2013. VULCAN: vulnerability assessment framework for cloud computing. In: IEEE 7th International Conference on Software Security and Reliability, SERE 2013, Gaithersburg, MD, USA, June 18-20, 2013. IEEE, pp. 218-226. doi: 10.1109/SERE.2013.31 . Kaur, A. , Raj, G. , Yadav, S. , Choudhury, T. ,2 0 1 8 . Performance evaluation of aws and ibm cloud platforms for security mechanism. In: 2018 International Conference on Computational Techniques, Electronics and Mechanical Systems (CTEMS). IEEE, pp. 516-520 . Khalaf, B.A. , Mostafa, S. , Mustapha, A . , Ismaila, A . , Mahmoud, M. , Jubaira, M.A. , Hassan, M. , 2019. A simulation study of syn flood attack in cloud computing environment. AUS journal 26 (1), 188-197 .",
+        "Khan, M.A., 2016. A survey of security issues for cloud computing. J. Netw. Comput. Appl. 71, 11-29. doi: 10.1016/j.jnca.2016.05.010 .",
+        "Khan, N., Al-Yasiri, A., 2016. Identifying cloud security threats to strengthen cloud computing adoption framework. In: Shakshuki, E.M. (Ed.), The 11th International Conference on Future Networks and Communications (FNC 2016) / The 13th International Conference on Mobile Systems and Pervasive Computing (MobiSPC 2016) / Affiliated Workshops, August 15-18, 2016, Montreal, Quebec, Canada. Elsevier, pp. 4 85-4 90. doi: 10.1016/j.procs.2016.08.075 .",
+        "Kim, D., Vouk, M.A., 2014. A survey of common security vulnerabilities and corresponding countermeasures for saas. In: 2014 IEEE GLOBECOM Workshops, Austin, TX, USA, December 8-12, 2014. IEEE, pp. 59-63. doi: 10.1109/GLOCOMW. 2014.7063386 . Krishna, B.H. , Kiran, S. , Murali, G. , Reddy, R.P.K. , 2016. Security issues in service model of cloud computing environment. Procedia Comput Sci 87, 246-251 .",
+        "Kritikos, K., Kirkham, T., Kryza, B., Massonet, P., 2017. Towards a security-enhanced paas platform for multi-cloud applications. Future Gener. Comput. Syst. 67, 206- 226. doi: 10.1016/j.future.2016.10.008 . Kumar, R., Goyal, R., 2019. On cloud security requirements, threats, vulnerabilities and countermeasures: a survey. Comput. Sci. Rev. 33, 1-48. doi: 10.1016/j.cosrev. 2019.05.002 .",
+        "Li, J., 2020. Vulnerabilities Mapping Based on OWASP-SANS: a Survey for Static Application Security Testing (SAST). abs/2004.03216 https://arxiv.org/abs/2004.",
+        "Li, X., Zhou, L., Shi, Y., Guo, Y., 2010. A trusted computing environment model in cloud architecture. In: International Conference on Machine Learning and Cybernetics, ICMLC 2010, Qingdao, China, July 11-14, 2010, Proceedings. IEEE, pp. 2843-2848. doi: 10.1109/ICMLC.2010.5580769 .",
+        "Liu, Y., Sun, Y.L., Ryoo, J., Rizvi, S., Vasilakos, A.V., 2015. A survey of security and privacy challenges in cloud computing: solutions and future directions. J. Comput. Sci. Eng. 9 (3). doi: 10.5626/JCSE.2015.9.3.119 .",
+        "Loukis, E.N., Janssen, M., Mintchev, I., 2019. Determinants of software-as-a-service benefits and impact on firm performance. Decis. Support Syst. 117, 38-47. Machado, G.S. , Hausheer, D. , Stiller, B. , 2009. Considerations on the interoperability of and between cloud computing standards. 27th open Grid Forum (OGF27), G2C-Net Workshop: From Grid to Cloud Networks . Malik, M.I. , Wani, S.H. , Rashid, A. , 2018. Cloud computing-technologies. International Journal of Advanced Research in Computer Science 9 (2) .",
+        "Manvi, S.S., Shyam, G.K., 2014. Resource management for infrastructure as a service (iaas) in cloud computing: a survey. J. Netw. Comput. Appl. 41, 424-440. doi: 10. 1016/j.jnca.2013.10.004 . McKay, K. , Cooper, D. ,2 0 1 8 . Guidelines for the Selection, Configuration, and Use of Transport Layer Security (TLS) Implementations (2nd Draft). Technical Report. National Institute of Standards and Technology .",
+        "Modi, C., Patel, D.R., Borisaniya, B., Patel, A., Rajarajan, M., 2013. A survey on security issues and solutions at different layers of cloud computing. J. Supercomput. 63 (2), 561-592. doi: 10.1007/s11227-012-0831-5 . Pancholi, V.R. , Patel, B.P. , 2016. Enhancement of cloud computing security with secure data storage using aes. International Journal for Innovative Research in Science and Technology 2 (9), 18-21 . Panda, D.R. , Behera, S.K. , Jena, D. , 2021. A survey on cloud computing security issues, attacks and countermeasures. In: Advances in Machine Learning and Computational Intelligence. Springer, pp. 513-524 . Pham, V.V.H., Liu, X., Zheng, X., Fu, M., Deshpande, S.V., Xia, W., Zhou, R., Abdelrazek, M., 2017. Paas - black or white: an investigation into software development model for building retail industry saas. In: Uchitel, S., Orso, A., Robillard, M.P. (Eds.), Proceedings of the 39th International Conference on Software Engineering, ICSE 2017, Buenos Aires, Argentina, May 20-28, 2017 - Companion Volume. IEEE Computer Society, pp. 285-287. doi: 10.1109/ICSE-C.2017.57 . Rajaraman, V. , 2014. Cloud computing. Resonance 19 (3), 242-258 .",
+        "Rakotondravony, N., Taubmann, B., Mandarawi, W., Weishäupl, E., Xu, P., Kolosnjaji, B., Protsenko, M., de Meer, H., Reiser, H.P., 2017. Classifying malware attacks in iaas cloud environments. J. Cloud Comput. 6, 26. doi: 10.1186/ s13677- 017- 0098- 8 . Rashid, A. , Chaturvedi, A. , 2019. Virtualization and its role in cloud computing environment. International Journal of Computer Sciences and Engineering 7 (4), 1131-1136 .",
+        "Rodero-Merino, L., Vaquero, L.M., Caron, E., Muresan, A., Desprez, F., 2012. Building safe paas clouds: a survey on security in multitenant software platforms. Comput. Secur. 31 (1), 96-108. doi: 10.1016/j.cose.2011.10.006 . e Rubab, K. , Azhar, T. , Anwar, M. , Majeed, S. , 2020. Security threats in cloud computing: trend and challenges. International Journal of Computing and Communication Networks 2 (1), 29-35 .",
+        "Sandikkaya, M.T., Harmanci, A.E., 2012. Security problems of platform-as-a-service (PaaS) clouds and practical solutions to the problems. In: IEEE 31st Symposium on Reliable Distributed Systems, SRDS 2012, Irvine, CA , USA , October 8-11, 2012. IEEE Computer Society, pp. 463-468. doi: 10.1109/SRDS.2012.84 . Selvamani, K. , Jayanthi, S. , 2015. A review on cloud data security and its mitigation techniques. Procedia Comput Sci 48, 347-352 .",
+        "Sengupta, S., Kaulgud, V.S., Sharma, V.S., 2011. Cloud computing security-trends and research directions. In: World Congress on Services, SERVICES 2011, Washington, DC, USA, July 4-9, 2011. IEEE Computer Society, pp. 524-531. doi: 10.1109/ SERVICES.2011.20 . Shaikh, A.H. , Meshram, B. , 2020. Security issues in cloud computing. In: Intelligent Computing and Networking. Springer, pp. 63-77 .",
+        "Shyam, G.K., Theja, R.S.S., 2021. A survey on resolving security issues in saas through software defined networks. Int. J. Grid Util. Comput. 12 (1), 1-14. doi: 10.1504/ IJGUC.2021.112475 .",
+        "Singh, A., Chatterjee, K., 2017. Cloud security issues and challenges: a survey. J. Netw. Comput. Appl. 79, 88-115. doi: 10.1016/j.jnca.2016.11.027 . Singh, A. , et al. , 2019. Security concerns and countermeasures in cloud computing: a qualitative analysis. International Journal of Information Technology 11 (4), 683-690 .",
+        "Singh, S., Jeong, Y., Park, J.H., 2016. A survey on cloud computing security: issues, threats, and solutions. J. Netw. Comput. Appl. 75, 200-222. doi: 10.1016/j.jnca. 2016.09.002 .",
+        "Subashini, S., Kavitha, V., 2011. A survey on security issues in service delivery models of cloud computing. J. Netw. Comput. Appl. 34 (1), 1-11. doi: 10.1016/j.jnca. 2010.07.006 .",
+        "Tabrizchi, H., Rafsanjani, M.K., 2020. A survey on security challenges in cloud computing: issues, threats, and solutions. J. Supercomput. 76 (12), 9493-9532. F. Khoda Parast, C. Sindhav, S. Nikam et al. Computers & Security 114 (2022) 102580 Toraskar, T.R. , Borse, Y. , 2018. Implementation of cloud computing service delivery models (IaaS, PaaS) by aws and microsoft azure: a survey. Int J Comput Appl 975, 8887 .",
+        "Vaquero, L.M., Rodero-Merino, L., Morán, D., 2011. Locking the sky: a survey on iaas cloud security. Computing 91 (1), 93-118. doi: 10.10 07/s0 0607- 010- 0140- x .",
+        "Varghese, B., Buyya, R., 2017. Next Generation Cloud Computing: New Trends and Research Directions. abs/1707.07452, http://arxiv.org/abs/1707.07452 Vasiljeva, T. , Shaikhulina, S. , Kreslins, K. , 2017. Cloud computing: business perspectives, benefits and challenges for small and medium enterprises (case of latvia). Procedia Eng 178, 443-451 .",
+        "Verma, A., Kaushal, S., 2011. Cloud computing security issues and challenges: A survey. In: Abraham, A., Mauri, J.L., Buford, J.F., Suzuki, J., Thampi, S.M. (Eds.), Advances in Computing and Communications - First International Conference, ACC 2011, Kochi, India, July 22-24, 2011, Proceedings, Part IV. Springer, pp. 445-454. Verma, G. , Adhikari, S. , 2020. Cloud computing security issues: a stakeholder's perspective. SN Computer Science 1 (6), 1-8 .",
+        "Wang, S., Liu, Z., Sun, Q., Zou, H., Yang, F., 2014. Towards an accurate evaluation of quality of cloud service in service-oriented cloud computing. J. Intell. Manuf. 25 (2), 283-291. doi: 10.1007/s10845- 012- 0661-6 .",
+        "Weinman, J., 2018. The economics of pay-per-use pricing. IEEE Cloud Comput. 5 (5), 101. doi: 10.1109/MCC.2018.053711671 .",
+        "Yan, Q., Huang, W., Luo, X., Gong, Q., Yu, F.R., 2018. A multi-level ddos mitigation framework for the industrial internet of things. IEEE Commun. Mag. 56 (2), 30- 36. doi: 10.1109/MCOM.2018.1700621 .",
+        "Zhang, S., Zhang, X., Ou, X., 2014. After we knew it: empirical study and modeling of cost-effectiveness of exploiting prevalent known vulnerabilities across iaas cloud. In: Moriai, S., Jaeger, T., Sakurai, K. (Eds.), 9th ACM Symposium on Information, Computer and Communications Security, ASIA CCS '14, Kyoto, Japan - June 03 - 06, 2014. ACM, pp. 317-328. doi: 10.1145/2590296.2590300 .",
+        "Zissis, D., Lekkas, D., 2012. Addressing cloud computing security issues. Future Gener. Comput. Syst. 28 (3), 583-592. doi: 10.1016/j.future.2010.12.006 ."
+      ]
+    },
+    {
+      "id": "urn:article:1-s2-0-s0167404822004114-main",
+      "type": "schema:ScholarlyArticle",
+      "title": "Security analysis and improvement of a public auditing scheme for secure data storage in fog-to-cloud computing",
+      "authors": [
+        "Wenfang Zhang",
+        "Heng Jiao",
+        "Zhuoqun Yan",
+        "Xiaomin Wang",
+        "Muhammad Khurram Khan"
+      ],
+      "year": "2023",
+      "doi": "",
+      "journal": "Computers & Security",
+      "abstract": "Human society has drastically changed as a result of the widespread application of Internet of Things (IoT) \ntechnology, particularly in various industrial fields. In spite of the advantages brought by IoT services, \nthe underlying security challenges cannot be underestimated. Cloud-based IoT data collection poses a \nnumber of challenges, including how to ensure its integrity. In order to address this issue, Tian et al. \nhave proposed a fog-to-cloud computing-based public auditing scheme in IoT scenarios, which provides \nthe data-privacy preserving mechanism and tag transformation strategy. However, in this paper, we show \nthat Tian et al.'s scheme fails to achieve soundness, an essential security property, by giving two attacks. \nIn the first attack, the malicious cloud server can delete all the data and then deceive the Third Party \nAuditor (TPA) into believing that the data is well-preserved. In the second attack, the malicious cloud \nserver can modify the outsourced data and then deceive TPA into believing that all the data is kept intact. \nWe further provide a simple but effective solution for Tian et al.'s scheme to resist the above-mentioned \nattacks. Security analysis and performance evaluation are also given to demonstrate the robustness and \nhigh efficiency of the improved scheme.",
+      "keywords": [
+        "Cloud storage",
+        "IoT",
+        "Data integrity checking",
+        "Fog computing",
+        "Security analysis"
+      ],
+      "objective": [
+        "In this paper, we investigate the details of Tian et al. (2019) and analyze its security."
+      ],
+      "problem": [
+        "Moreover, to handle the problem of user revocation in dynamic group under cloud data sharing scenario, Wang et al. (2015) proposed a novel scheme, named Panda.",
+        "To tackle the problem that authenticatable tag of metadata generated by different mobile sinks with different keys, they designed a novel tag transforming strategy, which converts tags produced by mobile sinks to the ones produced by fog nodes."
+      ],
+      "methodology": [
+        "This method makes use of error correction and random permutation so that data owner can detect the changes of stored files.",
+        "In Sun et al. (2020) ; Tian et al. (2019) ; Wang et al. (2014) ; Zhao et al. (2019) , authors also took different methods to achieve user information privacy preserving, like random mask encryption, ring signature and so on.",
+        "Experimental results In this subsection, we evaluate the performance of our improved scheme and give a performance comparison with the other two schemes involved in Table 2 ."
+      ],
+      "contributions": [],
+      "futureWork": [],
+      "references": [
+        "Ateniese, G., Burns, R., Curtmola, R., Herring, J., Kissner, L., Peterson, Z., Song, D., 2007. Provable data possession at untrusted stores. In: Proceedings of the 14th ACM Conference on Computer and Communications Security, pp. 598-609.",
+        "Chen, F., Meng, F., Xiang, T., Dai, H., Li, J., Qin, J., 2020. Towards usable cloud storage auditing. IEEE Trans. Parallel Distrib. Syst. 2605-2617. doi: 10.1109/TPDS.2020. 2998462 .",
+        "He, K., Chen, J., Yuan, Q., Ji, S., He, D., Du, R., 2021. Dynamic group-oriented provable data possession in the cloud. IEEE Trans. Dependable Secure Comput. 1394- 1408. doi: 10.1109/TDSC.2019.2925800 .",
+        "Jiang, T., Chen, X., Ma, J., 2016. Public integrity auditing for shared dynamic cloud data with group user revocation. IEEE Trans. Comput. 2363-2373. doi: 10.1109/ TC.2015.2389955 .",
+        "Juels, A., Kaliski, B.S., 2007. PORs: proofs of retrievability for large files. In: Proceedings of the 14th ACM Conference on Computer and Communications Security, pp. 584-597. doi: 10.1145/1315245.1315317 .",
+        "Li, Y., Yu, Y., Min, G., Susilo, W., Ni, J., Choo, K.-K.R., 2019. Fuzzy identity-based data integrity auditing for reliable cloud storage systems. IEEE Trans. Dependable Secure Comput. 72-83. doi: 10.1109/TDSC.2017.2662216 .",
+        "Shacham, H., Waters, B., 2013. Compact proofs of retrievability. J. Cryptol. 442-483.",
+        "Shen, J., Shen, J., Chen, X., Huang, X., Susilo, W., 2017. An efficient public auditing protocol with novel dynamic structure for cloud data. IEEE Trans. Inf. Forensics Secur. 2402-2415. doi: 10.1109/TIFS.2017.2705620 .",
+        "Shen, W., Qin, J., Yu, J., Hao, R., Hu, J., 2019. Enabling identity-based integrity auditing and data sharing with sensitive information hiding for secure cloud storage. IEEE Trans. Inf. Forensics Secur. 331-346. doi: 10.1109/TIFS.2018.2850312 .",
+        "Sookhak, M., Yu, F.R., Zomaya, A.Y., 2018. Auditing big data storage in cloud computing using divide and conquer tables. IEEE Trans. Parallel Distrib. Syst. 999-1012.",
+        "Sun, Y., Liu, Q., Chen, X., Du, X., 2020. An adaptive authenticated data structure with privacy-preserving for big data stream in cloud. IEEE Trans. Inf. Forensics Secur. 3295-3310. doi: 10.1109/TIFS.2020.2986879 .",
+        "Tian, H., Nan, F., Chang, C.-C., Huang, Y., Lu, J., Du, Y., 2019. Privacy-preserving public auditing for secure data storage in fog-to-cloud computing. J. Netw. Comput. Appl. 127, 59-69. doi: 10.1016/j.jnca.2018.12.004 .",
+        "Wang, B., Li, B., Li, H., 2014. Oruta: privacy-preserving public auditing for shared data in the cloud. IEEE Trans. Cloud Comput. 43-56. doi: 10.1109/TCC.2014. 2299807 . Wang, B., Li, B., Li, H., 2015. Panda: public auditing for shared data with efficient user revocation in the cloud. IEEE Trans. Serv. Comput. 8 (1), 92-106. doi: 10. 1109/TSC.2013.2295611 .",
+        "Wang, Q., Wang, C., Ren, K., Lou, W., Li, J., 2011. Enabling public auditability and data dynamics for storage security in cloud computing. IEEE Trans. Parallel Distrib. Syst. 22 (5), 847-859. doi: 10.1109/TPDS.2010.183 .",
+        "Zhang, Y., Yu, J., Hao, R., Wang, C., Ren, K., 2020. Enabling efficient user revocation in identity-based cloud storage auditing for shared big data. IEEE Trans. Dependable Secure Comput. 608-619. doi: 10.1109/TDSC.2018.2829880 .",
+        "Zhao, H., Yao, X., Zheng, X., Qiu, T., Ning, H., 2019. User stateless privacy-preserving TPA auditing scheme for cloud storage. J. Netw. Comput. Appl. 62-70. doi: 10. 1016/j.jnca.2019.01.005 ."
+      ]
+    },
+    {
+      "id": "urn:article:1-s2-0-s0167404824000749-main",
+      "type": "schema:ScholarlyArticle",
+      "title": "Crayfish optimization algorithm for improving cyber security in cloud computing",
+      "authors": [
+        "Sahaya Stalin Jose. G",
+        "G. Sugitha",
+        "Ayshwarya Lakshmi. S",
+        "Preethi Bangalore Chaluvaraj"
+      ],
+      "year": "2024",
+      "doi": "10.1016/j.cose.2024.103773",
+      "journal": "Computers & Security",
+      "abstract": "The decentralized and distributed architecture of cloud computing promotes adoption and growth in various \nsocietal domains, including education, government, information technology, business, entertainment. Cloud \ncomputing (CC) makes a broad range of information technologies available. Security and privacy are key \nchallenges in storing big data in the cloud. To overcome this challenge, a Self-Attention Conditional Generative \nAdversarial Network Optimised with Crayfish Optimization Algorithm for Improving Cyber Security in Cloud \nComputing (CybS-CC-SACGAN -COA) is proposed in this paper to enhance the safety of CC environment. The \ninput data is amassed from NSL-KDD database. After that, the data is fed to pre-processing segment. The segment \nof pre-processing eliminates Cloud data termination and missing value replacement using Reformed Phase \nConserving Vibrant Range Compression filter. The results of pre-processing serves for feature selection. The \noptimal features are selected by means of Manta Ray Foraging Optimization Algorithm (MRFOA). Cloud data is \ncategorized as normal and abnormal data, like Denial-of-Service (DoS), Probe, Remote to local attack (R2L), User \nto root attack (U2R) by the help of SACGAN. Crayfish Optimization Algorithm (COA) is proposed to optimize the \nSACGAN classifier that classifies anomaly data precisely. The proposed CSCC-SACGAN -COA technique is \nactivated in Python under some metrics. The proposed CSCC-SACGAN -COA approach has attained higher \ndetection accuracy, lower computation time, higher AUC, higher scalability and lower detection error rate \ncompared to the existing methods.",
+      "keywords": [
+        "Cloud computing",
+        "Crayfish optimization algorithm",
+        "NSL-KDD benchmark dataset",
+        "Reformed phase conserving vibrant range",
+        "compression filter",
+        "Manta ray foraging optimization algorithm and",
+        "self-attention conditional generative adversa rial network"
+      ],
+      "objective": [
+        "This work develops the three forms of foraging behaviors: somersault, cyclone and chainforaging provide an efficient optimization paradigm for feature selection. 3.3.1.",
+        "Discussion This paper proposes SACGAN optimised with Crayfish Optimization Algorithm to optimize SACGAN network algorithm."
+      ],
+      "problem": [
+        "COA overcomes the manual random and grid explorations probleMs. To strike a Table 3 Nominated Features using Manta Ray Foraging Optimization Algorithm.",
+        "The problem solution is repre sented by each column matrix."
+      ],
+      "methodology": [
+        "Cyber security systems (CSS) in platform of cloud tools and techniques are available to identifying attacks on cloud setup (Qureshi et al., 2021 ; Ogwara et al., 2021 ; Samunnisa et al., 2023 ).",
+        "Real-time analysis of the complex data generated is necessary for the develop ment of robust intrusion detection systeMs. Therefore, deep learning techniques are promising for the analysis of large data, consisting of traffic flows in cloud networks for indicators of intrusions, even if they have not been detected before.",
+        "The proposed system is assessed using network data from the benchmark NSL-KDD dataset."
+      ],
+      "contributions": [
+        "The primary contributions of this paper are abridged below: ≡CybS-CC-SACGAN -COA is proposed for protecting CC environment. ≡The feature selection and categorization method for IDS is explored."
+      ],
+      "futureWork": [],
+      "references": [
+        "NSL-KDD dataset. [Online]. Available: https://www.unb.ca/cic/datasets/nsl.html .",
+        "Balamurugan, E., Mehbodniya, A., Kariri, E., Yadav, K., Kumar, A., Haq, M.A., 2022. Network optimization using defender system in cloud computing security based intrusion detection system withgame theory deep neural network (IDSGT-DNN). Pattern Recognit. Lett. 156, 142-151. Dehghani, M., Hub˘alovský, ¯S., Trojovský, P., 2022. Tasmanian devil optimization: a new bio-inspired optimization algorithm for solving optimization algorithm. IEEE Access 10, 19599 -19620 . El Kafhali, S., El Mir, I., Hanini, M., 2022. Security threats, defense mechanisms, challenges, and future directions in cloud computing. Arch. Comput. Meth. Eng. 29 (1), 223-246.",
+        "Geetha, T.V., Deepa, A.J., 2022. A FKPCA-GWO WDBiLSTM classifier for intrusion detection system in cloud environments. Knowl. Based Syst. 253, 109557 .",
+        "Ghosh, P., Alam, Z., Sharma, R.R., Phadikar, S., 2021. An efficient SGM based IDS in cloud environment. Computing 104 (3), 553-576.",
+        "Gomathi, P., Muniraj, C., Periasamy, P.S., 2023. Digital infrared thermal imaging system based breast cancer diagnosis using 4D U-Net segmentation. Biomed. Signal Process. Control 85, 104792 .",
+        "Guezzaz, A., Asimi, A., Asimi, Y., Azrour, M., Benkirane, S.: A distributed intrusion detection approach based on machine leaning techniques for a cloud security. In Intelligent Systems in Big Data, Semantic Web and Machine Learning (pp. 85-94). Springer, Cham.",
+        "Hassaoui, M., Hanini, M., El Kafhali, S., 2023. Domain generated algorithms detection applying a combination of a deep feature selection and traditional machine learning models. J. Comput. Secur. 31 (1), 85-105.",
+        "Hassaoui, M., Hanini, M., El Kafhali, S., 2024. Unsupervised Clustering for a Comparative Methodology of Machine Learning Models to Detect Domain-Generated Algorithms Based on an Alphanumeric Features Analysis. J. Network Syst. Manage. 32 (1), 1-38.",
+        "Jain, D.K., Ding, W., Kotecha, K., 2022. Training fuzzy deep neural network with honey badger algorithm for intrusion detection in cloud environment. Int. J. Machine Learn. Cybern. 1-17.",
+        "Kholidy, H.A., 2021. Detecting impersonation attacks in cloud computing environments using a centric user profiling approach. Future Gener. Comput. Syst. 117, 299-320.",
+        "Krishnaveni, S., Sivamohan, S., Sridhar, S.S., Prabakaran, S., 2021. Efficient feature selection and classification through ensemble method for network intrusion detection on cloud computing. Cluster Comput. 24 (3), 1761 -1779 .",
+        "Kumar, A., Umurzoqovich, R.S., Duong, N.D., Kanani, P., Kuppusamy, A., Praneesh, M.,",
+        "Hieu, M.N., 2022. An intrusion identification and prevention for cloud computing: from the perspective of deep learning. Optik (Stuttg) 270, 170044 .",
+        "Li, J., Zeng, H., Peng, L., Zhu, J., Liu, Z., 2022. Learning to rank method combining multihead self-attention with conditional generative adversarial nets. Array 15, 100205 .",
+        "Lou, P., Lu, G., Jiang, X., Xiao, Z., Hu, J., Yan, J., 2021. Cyber intrusion detection through association rule mining on multi-source logs. Appl. Intell. 51 (6), 4043 -4057 .",
+        "Mayuranathan, M., Murugan, M., Dhanakoti, V., 2021. Best features based intrusion detection system by RBM model for detecting DDoS in cloud environment. J. Ambient Intell. Humaniz. Comput. 12 (3), 3609 -3619 .",
+        "Mayuranathan, M., Saravanan, S.K., Muthusenthil, B., Samydurai, A., 2022. An efficient optimal security system for intrusion detection in cloud computing environment using hybrid deep learning technique. Adv. Eng. Software 173, 103236 . Mehanovi ˘c, D., Ke¯co, D., Kevri ˘c, J., Juki˘c, S., Miljkovi ˘c, A., Ma¯seti˘c, Z., 2021. Feature selection using cloud-based parallel genetic algorithm for intrusion detection data classification. Neural. Comput. Appl. 33 (18), 11861 -11873 .",
+        "Mondal, A., Goswami, R.T., 2021. Enhanced Honeypot cryptographic scheme and privacy preservation for an effective prediction in cloud security. Microprocess. Microsyst. 81, 103719 .",
+        "Ogwara, N.O., Petrova, K., Yang, M.L.B., MacDonell, S., 2021. Enhancing Data Security in the User Layer of Mobile Cloud Computing Environment: a Novel Approach. Adv. Secur. Networks Internet Things 129-145.",
+        "Osman, F.M., Yap, M.H., 2020. Adjusted quick shift phase preserving dynamic range compression method for breast lesions segmentation. Inf. Med. Unlock 20, 100344 .",
+        "Prabhakaran, V., Kulandasamy, A., 2021. Hybrid semantic deep learning architecture and optimal advanced encryption standard key management scheme for secure cloud storage and intrusion detection. Neural. Comput. Appl. 33 (21), 14459 -14479 .",
+        "Qureshi, K.N., Jeon, G., Piccialli, F., 2021. Anomaly detection and trust authority in artificial intelligence and cloud computing. Comput. Networks 184, 107647 .",
+        "Rajagopal, S., Kundapur, P.P., Hareesha, K.S., 2021. Towards effective network intrusion detection: from concept to creation on Azure cloud. IEEE Access 9, 19723 -19742 . Rajan, D.A.J., Naganathan, E.R., 2022. Trust Based Anonymous Intrusion Detection for Cloud Assisted WSN-IOT. Glob. Trans. Proc.",
+        "Samunnisa, K., Kumar, G.S.V., Madhavi, K., 2023. Intrusion detection system in distributed cloud computing: hybrid clustering and classification methods. Measurement 25, 100612 .",
+        "Selvapandian, D., Santhosh, R., 2021. Deep learning approach for intrusion detection in IoT-multi cloud environment. Automated Softw. Eng. 28 (2), 1-17.",
+        "SobinSoniya, S., Maria Celestin Vigila, S., 2022. Analysis of Cloud-Based Intrusion Detection System. Information and Communication Technology For Competitive Strategies (ICTCS 2020). Springer, Singapore, pp. 1133 -1141 .",
+        "Srilatha, D., Shyam, G.K., 2021. Cloud-based intrusion detection using kernel fuzzy clustering and optimal type-2 fuzzy neural network. Cluster Comput. 24 (3), 2657 -2672 .",
+        "Thilagam, T., Aruna, R., 2021. Intrusion detection for network based cloud computing by custom RC-NN and optimization. ICT Express 7 (4), 512-520.",
+        "Tissir, N., El Kafhali, S., Aboutabit, N., 2021. Cybersecurity management in cloud computing: semantic literature review and conceptual framework proposal. J. Reliable Intell. Environ. 7, 69-84.",
+        "Turcato, A.C., Negri, L.H.B.L., Dias, A.L., Sestito, G.S., Flauzino, R.A., 2021. A cloudbased method for detecting intrusions in PROFINET communication networks based on anomaly detection. J. Control Autom. Electr. Syst. 32 (5), 1177 -1188 . S.S. Jose. G et al. 12Vu, L., Nguyen, Q.U., Nguyen, D.N., Hoang, D.T., Dutkiewicz, E., 2022. Deep generative learning models for cloud intrusion detection systems. IEEE Trans. Cybern.",
+        "Wen, L., 2022. Cloud computing intrusion detection technology based on BP-NN. Wireless Personal Commun. 126 (3), 1917 -1934 .",
+        "Zhao, W., Zhang, Z., Wang, L., 2020. Manta ray foraging optimization: an effective bioinspired optimizer for engineering applications. Eng. Appl. Artif. Intell. 87, 103300 . Dr.G. Sahaya Stalin Jose received his B.E. degree in Electronics and Communication Engineering from Madras University, India in 2000.In 2004, he received M.E. Degree in Digital Communication and Networking Engineering from Anna University, Chennai. He is in teaching field since 2000.Obtained his Ph.D from Anna University Chennai in the year 2018 under the research topic \"Secure Data and Fault Tolerance in Cloud Storage System \" in Information and Communication Engineering. He is in teaching profession for the past twenty two years. Currently, he is working as an Assistant Professor in the department of Information Technology at St.Xavier 's Catholic College of Engineering, Nagercoil, Tamil Nadu, India. His-area"
+      ]
+    }
+  ],
+  "corpusTopTerms": {
+    "top_uniterms": [
+      [
+        "data",
+        1097
+      ],
+      [
+        "cloud",
+        986
+      ],
+      [
+        "user",
+        610
+      ],
+      [
+        "scheme",
+        473
+      ],
+      [
+        "security",
+        469
+      ],
+      [
+        "attack",
+        396
+      ],
+      [
+        "model",
+        394
+      ],
+      [
+        "access",
+        322
+      ],
+      [
+        "network",
+        299
+      ],
+      [
+        "system",
+        289
+      ]
+    ],
+    "top_bigrams": [
+      [
+        "cloud compute",
+        142
+      ],
+      [
+        "data integrity",
+        122
+      ],
+      [
+        "integrity scheme",
+        94
+      ],
+      [
+        "access control",
+        86
+      ],
+      [
+        "data owner",
+        81
+      ],
+      [
+        "computer security",
+        75
+      ],
+      [
+        "cloud server",
+        69
+      ],
+      [
+        "hldns framework",
+        65
+      ],
+      [
+        "cloud storage",
+        63
+      ],
+      [
+        "cloud service",
+        57
+      ]
+    ],
+    "top_trigrams": [
+      [
+        "data integrity scheme",
+        89
+      ],
+      [
+        "perceive behavioral control",
+        28
+      ],
+      [
+        "cloud service provider",
+        17
+      ],
+      [
+        "network traffic profile",
+        17
+      ],
+      [
+        "attack detection system",
+        16
+      ],
+      [
+        "cloud compute environment",
+        13
+      ],
+      [
+        "random forest classifier",
+        13
+      ],
+      [
+        "detection error rate",
+        13
+      ],
+      [
+        "cyber security system",
+        13
+      ],
+      [
+        "cloud storage service",
+        12
+      ]
+    ]
+  }
+}
