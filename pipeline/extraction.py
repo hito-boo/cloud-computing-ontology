@@ -1,3 +1,12 @@
+"""Extracao de objetivo, problema, metodologia, contribuicoes e trabalhos
+futuros de cada artigo, por casamento de padroes em frases (Etapa 2).
+
+A extracao trabalha em tres zonas do texto do artigo: introducao+abstract
+(onde normalmente aparecem objetivo e problema), corpo do texto (onde
+aparecem metodologia e contribuicoes) e conclusao (onde normalmente aparecem
+os trabalhos futuros).
+"""
+
 import re
 from typing import Dict, List, Optional
 
@@ -10,8 +19,15 @@ _INITIAL_RE = re.compile(r"\b([A-Z])\.\s+(?=[A-Z][a-z])")
 _SPLIT_RE = re.compile(r"(?<=[.!?])\s+(?=[A-Z(])")
 _WHITESPACE_RE = re.compile(r"\s+")
 
-# Divisor de frases baseado em regras
+
 def split_sentences(text: str) -> List[str]:
+    """Divide um texto em frases, protegendo abreviacoes e iniciais de nomes.
+
+    Como o ponto final tambem aparece em abreviacoes comuns ("e.g.", "et
+    al.") e em iniciais de nomes ("J. Silva"), essas ocorrencias sao
+    temporariamente substituidas por marcadores antes da divisao por frase,
+    e restauradas depois.
+    """
     if not text:
         return []
 
@@ -36,6 +52,7 @@ def split_sentences(text: str) -> List[str]:
             sentences.append(s)
     return sentences
 
+
 _OBJECTIVE_PATTERNS = [
     re.compile(
         r"\b(?:main\s+|primary\s+|overall\s+|key\s+)?"
@@ -50,7 +67,8 @@ _OBJECTIVE_PATTERNS = [
     ),
 ]
 
-# Alternativa mais ampla utilizada no artigo todo, caso as primeiras regras não detectem o Objetivo
+# Padroes alternativos, mais amplos, usados quando as regras especificas
+# acima nao encontram nenhuma frase de objetivo no artigo
 _OBJECTIVE_PATTERNS_BROAD = [
     re.compile(
         r"\bin\s+this\s+(?:paper|article|study|work),?\s+we\s+"
@@ -96,9 +114,7 @@ _CONTRIBUTION_PATTERNS_BROAD = [
     ),
 ]
 
-_CREDIT_BOILERPLATE_RE = re.compile(
-    r"\bCRediT\s+authorship\s+contribution\s+statement\b", re.I
-)
+_CREDIT_BOILERPLATE_RE = re.compile(r"\bCRediT\s+authorship\s+contribution\s+statement\b", re.I)
 
 _FUTURE_WORK_PATTERNS = [
     re.compile(r"\bfuture\s+(?:work|research|directions?)\b", re.I),
@@ -109,8 +125,14 @@ _FUTURE_WORK_PATTERNS = [
     re.compile(r"\bcurrently\s+working\s+on\b", re.I),
 ]
 
-# Realiza o casamento de padrões aplicando as regras gerais
-def _find_matches(sentences: List[str], patterns: List[re.Pattern], max_results: int = 3, exclude: Optional[set] = None) -> List[str]:
+
+def _find_matches(
+    sentences: List[str],
+    patterns: List[re.Pattern],
+    max_results: int = 3,
+    exclude: Optional[set] = None,
+) -> List[str]:
+    """Procura, em ordem, as primeiras frases que casam com algum dos padroes dados."""
     exclude = exclude or set()
     matches: List[str] = []
     seen: set = set()
@@ -126,15 +148,17 @@ def _find_matches(sentences: List[str], patterns: List[re.Pattern], max_results:
             break
     return matches
 
-# Extrai o Objetivo do artigo
+
 def extract_objective(sentences: List[str], max_results: int = 3) -> List[str]:
+    """Extrai as frases que descrevem o objetivo do artigo."""
     matches = _find_matches(sentences, _OBJECTIVE_PATTERNS, max_results)
     if not matches:
         matches = _find_matches(sentences, _OBJECTIVE_PATTERNS_BROAD, max_results)
     return matches
 
-# Extrai o Problema do artigo
+
 def extract_problem(sentences: List[str], max_results: int = 3) -> List[str]:
+    """Extrai as frases que descrevem o problema abordado pelo artigo."""
     matches: List[str] = []
     for sent in sentences:
         if _PROBLEM_PRIMARY_RE.search(sent) or _PROBLEM_SECONDARY_RE.search(sent):
@@ -144,12 +168,14 @@ def extract_problem(sentences: List[str], max_results: int = 3) -> List[str]:
             break
     return matches
 
-# Extrai a Metodologia do artigo
+
 def extract_methodology(sentences: List[str], max_results: int = 3) -> List[str]:
+    """Extrai as frases que descrevem a metodologia utilizada no artigo."""
     return _find_matches(sentences, _METHODOLOGY_PATTERNS, max_results)
 
-# Extrai uma lista de contribuições, excluindo sentenças já classificadas como Objetivo ou divisão de tarefas
+
 def extract_contributions(sentences: List[str], exclude: Optional[List[str]] = None, max_results: int = 3) -> List[str]:
+    """Extrai as frases de contribuicao do artigo, excluindo as ja usadas como objetivo."""
     exclude_set = set(exclude or [])
 
     def _collect(patterns: List[re.Pattern]) -> List[str]:
@@ -168,12 +194,14 @@ def extract_contributions(sentences: List[str], exclude: Optional[List[str]] = N
         matches = _collect(_CONTRIBUTION_PATTERNS_BROAD)
     return matches
 
-# Extrai possíveis trabalhos futuros de um artigo
+
 def extract_future_work(sentences: List[str], max_results: int = 3) -> List[str]:
+    """Extrai as frases que mencionam trabalhos futuros, normalmente na conclusao."""
     return _find_matches(sentences, _FUTURE_WORK_PATTERNS, max_results)
 
-# Função principal de extração de informações
+
 def extract_info(paper: Dict) -> Dict[str, List[str]]:
+    """Extrai objetivo, problema, metodologia, contribuicoes e trabalhos futuros de um artigo."""
     intro_zone = (paper.get("abstract", "") + " " + paper.get("intro_text", "")).strip()
     intro_sentences = split_sentences(intro_zone)
     body_sentences = split_sentences(paper.get("body_text", ""))
@@ -188,9 +216,7 @@ def extract_info(paper: Dict) -> Dict[str, List[str]]:
         problem = extract_problem(body_sentences)
 
     methodology = extract_methodology(body_sentences)
-
     contributions = extract_contributions(body_sentences, exclude=objective)
-
     future_work = extract_future_work(conclusion_sentences)
 
     return {
@@ -201,14 +227,17 @@ def extract_info(paper: Dict) -> Dict[str, List[str]]:
         "future_work": future_work,
     }
 
-# Realiza a extração de informações em um córpus categorizado
+
 def extract_corpus(categorized_corpus: Dict[str, Dict]) -> Dict[str, Dict]:
+    """Aplica ``extract_info`` a todos os artigos categorizados do corpus."""
     result: Dict[str, Dict] = {}
     for name, paper in categorized_corpus.items():
         result[name] = extract_info(paper)
     return result
 
+
 def extraction_brief(filename: str, info: Dict[str, List[str]]) -> str:
+    """Monta um resumo textual com os trechos extraidos de um artigo."""
     lines = [f"Arquivo : {filename}"]
     for field, label in [
         ("objective", "Objetivo"),

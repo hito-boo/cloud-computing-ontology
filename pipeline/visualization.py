@@ -1,14 +1,26 @@
+"""Visualizacoes analiticas do corpus: graficos, heatmaps e nuvens de palavras.
+
+Este modulo responde as perguntas de analise pedidas no enunciado do
+trabalho (palavras mais citadas, nuvem de palavras geral, tecnicas mais
+mencionadas, evolucao temporal dos termos e termos de trabalhos futuros),
+alem de visualizacoes complementares de coocorrencia e similaridade entre
+artigos.
+
+Todas as figuras sao salvas como PNG em ``output_dir`` via
+``generate_all_visualizations``, que orquestra a geracao de todos os
+graficos em sequencia.
+"""
+
+import math
 import os
 import re
-import math
 from collections import Counter, defaultdict
 from typing import Dict, List, Optional, Tuple
 
 import matplotlib
 matplotlib.use("Agg")
-import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
-import matplotlib.colors as mcolors
+import matplotlib.pyplot as plt
 import numpy as np
 
 try:
@@ -18,7 +30,6 @@ except ImportError:
     _HAS_WORDCLOUD = False
     print("[warn] wordcloud not installed. Run: pip install wordcloud")
 
-# Paleta principal
 _COLORS = [
     "#2E86AB", "#A23B72", "#F18F01", "#C73E1D", "#3B1F2B",
     "#44BBA4", "#E94F37", "#393E41", "#F5C518", "#6B4226",
@@ -26,8 +37,9 @@ _COLORS = [
 ]
 _CMAP_HEATMAP = "YlOrRd"
 
-# Técnicas de Cloud Computing / Segurança para detecção por busca de termos.
-# Chave = nome legível para o eixo; valor = lista de strings a buscar (lowercase).
+# Tecnicas de Cloud Computing / Seguranca para deteccao por busca de termos.
+# Chave = nome legivel para o eixo do grafico; valor = lista de strings a
+# buscar no texto do artigo (em minusculas).
 CLOUD_SECURITY_TECHNIQUES: Dict[str, List[str]] = {
     "Attribute-Based Enc. (ABE)": ["attribute-based encryption", "abe", "cp-abe", "kp-abe"],
     "Searchable Encryption": ["searchable encryption", "sse", "peks", "xse"],
@@ -49,51 +61,56 @@ CLOUD_SECURITY_TECHNIQUES: Dict[str, List[str]] = {
     "Obfuscation / Code Sec.": ["obfuscat", "decompil", "code protection", "software protection"],
 }
 
-# Stop-words básicas para o tokenizador de fallback interno
+# Stop-words basicas para o tokenizador de fallback interno, usado apenas
+# quando o chamador nao fornece os tokens ja pre-processados pela Etapa 1
 _FALLBACK_STOPWORDS = {
-    "the","of","and","to","in","a","is","that","for","are","this","be","as","on",
-    "an","with","by","at","from","have","was","were","has","which","not","or","it",
-    "also","can","we","its","our","their","these","such","been","they","will","may",
-    "than","more","each","most","into","one","two","while","both","when","where",
-    "but","only","any","other","all","no","if","so","up","out","about","then","how",
-    "what","there","through","between","over","under","after","before","do","does",
-    "used","using","use","uses","based","paper","study","article","work","proposed",
-    "provide","provides","provided","approach","result","results","show","shows",
-    "shown","however","thus","therefore","since","given","due","found","used","while",
+    "the", "of", "and", "to", "in", "a", "is", "that", "for", "are", "this", "be", "as", "on",
+    "an", "with", "by", "at", "from", "have", "was", "were", "has", "which", "not", "or", "it",
+    "also", "can", "we", "its", "our", "their", "these", "such", "been", "they", "will", "may",
+    "than", "more", "each", "most", "into", "one", "two", "while", "both", "when", "where",
+    "but", "only", "any", "other", "all", "no", "if", "so", "up", "out", "about", "then", "how",
+    "what", "there", "through", "between", "over", "under", "after", "before", "do", "does",
+    "used", "using", "use", "uses", "based", "paper", "study", "article", "work", "proposed",
+    "provide", "provides", "provided", "approach", "result", "results", "show", "shows",
+    "shown", "however", "thus", "therefore", "since", "given", "due", "found", "used", "while",
 }
 
-# Gera label para uso nos gráficos
+
 def _short_label(fname: str, paper: Dict) -> str:
+    """Gera um rotulo curto "ano + sobrenome" para identificar o artigo nos graficos."""
     year = paper.get("metadata", {}).get("year", "????")
     authors = paper.get("authors", [])
     if authors:
-        # Pega último sobrenome do primeiro autor
-        surname = authors[0].split()[-1]
+        surname = authors[0].split()[-1]  # ultimo sobrenome do primeiro autor
     else:
-        # Usa parte do nome do arquivo
+        # Sem autores disponiveis: usa parte do identificador no nome do arquivo
         surname = re.search(r"S(\d{6,})", fname)
         surname = surname.group(1)[-4:] if surname else fname[:6]
     return f"{year}\n{surname}"
 
-# Tokenizador básico
+
 def _fallback_tokenize(text: str) -> List[str]:
+    """Tokenizador simples usado quando os tokens da Etapa 1 nao estao disponiveis."""
     text = text.lower()
     text = re.sub(r"[^a-z\s]", " ", text)
     return [t for t in text.split() if len(t) >= 4 and t not in _FALLBACK_STOPWORDS]
 
-# Cria o diretório de saída
+
 def _ensure_dir(path: str) -> None:
+    """Cria o diretorio de saida das visualizacoes, se ainda nao existir."""
     os.makedirs(path, exist_ok=True)
 
-# Salva a figura e libera memória
+
 def _save(fig: plt.Figure, output_dir: str, filename: str) -> None:
+    """Salva a figura em PNG e libera a memoria do matplotlib."""
     path = os.path.join(output_dir, filename)
     fig.savefig(path, dpi=150, bbox_inches="tight")
     plt.close(fig)
     print(f"  [saved] {filename}")
 
-# Gráfico de barras horizontais
+
 def _horizontal_bar(counter: Counter, top_n: int, title: str, xlabel: str, color: str, output_dir: str, filename: str) -> None:
+    """Desenha um grafico de barras horizontais a partir de um ``Counter``."""
     items = counter.most_common(top_n)
     if not items:
         print(f"  [skip] {filename} - no data")
@@ -106,8 +123,8 @@ def _horizontal_bar(counter: Counter, top_n: int, title: str, xlabel: str, color
     fig, ax = plt.subplots(figsize=(9, max(4, top_n * 0.42)))
     bars = ax.barh(labels, values, color=color, edgecolor="white", linewidth=0.5)
 
-    # Valor na ponta de cada barra
     for bar, val in zip(bars, values):
+        # Escreve o valor na ponta de cada barra
         ax.text(
             val + max_v * 0.01, bar.get_y() + bar.get_height() / 2,
             str(val), va="center", ha="left", fontsize=8,
@@ -121,8 +138,9 @@ def _horizontal_bar(counter: Counter, top_n: int, title: str, xlabel: str, color
 
     _save(fig, output_dir, filename)
 
-# Bar Chart dos termos mais frequentes
+
 def plot_top_terms_bar(tokens_all: List[str], top_n: int = 15, output_dir: str = "visualizations") -> None:
+    """Grafico 1: barras com os termos mais frequentes do corpus."""
     _horizontal_bar(
         Counter(tokens_all), top_n,
         title=f"Top {top_n} Most Frequent Terms (Corpus)",
@@ -132,8 +150,14 @@ def plot_top_terms_bar(tokens_all: List[str], top_n: int = 15, output_dir: str =
         filename="1_bar_top_terms.png",
     )
 
-# Nuvem de palavras geral
-def plot_wordcloud(tokens_all: List[str], output_dir: str = "visualizations", title: str = "Word Cloud - Cloud Computing & Security Corpus", filename: str = "2_wordcloud_general.png") -> None:
+
+def plot_wordcloud(
+    tokens_all: List[str],
+    output_dir: str = "visualizations",
+    title: str = "Word Cloud - Cloud Computing & Security Corpus",
+    filename: str = "2_wordcloud_general.png",
+) -> None:
+    """Grafico 2: nuvem de palavras geral do corpus."""
     if not _HAS_WORDCLOUD:
         print("  [skip] wordcloud - install with: pip install wordcloud")
         return
@@ -159,9 +183,9 @@ def plot_wordcloud(tokens_all: List[str], output_dir: str = "visualizations", ti
 
     _save(fig, output_dir, filename)
 
-# Detecta técnicas pré-definidas e desenha um Bar Chart de frequência
+
 def plot_techniques_frequency(categorized_corpus: Dict[str, Dict], output_dir: str = "visualizations") -> None:
-    # Conta quantas vezes cada técnica aparece (somando todos os artigos)
+    """Grafico 3: tecnicas de cloud/seguranca mais mencionadas no corpus."""
     counts: Counter = Counter()
     for paper in categorized_corpus.values():
         text = (paper.get("abstract", "") + " " + paper.get("body_text", "")).lower()
@@ -179,9 +203,14 @@ def plot_techniques_frequency(categorized_corpus: Dict[str, Dict], output_dir: s
         filename="3_bar_techniques.png",
     )
 
-# Desenha um Heat Map com a evolução temporal dos termos
-def plot_temporal_evolution(categorized_corpus: Dict[str, Dict], tokens_per_article: Dict[str, List[str]], top_n: int = 14, output_dir: str = "visualizations") -> None:
-    # Agrupa tokens por ano de publicação
+
+def plot_temporal_evolution(
+    categorized_corpus: Dict[str, Dict],
+    tokens_per_article: Dict[str, List[str]],
+    top_n: int = 14,
+    output_dir: str = "visualizations",
+) -> None:
+    """Grafico 4: heatmap com a evolucao temporal dos termos mais frequentes, por ano."""
     year_tokens: Dict[str, List[str]] = defaultdict(list)
     for fname, paper in categorized_corpus.items():
         year = paper.get("metadata", {}).get("year", "")
@@ -192,14 +221,14 @@ def plot_temporal_evolution(categorized_corpus: Dict[str, Dict], tokens_per_arti
         print("  [skip] temporal heatmap - fewer than 2 distinct years")
         return
 
-    # Determina os termos globais mais frequentes para as linhas do Heat Map
+    # Determina os termos globais mais frequentes, que formam as linhas do heatmap
     all_tokens: List[str] = []
     for tks in tokens_per_article.values():
         all_tokens.extend(tks)
     top_terms = [t for t, _ in Counter(all_tokens).most_common(top_n)]
 
     sorted_years = sorted(year_tokens.keys())
-    # Monta a matriz (termos x anos), cada célula = % do total do ano
+    # Monta a matriz (termos x anos); cada celula = % do total de tokens daquele ano
     matrix = np.zeros((len(top_terms), len(sorted_years)))
     for j, year in enumerate(sorted_years):
         year_cnt = Counter(year_tokens[year])
@@ -215,38 +244,35 @@ def plot_temporal_evolution(categorized_corpus: Dict[str, Dict], tokens_per_arti
     ax.set_yticks(range(len(top_terms)))
     ax.set_yticklabels(top_terms, fontsize=9)
 
-    # Valores nas células (omite zeros)
+    # Escreve os valores nas celulas, omitindo zeros
     vmax = matrix.max() or 1
     for i in range(len(top_terms)):
         for j in range(len(sorted_years)):
             v = matrix[i, j]
             if v > 0:
                 color = "white" if v > vmax * 0.58 else "black"
-                ax.text(j, i, f"{v:.1f}", ha="center", va="center",
-                        fontsize=7, color=color)
+                ax.text(j, i, f"{v:.1f}", ha="center", va="center", fontsize=7, color=color)
 
-    # Indica quantos artigos há por ano
+    # Indica quantos artigos contribuem para cada ano
     for j, year in enumerate(sorted_years):
-        # Conta artigos com esse ano
         n_arts = sum(
             1 for p in categorized_corpus.values()
             if p.get("metadata", {}).get("year", "") == year
         )
-        ax.text(j, -0.8, f"n={n_arts}", ha="center", va="top",
-                fontsize=7, color="gray")
+        ax.text(j, -0.8, f"n={n_arts}", ha="center", va="top", fontsize=7, color="gray")
 
     cbar = fig.colorbar(im, ax=ax, fraction=0.03, pad=0.04)
     cbar.set_label("Relative frequency (%)", fontsize=9)
 
-    ax.set_title("Temporal Evolution of Top Terms (% per year)", fontsize=13,
-                 fontweight="bold", pad=18)
+    ax.set_title("Temporal Evolution of Top Terms (% per year)", fontsize=13, fontweight="bold", pad=18)
     ax.set_xlabel("Publication Year", fontsize=10)
     ax.set_ylabel("Term", fontsize=10)
 
     _save(fig, output_dir, "4_heatmap_temporal.png")
 
-# Desenha gráfico com termos presentes na seção de trabalhos futuros
+
 def plot_future_work_terms(stage2_corpus: Dict[str, Dict], output_dir: str = "visualizations") -> None:
+    """Graficos 5a/5b: termos mais frequentes nas frases de trabalhos futuros (Etapa 2)."""
     raw_text = " ".join(
         " ".join(info.get("future_work", []))
         for info in stage2_corpus.values()
@@ -255,7 +281,6 @@ def plot_future_work_terms(stage2_corpus: Dict[str, Dict], output_dir: str = "vi
         print("  [skip] future work - no sentences found in stage2")
         return
 
-    # Tokenização leve sobre o texto de futuros trabalhos
     fw_tokens = _fallback_tokenize(raw_text)
     extra_stop = {
         "will", "plan", "future", "work", "research", "further", "also",
@@ -267,7 +292,6 @@ def plot_future_work_terms(stage2_corpus: Dict[str, Dict], output_dir: str = "vi
         print("  [skip] future work - all tokens were stopwords")
         return
 
-    # Bar Chart
     _horizontal_bar(
         Counter(fw_tokens), 15,
         title="Most Frequent Terms in Future Work Sections",
@@ -277,7 +301,6 @@ def plot_future_work_terms(stage2_corpus: Dict[str, Dict], output_dir: str = "vi
         filename="5a_bar_future_work.png",
     )
 
-    # Word Cloud
     plot_wordcloud(
         fw_tokens,
         output_dir=output_dir,
@@ -285,8 +308,14 @@ def plot_future_work_terms(stage2_corpus: Dict[str, Dict], output_dir: str = "vi
         filename="5b_wordcloud_future_work.png",
     )
 
-# Coocorrência de termos
-def plot_cooccurrence_heatmap(tokens_per_article: Dict[str, List[str]], top_n: int = 14, window: int = 5, output_dir: str = "visualizations") -> None:
+
+def plot_cooccurrence_heatmap(
+    tokens_per_article: Dict[str, List[str]],
+    top_n: int = 14,
+    window: int = 5,
+    output_dir: str = "visualizations",
+) -> None:
+    """Grafico 6: heatmap de coocorrencia entre os termos mais frequentes do corpus."""
     all_tokens: List[str] = []
     for tks in tokens_per_article.values():
         all_tokens.extend(tks)
@@ -294,7 +323,7 @@ def plot_cooccurrence_heatmap(tokens_per_article: Dict[str, List[str]], top_n: i
     top_terms = [t for t, _ in Counter(all_tokens).most_common(top_n)]
     term_idx = {t: i for i, t in enumerate(top_terms)}
 
-    # Contagem de coocorrência via janela deslizante em cada artigo
+    # Conta coocorrencias usando uma janela deslizante dentro de cada artigo
     matrix = np.zeros((top_n, top_n), dtype=float)
     for tokens in tokens_per_article.values():
         for center, tok in enumerate(tokens):
@@ -310,10 +339,10 @@ def plot_cooccurrence_heatmap(tokens_per_article: Dict[str, List[str]], top_n: i
                     j = term_idx[tokens[k]]
                     matrix[i, j] += 1
 
-    # Normaliza pela diagonal (auto-frequência) para obter correlação relativa
+    # Normaliza pela diagonal (auto-frequencia) para obter uma correlacao relativa
     diag = np.diag(matrix).copy()
     diag[diag == 0] = 1
-    matrix_norm = matrix / diag[:, np.newaxis] # Fração de coocorrência
+    matrix_norm = matrix / diag[:, np.newaxis]
 
     fig, ax = plt.subplots(figsize=(10, 9))
     im = ax.imshow(matrix_norm, cmap="Blues", aspect="auto", vmin=0)
@@ -323,15 +352,13 @@ def plot_cooccurrence_heatmap(tokens_per_article: Dict[str, List[str]], top_n: i
     ax.set_yticks(range(top_n))
     ax.set_yticklabels(top_terms, fontsize=8)
 
-    # Valores nas células
     vmax = matrix_norm.max() or 1
     for i in range(top_n):
         for j in range(top_n):
             v = matrix_norm[i, j]
             if v > 0.02:
                 col = "white" if v > vmax * 0.6 else "black"
-                ax.text(j, i, f"{v:.2f}", ha="center", va="center",
-                        fontsize=6.5, color=col)
+                ax.text(j, i, f"{v:.2f}", ha="center", va="center", fontsize=6.5, color=col)
 
     cbar = fig.colorbar(im, ax=ax, fraction=0.046, pad=0.04)
     cbar.set_label("Co-occurrence ratio (window=" + str(window) + ")", fontsize=9)
@@ -340,8 +367,13 @@ def plot_cooccurrence_heatmap(tokens_per_article: Dict[str, List[str]], top_n: i
 
     _save(fig, output_dir, "6_heatmap_cooccurrence.png")
 
-# Heat Map da similaridade de Jaccard entre pares de artigos
-def plot_article_similarity_heatmap(categorized_corpus: Dict[str, Dict], tokens_per_article: Dict[str, List[str]], output_dir: str = "visualizations") -> None:
+
+def plot_article_similarity_heatmap(
+    categorized_corpus: Dict[str, Dict],
+    tokens_per_article: Dict[str, List[str]],
+    output_dir: str = "visualizations",
+) -> None:
+    """Grafico 7a: heatmap de similaridade de Jaccard entre todos os pares de artigos."""
     fnames = list(tokens_per_article.keys())
     n = len(fnames)
     if n < 2:
@@ -352,7 +384,6 @@ def plot_article_similarity_heatmap(categorized_corpus: Dict[str, Dict], tokens_
     labels = [_short_label(f, categorized_corpus.get(f, {})) for f in fnames]
     matrix = np.zeros((n, n))
 
-    # Jaccard para cada par
     for i in range(n):
         for j in range(n):
             inter = len(sets[i] & sets[j])
@@ -380,8 +411,14 @@ def plot_article_similarity_heatmap(categorized_corpus: Dict[str, Dict], tokens_
 
     _save(fig, output_dir, "7a_heatmap_similarity.png")
 
-# Diagrama de similaridade entre artigos
-def plot_article_similarity_network(categorized_corpus: Dict[str, Dict], tokens_per_article: Dict[str, List[str]], threshold: float = 0.18, output_dir: str = "visualizations") -> None:
+
+def plot_article_similarity_network(
+    categorized_corpus: Dict[str, Dict],
+    tokens_per_article: Dict[str, List[str]],
+    threshold: float = 0.18,
+    output_dir: str = "visualizations",
+) -> None:
+    """Grafico 7b: diagrama de rede com a similaridade entre artigos (layout circular)."""
     fnames = list(tokens_per_article.keys())
     n = len(fnames)
     if n < 2:
@@ -390,7 +427,7 @@ def plot_article_similarity_network(categorized_corpus: Dict[str, Dict], tokens_
     sets = [set(tokens_per_article[f]) for f in fnames]
     labels = [_short_label(f, categorized_corpus.get(f, {})) for f in fnames]
 
-    # Posições em círculo
+    # Posiciona os artigos em um circulo
     angles = [2 * math.pi * i / n for i in range(n)]
     xs = [math.cos(a) for a in angles]
     ys = [math.sin(a) for a in angles]
@@ -399,7 +436,7 @@ def plot_article_similarity_network(categorized_corpus: Dict[str, Dict], tokens_
     ax.set_aspect("equal")
     ax.axis("off")
 
-    # Arestas
+    # Calcula as arestas (pares de artigos com similaridade acima do limiar)
     max_sim = 0.0
     edges: List[Tuple[int, int, float]] = []
     for i in range(n):
@@ -413,6 +450,8 @@ def plot_article_similarity_network(categorized_corpus: Dict[str, Dict], tokens_
                     max_sim = sim
 
     if not edges:
+        # Nenhum par acima do limiar original: relaxa o limiar para garantir
+        # que o grafico mostre pelo menos as conexoes mais fortes existentes
         print(f"  [info] no article pairs above threshold {threshold} - lowering to 0.10")
         threshold = 0.10
         for i in range(n):
@@ -429,15 +468,14 @@ def plot_article_similarity_network(categorized_corpus: Dict[str, Dict], tokens_
         alpha = 0.2 + 0.7 * (sim / max(max_sim, 0.01))
         lw = 0.5 + 4.0 * (sim / max(max_sim, 0.01))
         ax.plot([xs[i], xs[j]], [ys[i], ys[j]], color=_COLORS[0], alpha=alpha, lw=lw, zorder=1)
-        # Rótulo no meio da aresta com o valor de similaridade
+        # Rotulo no meio da aresta, com o valor de similaridade
         mx, my = (xs[i] + xs[j]) / 2, (ys[i] + ys[j]) / 2
         ax.text(mx, my, f"{sim:.2f}", fontsize=6, ha="center", va="center", color="gray", zorder=2)
 
-    # Nós
     cmap = plt.cm.get_cmap("tab10", n)
     for i in range(n):
         ax.scatter(xs[i], ys[i], s=450, color=cmap(i), zorder=3, edgecolors="white", linewidths=1.5)
-        # Rótulo do artigo (fora do nó, alinhado radialmente)
+        # Rotulo do artigo, posicionado fora do no e alinhado radialmente
         offset = 0.18
         lx = xs[i] * (1 + offset)
         ly = ys[i] * (1 + offset)
@@ -445,7 +483,6 @@ def plot_article_similarity_network(categorized_corpus: Dict[str, Dict], tokens_
         ax.text(lx, ly, labels[i], fontsize=7.5, ha=ha, va="center", fontweight="bold", zorder=4)
 
     ax.set_title(f"Article Similarity Network (Jaccard ≥ {threshold:.2f})", fontsize=13, fontweight="bold", pad=12)
-    # Legenda de espessura da aresta
     legend_handles = [mpatches.Patch(facecolor=_COLORS[0], alpha=0.4, label=f"Similarity ≥ {threshold:.2f}")]
     ax.legend(handles=legend_handles, loc="lower right", fontsize=8)
 
@@ -454,8 +491,14 @@ def plot_article_similarity_network(categorized_corpus: Dict[str, Dict], tokens_
 
     _save(fig, output_dir, "7b_network_similarity.png")
 
-# Árvore de palavras
-def plot_word_tree(tokens_per_article: Dict[str, List[str]], pivot: str = "cloud", n_branches: int = 10, output_dir: str = "visualizations") -> None:
+
+def plot_word_tree(
+    tokens_per_article: Dict[str, List[str]],
+    pivot: str = "cloud",
+    n_branches: int = 10,
+    output_dir: str = "visualizations",
+) -> None:
+    """Grafico 8: arvore de palavras com o contexto (antes/depois) do termo ``pivot``."""
     before_counter: Counter = Counter()
     after_counter: Counter = Counter()
 
@@ -471,10 +514,10 @@ def plot_word_tree(tokens_per_article: Dict[str, List[str]], pivot: str = "cloud
         print(f"  [skip] word tree - pivot '{pivot}' not found in corpus")
         return
 
-    top_before = before_counter.most_common(n_branches)[::-1]   # menor freq em cima
+    top_before = before_counter.most_common(n_branches)[::-1]  # menor frequencia em cima
     top_after = after_counter.most_common(n_branches)[::-1]
 
-    # Layout: 2 sub-plots lado a lado, compartilhando o eixo Y central
+    # Layout com 3 paineis lado a lado, compartilhando o eixo Y central (o pivot)
     fig, (ax_l, ax_c, ax_r) = plt.subplots(
         1, 3,
         figsize=(13, max(5, n_branches * 0.45)),
@@ -482,6 +525,7 @@ def plot_word_tree(tokens_per_article: Dict[str, List[str]], pivot: str = "cloud
     )
 
     def _side_bar(ax, items, is_left: bool) -> None:
+        """Desenha o painel lateral (antes ou depois do pivot) da arvore de palavras."""
         if not items:
             ax.axis("off")
             return
@@ -516,24 +560,24 @@ def plot_word_tree(tokens_per_article: Dict[str, List[str]], pivot: str = "cloud
     _side_bar(ax_l, top_before, is_left=True)
     _side_bar(ax_r, top_after, is_left=False)
 
-    # Coluna central: apenas o pivot
     ax_c.axis("off")
-    ax_c.text(0.5, 0.5, f'"{pivot}"',
-              ha="center", va="center", fontsize=14, fontweight="bold",
-              transform=ax_c.transAxes,
-              bbox=dict(boxstyle="round,pad=0.5", facecolor=_COLORS[4], edgecolor="white", alpha=0.85))
-    ax_c.text(0.5, 0.1, "←  precedes  |  follows  →",
-              ha="center", va="bottom", fontsize=7.5, color="gray",
-              transform=ax_c.transAxes)
-
-    fig.suptitle(
-        f"Word Tree - context of \"{pivot}\" in the corpus",
-        fontsize=13, fontweight="bold", y=1.01,
+    ax_c.text(
+        0.5, 0.5, f'"{pivot}"',
+        ha="center", va="center", fontsize=14, fontweight="bold",
+        transform=ax_c.transAxes,
+        bbox=dict(boxstyle="round,pad=0.5", facecolor=_COLORS[4], edgecolor="white", alpha=0.85),
     )
+    ax_c.text(
+        0.5, 0.1, "←  precedes  |  follows  →",
+        ha="center", va="bottom", fontsize=7.5, color="gray",
+        transform=ax_c.transAxes,
+    )
+
+    fig.suptitle(f'Word Tree - context of "{pivot}" in the corpus', fontsize=13, fontweight="bold", y=1.01)
 
     _save(fig, output_dir, f"8_word_tree_{pivot}.png")
 
-# Gerar todas as visualizações
+
 def generate_all_visualizations(
     categorized_corpus: Dict[str, Dict],
     stage2_corpus: Dict[str, Dict],
@@ -545,9 +589,9 @@ def generate_all_visualizations(
     cooccurrence_window: int = 5,
     similarity_threshold: float = 0.18,
 ) -> None:
+    """Gera as oito visualizacoes analiticas do corpus, em sequencia, e as salva em ``output_dir``."""
     _ensure_dir(output_dir)
 
-    # Usa o tokenizador simples se tokens não forem fornecidos
     if tokens_per_article is None:
         print("[info] tokens_per_article not provided - using fallback tokenizer")
         tokens_per_article = {
@@ -555,7 +599,6 @@ def generate_all_visualizations(
             for fname, paper in categorized_corpus.items()
         }
 
-    # Token list global (todos os artigos concatenados)
     all_tokens: List[str] = []
     for tks in tokens_per_article.values():
         all_tokens.extend(tks)
@@ -564,40 +607,31 @@ def generate_all_visualizations(
           f"{len(all_tokens):,} total tokens")
     print(f"[visualizations] output dir: {os.path.abspath(output_dir)}\n")
 
-    # 1 - Bar: palavras mais citadas
     print("1/8 - Top terms bar chart")
     plot_top_terms_bar(all_tokens, top_n=top_n_terms, output_dir=output_dir)
 
-    # 2 - Word cloud geral
     print("2/8 - General word cloud")
     plot_wordcloud(all_tokens, output_dir=output_dir)
 
-    # 3 - Técnicas mais mencionadas
     print("3/8 - Techniques frequency")
     plot_techniques_frequency(categorized_corpus, output_dir=output_dir)
 
-    # 4 - Evolução temporal
     print("4/8 - Temporal evolution heatmap")
     plot_temporal_evolution(categorized_corpus, tokens_per_article, top_n=top_n_temporal, output_dir=output_dir)
 
-    # 5 - Trabalhos futuros
     print("5/8 - Future work terms")
     plot_future_work_terms(stage2_corpus, output_dir=output_dir)
 
-    # 6 - Co-ocorrência
     print("6/8 - Co-occurrence heatmap")
     plot_cooccurrence_heatmap(tokens_per_article, top_n=top_n_terms, window=cooccurrence_window, output_dir=output_dir)
 
-    # 7a - Heatmap de similaridade
     print("7a/8 - Article similarity heatmap")
     plot_article_similarity_heatmap(categorized_corpus, tokens_per_article, output_dir=output_dir)
 
-    # 7b - Network de similaridade
     print("7b/8 - Article similarity network")
     plot_article_similarity_network(categorized_corpus, tokens_per_article, threshold=similarity_threshold, output_dir=output_dir)
 
-    # 8 - Word tree
     print(f"8/8  - Word tree (pivot='{word_tree_pivot}')")
-    plot_word_tree(tokens_per_article, pivot=word_tree_pivot, n_branches=10, output_dir=output_dir,)
+    plot_word_tree(tokens_per_article, pivot=word_tree_pivot, n_branches=10, output_dir=output_dir)
 
     print(f"\n[done] All visualizations saved to: {os.path.abspath(output_dir)}/")
