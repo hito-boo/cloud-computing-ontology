@@ -267,19 +267,19 @@ Além do que foi pedido, foi gerado:
 ---
 ## Visualizações complementares
 - **Heatmap de coocorrência**
-![bg right:60% fit](output\visualizations\6_heatmap_cooccurrence.png)
+![bg right:60% fit](output/visualizations/6_heatmap_cooccurrence.png)
 ---
 ## Visualizações complementares
 - **Similaridade entre artigos**
-![bg right:60% fit](output\visualizations\7a_heatmap_similarity.png)
+![bg right:60% fit](output/visualizations/7a_heatmap_similarity.png)
 ---
 ## Visualizações complementares
 - **Similaridade entre artigos**
-![bg right:60% fit](output\visualizations\7b_network_similarity.png)
+![bg right:60% fit](output/visualizations/7b_network_similarity.png)
 ---
 ## Visualizações complementares
 - **Árvore de palavras**
-![bg right:60% fit](output\visualizations\8_word_tree_cloud.png)
+![bg right:60% fit](output/visualizations/8_word_tree_cloud.png)
 ---
 
 # 6. Demonstração prática em artigos adicionais
