@@ -1,0 +1,490 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "concepts": "http://host/ontology/cloud-computing#",
+    "id": "@id",
+    "type": "@type",
+    "title": "schema:name",
+    "authors": {
+      "@id": "schema:author",
+      "@container": "@list"
+    },
+    "year": "schema:datePublished",
+    "doi": "schema:identifier",
+    "journal": "schema:isPartOf",
+    "abstract": "schema:abstract",
+    "keywords": {
+      "@id": "schema:keywords",
+      "@container": "@list"
+    },
+    "objective": {
+      "@id": "concepts:hasObjective",
+      "@container": "@list"
+    },
+    "problem": {
+      "@id": "concepts:hasProblem",
+      "@container": "@list"
+    },
+    "methodology": {
+      "@id": "concepts:hasMethodology",
+      "@container": "@list"
+    },
+    "contributions": {
+      "@id": "concepts:hasContribution",
+      "@container": "@list"
+    },
+    "futureWork": {
+      "@id": "concepts:hasFutureWork",
+      "@container": "@list"
+    },
+    "references": {
+      "@id": "schema:citation",
+      "@container": "@list"
+    }
+  },
+  "@graph": [
+    {
+      "id": "urn:article:1-s2-0-s0167404825002883-main",
+      "type": "schema:ScholarlyArticle",
+      "title": "Security and privacy in multi-cloud and hybrid cloud environments: Challenges, strategies, and future directions Sijjad Alia",
+      "authors": [
+        "Dhani Bux Talpur",
+        "Adeel Abro",
+        "Khulud Salem Alshudukhi",
+        "Ghadah Naif Alwakid",
+        "Mamoona Humayun",
+        "Farhan Bashirg",
+        "Shuaib Ahmed Wadhog",
+        "Asadullah Shah"
+      ],
+      "year": "",
+      "doi": "",
+      "journal": "",
+      "abstract": "The rapid adoption of multi-cloud and hybrid cloud environments has revolutionized modern computing \nby enhancing scalability, flexibility, and cost-efficiency. However, these environments introduce significant \nsecurity and privacy challenges due to the distributed nature of data storage, heterogeneous infrastructures, and \nintercloud communications. This review comprehensively examines the critical security and privacy concerns \nassociated with multi-cloud and hybrid cloud architectures, including data confidentiality, access control, \nsecure communication, regulatory compliance, and emerging attack vectors such as cross-cloud threats and \nside-channel attacks. We analyze existing security strategies, including cryptographic techniques, identity and \naccess management (IAM) mechanisms, AI-driven threat detection, and privacy-preserving methodologies. \nFurthermore, we provide a comparative evaluation of these approaches, highlighting their trade-offs in terms of \nsecurity effectiveness, computational overhead, and deployment feasibility. In addition, we explore emerging \ntrends such as post-quantum cryptography, zero-trust architectures, decentralized security frameworks, and \nAI-powered security automation to mitigate evolving threats. Finally, we outline open research challenges and \nfuture directions, emphasizing the need for scalable, adaptive, and regulation-compliant security solutions. \nThis review serves as a foundation for researchers and practitioners aiming to enhance security and privacy \nin multi-cloud and hybrid cloud infrastructures, ensuring robust and resilient cloud computing ecosystems.\nContents\n1. Introduction ...................................................................................................................................................................................................... 2\n1.1. Scope and contributions of the review ..................................................................................................................................................... 3\n1.1.1. Scope of the review .................................................................................................................................................................. 3\n1.1.2. Contributions of the review ....................................................................................................................................................... 4\n2. Overview of multi-cloud and hybrid cloud environments: Analytical approaches ..................................................................................................... 4\n2.1. Architectural overview and taxonomy ...................................................................................................................................................... 4\n2.2. Performance and resource optimization models ......................................................................................................................................... 6\n2.3. Reliability and availability modeling ........................................................................................................................................................ 6\n2.4. Security analysis in multi/hybrid cloud .................................................................................................................................................... 7\n2.5. Data placement and migration strategies .................................................................................................................................................. 8\nE-mail addresses: sijjadali2021@email.szu.edu.cn (S. Ali), dhanibux@hotmail.com (D.B. Talpur) , dr.adeelabro@sabsu.edu.pk (A. Abro) , \nksalshudukhi@ju.edu.sa (K.S. Alshudukhi) , gnalwakid@ju.edu.sa (G.N. Alwakid) , mamoona.humayun@roehampton.ac.uk (M. Humayun) , Farhanb@utar.edu.my \n(F. Bashir) , shuaib@1utar.my (S.A. Wadho) , asadullah@iium.edu.my (A. Shah) .\nS. Ali et al.\n2.6. Latency and network analysis .................................................................................................................................................................. 9\n2.7. Interoperability and service composition .................................................................................................................................................. 9\n3. Security and privacy challenges in multi-cloud and hybrid cloud environments ...................................................................................................... 10\n3.1. Identity and Access Management (IAM) issues .......................................................................................................................................... 11\n3.2. Network security .................................................................................................................................................................................... 11\n3.3. Threats and attack vectors ...................................................................................................................................................................... 11\n3.4. Regulatory and compliance challenges ..................................................................................................................................................... 11\n4. Limitations of multi-cloud approach and practical implementation suggestions ....................................................................................................... 12\n4.1. Interoperability challenges across multi-cloud and hybrid cloud environments ............................................................................................. 14\n4.1.1. Federated identity management across clouds ............................................................................................................................. 14\n4.1.2. Centralized governance and cloud-native policy normalization ..................................................................................................... 14\n4.1.3. Granular access control via ABAC and policy engines .................................................................................................................. 14\n4.1.4. Formal verification and interoperability testing framework .......................................................................................................... 14\n5. Existing security and privacy strategies ................................................................................................................................................................ 14\n6. Comparative analysis of security strategies ........................................................................................................................................................... 16\n7. Emerging trends and future directions ................................................................................................................................................................. 17\n8. Open challenges and research opportunities ......................................................................................................................................................... 18\n8.1. Scalability of security mechanisms in large-scale multi-cloud environments ................................................................................................. 18\n8.2. Optimizing security-cost trade-offs in hybrid cloud deployments ................................................................................................................ 19\n8.3. Ensuring compliance with evolving data protection regulations .................................................................................................................. 19\n8.4. Research questions and proposed solutions ............................................................................................................................................... 19\n9. Conclusion ........................................................................................................................................................................................................ 20\n9.1. Recommendations for cloud security research and development ................................................................................................................. 21\n CRediT authorship contribution statement ........................................................................................................................................................... 21\n Declaration of competing interest ........................................................................................................................................................................ 21\n Acknowledgments .............................................................................................................................................................................................. 21\n Data availability ................................................................................................................................................................................................ 21\n References ......................................................................................................................................................................................................... 21",
+      "keywords": [
+        "Multi-cloud security",
+        "Hybrid cloud privacy",
+        "Cryptographic techniques",
+        "Zero-trust architecture",
+        "AI-driven cybersecurity",
+        "Post-quantum cryptography",
+        "Secure data sharing"
+      ],
+      "objective": [],
+      "problem": [
+        "(5) A discussion of emerging research challenges and open problems, offering insights into future directions for the development of resilient and scalable security architectures.",
+        "In a multi-cloud scenario, we are often interested in load-balancing resource assignments subject to both capacity and cost constraints (Suresh et al., 2024 ; Zhang et al., 2021b ; Kanbar and Faraj , 2022 ), forming a constrained optimization problem: min⃗ 𝑥𝑓𝑐𝑜𝑠𝑡(⃗ 𝑥) subject to 𝐴⃗ 𝑥≤⃗𝑏, where matrix 𝐴∈R𝑚×𝑛 encodes resource limits across clouds and ⃗𝑏∈R𝑚 denotes maximum capacity per region or service type.",
+        "This gives rise to an interoperability graph 𝐺𝑖𝑛𝑡𝑒𝑟𝑜𝑝 , and finding the largest clique in 𝐺𝑖𝑛𝑡𝑒𝑟𝑜𝑝 gives the maximum interoperable subsystem, an NP-complete problem that can be heuristically solved using graph coloring algorithMs. Further, the cloud control and orchestration plane can be abstracted as a finite-state machine (FSM) = (𝑆,𝛴,𝛿,𝑠0,𝐹), where 𝑆 is the set of orchestration states (e.g., ''provisioned'', ''scaling'', ''decommissioning''), 𝛴 is the input set (e.g., demand surge, policy violation), 𝛿 is the transition function, and 𝑠0 and 𝐹 are the initial and terminal states respectively."
+      ],
+      "methodology": [
+        "In today's era of rapid technological advancement and dynamic market conditions, organizations require agile IT frameworks capable of adapting to fluctuating workloads, diverse application requirements, and stringent security protocols (Dugbartey and Kehinde , 2025 ; Mishra and Agarwal , 2024 ).",
+        "Moreover, the emergence of new technologies such as cloud computing has introduced additional security threats and challenges, necessitating the implementation of enhanced and uniform security protocols across cloud platforMs. These include standardized identity and access management (IAM) methods, encryption techniques, and threat detection mechanisms (Singh et al., 2016 ; Praveenadevi et al., 2024 ).",
+        "Framework for addressing cloud security challenges through strategic mitigation and advanced security integration. not just information privacy, but the entire trust infrastructure of the system (Singh et al., 2024 ; Ponde , 2025 ; Akbar et al., 2024 ; Shilpa , 2024 )."
+      ],
+      "contributions": [],
+      "futureWork": [
+        "With the advancement of technology and the enforcement of global data privacy laws, organizations are now required to develop comprehensive compliance frameworks capable of monitoring regulatory landscapes in real-time while minimizing the risks associated with cross-border data handling.Computers & Security 157 (2025) 104599 S. Ali et al. Finally, this study defines the open issues and future research directions mentioned extensively in the literature.",
+        "By integrating AI-driven security automation, advanced cryptographic techniques, and policyaware cloud management frameworks, future research and development can significantly improve the resilience and trustworthiness of cloud computing ecosysteMs. Collaboration among organizations, cloud service providers, and the research community will be crucial to driving advancements in cloud security, ultimately fostering a safer, more efficient, and regulation-compliant digital infrastructure."
+      ],
+      "references": [
+        "Abbas, H., Emmanuel, N., Amjad, M.F., Yaqoob, T., Atiquzzaman, M., Iqbal, Z.,",
+        "Shafqat, N., Shahid, W.B., Tanveer, A., Ashfaq, U., 2023. Security assessment and evaluation of VPNs: a comprehensive survey. ACM Comput. Surv. 55 (13s), 1-47.",
+        "Abdo, J.B., 2021. Corporate Decision-Making for the Adoption of Cloud Computing: Economic and Organizational Factors (Doctoral dissertation). Université Paris-Saclay.",
+        "Abeywickrama, T., Liang, V., Tan, K.-L., 2021. Optimizing bipartite matching in realworld applications by incremental cost computation. Proc. the VLDB Endow. 14 (7), 1150-1158.",
+        "Acar, A., Aksu, H., Uluagac, A.S., Conti, M., 2018. A survey on homomorphic encryption schemes: Theory and implementation. ACM Comput. Surv. ( Csur) 51 (4), 1-35.",
+        "Aisyah, N., Hidayat, R., Zulaikha, S., Rizki, A., Yusof, Z.B., Pertiwi, D., Ismail, F., 2019. Artificial intelligence in cryptographic protocols: Securing E-commerce transactions and ensuring data integrity.",
+        "Akbar, M., Waseem, M.M., Mehanoor, S.H., Barmavatu, P., 2024. Blockchain-based cyber-security trust model with multi-risk protection scheme for secure data transmission in cloud computing. Clust. Comput. 27 (7), 9091-9105. AKHTAR, N.S.I., 2025. Inter Cloud Security Framework for Handling of Data (Doctoral dissertation, ). National University of Sciences and Technology.",
+        "Akhtar, S.I., Rauf, A., Amjad, M.F., Abbas, H., 2022. Inter-cloud data security framework, compliance and trust.",
+        "Akinade, A.O., Adepoju, P.A., Ige, A.B., Afolabi, A.I., 2025. Cloud security challenges and solutions: A review of current best practices. Int J Multidiscip Res Growth Eval 6 (1), 26-35.",
+        "Alam, A.B., Fadlullah, Z.M., Choudhury, S., 2021. A resource allocation model based on trust evaluation in multi-cloud environments. IEEE Access 9, 105577-105587.",
+        "Alejandra, R., Elena, P., 2025. Privacy-preserving ai models for cloud and edge computing security. Synerg.: Cross- Discipl. J. Digit. Investig. 3 (3), 1-19.",
+        "Ali, S., Wadho, S.A., Yichiet, A., Gan, M.L., Lee, C.K., 2024. Advancing cloud security: Unveiling the protective potential of homomorphic secret sharing in secure cloud computing. Egypt. Informatics J. 27, 100519.",
+        "Ali, S., Wadho, S.A., Yichiet, A., Prince, N.U., Gan, M.L., Lee, C.K., 2025a. Dynamic secret sharing for enhanced cloud security: Tackling eavesdropping and threshold attacks. Egypt. Informatics J. 30, 100660.",
+        "Ali, S., Wang, J., Leung, V.C.M., 2023. Defensive strategies against PCC attacks based on ideal (t, n)-secret sharing scheme. J. King Saud University- Comput. Inf. Sci. 35 (9), 101784.",
+        "Ali, S., Wang, J., Leung, V.C.M., 2025b. AI-driven fusion with cybersecurity: Exploring current trends, advanced techniques, future directions, and policy implications for evolving paradigms-a comprehensive review. Inf. Fusion 102922.Computers & Security 157 (2025) 104599 S. Ali et al.",
+        "Aminu, M., Akinsanya, A., Dako, D.A., Oyedokun, O., 2024. Enhancing cyber threat detection through real-time threat intelligence and adaptive defense mechanisms. Int. J. Comput. Appl. Technol. Res. 13 (8), 11-27.",
+        "Amiri, Z., Heidari, A., Navimipour, N.J., Unal, M., 2023. Resilient and dependability management in distributed environments: A systematic and comprehensive literature review. Clust. Comput. 26 (2), 1565-1600.",
+        "Anderson, O., Bragin, M.A., Yu, N., 2025. Optimizing deep decarbonization pathways in california with power system planning using surrogate level-based Lagrangian relaxation. Appl. Energy 377, 124348.",
+        "Andrikopoulos, V., Binz, T., Leymann, F., Strauch, S., 2013. How to adapt applications for the cloud environment: Challenges and solutions in migrating applications to the cloud. Computing 95, 493-535.",
+        "Anh, N.H., 2024. Hybrid cloud migration strategies: Balancing flexibility, security, and cost in a multi-cloud environment. Trans. Mach. Learn. Artif. Intell. Adv. Intell. Syst. 14 (10), 14-26.",
+        "Arogundade, O.R., Palla, K., 2023. Virtualization revolution: Transforming cloud computing with scalability and agility.",
+        "Arumugam, K.J., 2024. Behind the cloud: Uncovering critical security threats. Available At SSRN 5160686.",
+        "Asha, S., Shanmugapriya, D., 2024. Understanding insiders in cloud adopted organizations: A survey on taxonomies, incident analysis, defensive solutions, challenges. Future Gener. Comput. Syst..",
+        "Awaysheh, F.M., Aladwan, M.N., Alazab, M., Alawadi, S., Cabaleiro, J.C., Pena, T.F., 2021. Security by design for big data frameworks over cloud computing. IEEE Trans. Eng. Manage. 69 (6), 3676-3693.",
+        "Badirova, A., Dabbaghi, S., Moghaddam, F.F., Wieder, P., Yahyapour, R., 2023. A survey on identity and access management for cross-domain dynamic users: issues, solutions, and challenges. IEEE Access 11, 61660-61679.",
+        "Baladari, V., 2024. Enhancing performance and security in multi-cloud and hybrid-cloud environments. International Journal of Core Engineering & Management 7 (11).",
+        "Battleson, D.A., West, B.C., Kim, J., Ramesh, B., Robinson, P.S., 2016. Achieving dynamic capabilities with cloud computing: An empirical investigation. Eur. J. Inf. Syst. 25 (3), 209-230. Bécue, A., Praça, I., Gama, J., 2021. Artificial intelligence, cyber-threats and industry 4.0: Challenges and opportunities. Artif. Intell. Rev. 54 (5), 3849-3886.",
+        "Beniwal, R., Kumar, V., Sharma, V., 2025. A multi-cluster security framework for healthcare IoT: The synergy of redundant Byzantine fault tolerance with extensions and coati-based network. Trans. Emerg. Telecommun. Technol. 36 (3), e70098.",
+        "Bergkamp, L., 2002. EU data protection policy: the privacy fallacy: adverse effects of europe's data protection policy in an information-driven economy. Comput. Law Secur. Rev. 18 (1), 31-47.",
+        "Bernabe, J.B., Canovas, J.L., Hernandez-Ramos, J.L., Moreno, R.T., Skarmeta, A., 2019. Privacy-preserving solutions for blockchain: Review and challenges. Ieee Access 7, 164908-164940.",
+        "Bharathan, R., 2025. Securing the future of AI: A deep compliance review of anthropic, google DeepMind, and openai under SOC 2, ISO 27001, and NIST.",
+        "Bieger, V., 2023. A Decision Support Framework for Multi-Cloud Service Composition. (Master's thesis).",
+        "Brabra, H., 2020. Supporting Management and Orchestration of Cloud Resources in a Multi-Cloud Environment (Doctoral dissertation). Institut Polytechnique de Paris; Université de Sfax (Tunisie). Faculté des . . . .",
+        "Chang, V., Kuo, Y.-H., Ramachandran, M., 2016. Cloud computing adoption framework: A security framework for business clouds. Future Gener. Comput. Syst. 57, 24-41.",
+        "Chatterjee, S., 2021. A comparative study between NERC-CIP and NIST compliancedefining the critical framework for building cyberrisk free infrastructure. ESP Journal of Engineering & Technology Advancements 1 (1), 273-281.",
+        "Chauhan, M., Shiaeles, S., 2023. An analysis of cloud security frameworks, problems and proposed solutions. Network 3 (3), 422-450.",
+        "Chauke, K.O., Makondo, N., Muchenje, T., 2025. Enhancing network security in multi-cloud environments through adaptive threat detection. p. 8.",
+        "Chen, T., Ling, Q., Giannakis, G.B., 2017. Learn-and-adapt stochastic dual gradients for network resource allocation. IEEE Trans. Control. Netw. Syst. 5 (4), 1941-1951.",
+        "Chen, K., Orabona, F., 2023. Generalized implicit follow-the-regularized-leader. In: International Conference on Machine Learning. PMLR, pp. 4826-4838.",
+        "Cheng, X., Wu, Y., Min, G., Zomaya, A.Y., 2018. Network function virtualization in dynamic networks: A stochastic perspective. IEEE J. Sel. Areas Commun. 36 (10), 2218-2232.",
+        "Ciavotta, M., Ardagna, D., Gibilisco, G.P., 2017. A mixed integer linear programming optimization approach for multi-cloud capacity allocation. J. Syst. Softw. 123, 64-78.",
+        "Clempner, J.B., 2016. Necessary and sufficient karush-kuhn-tucker conditions for multiobjective markov chains optimality. Automatica 71, 135-142.",
+        "Council, N.R., on Engineering, D., Sciences, P., Science, C., Board, T., on Physical Sciences, C., Mathematics, Applications, on Maintaining Privacy, C., in Health Care Applications of the National Information Infrastructure, S., 1997. For the record: protecting electronic health information.",
+        "Dasmen, R.N., Purwanto, T.D., et al., 2025. Implementation of tarpit firewall for network security optimization with the NIST SP800-86 method in KP room. Tech- E 8 (2), 75-85.Di Federico, G., Barcaroli, F., 2022. Cloud Identity Patterns and Strategies: Design Enterprise Cloud Identity Models with Oauth 2.0 and Azure Active Directory. Packt Publishing Ltd.",
+        "Diamantopoulou, V., Tsohou, A., Karyda, M., 2020. From ISO/IEC27001: 2013 and ISO/IEC27002: 2013 to GDPR compliance controls. Inf. Comput. Secur. 28 (4), 645-662.",
+        "Dib, O., Rababah, B., 2020. Decentralized identity systems: Architecture, challenges, solutions and future directions. Ann. Emerg. Technol. Comput. ( AETiC) 4 (5), 19-40.",
+        "Dugbartey, A.N., Kehinde, O., 2025. Optimizing project delivery through agile methodologies: Balancing speed, collaboration and stakeholder engagement.",
+        "Ekundayo, F., Atoyebi, I., Soyele, A., Ogunwobi, E., 2024. Predictive analytics for cyber threat intelligence in fintech using big data and machine learning. Int J Res Publ Rev 5 (11), 1-15.",
+        "El-Awady, A., Ponnambalam, K., 2021. Integration of simulation and Markov chains to support Bayesian networks for probabilistic failure analysis of complex systems. Reliab. Eng. Syst. Saf. 211, 107511.",
+        "Esposito, C., 2018. Interoperable, dynamic and privacy-preserving access control for cloud data storage when integrating heterogeneous organizations. J. Netw. Comput. Appl. 108, 124-136. Fernández, A., del Río, S., López, V., Bawakid, A., del Jesus, M.J., Benítez, J.M.,",
+        "Herrera, F., 2014. Big data with cloud computing: an insight on the computing environment, MapReduce, and programming frameworks. Wiley Interdiscip. Rev.: Data Min. Knowl. Discov. 4 (5), 380-409.",
+        "Ferraiolo, D., Atluri, V., Gavrila, S., 2011. The policy machine: A novel architecture and framework for access control policy specification and enforcement. J. Syst. Archit. 57 (4), 412-424.",
+        "Fischer, A., 2023. Data sovereignty and E-governance: The legal implications of national laws on digital government systems. Leg. Stud. Digit. Age 2 (4), 1-12.",
+        "Gai, S., 2020. Building a future-proof cloud infrastructure.",
+        "Garcia-Teodoro, P., Diaz-Verdejo, J., Maciá-Fernández, G., Vázquez, E., 2009. Anomalybased network intrusion detection: Techniques, systems and challenges. Comput. Secur. 28 (1-2), 18-28.",
+        "Gaur, K., Kalla, A., Grover, J., Borhani, M., Gurtov, A., Liyanage, M., 2021. A survey of virtual private LAN services (VPLS): Past, present and future. Comput. Netw. 196, 108245.",
+        "Gbadebo, M.O., Salako, A., Selesi-Aina, O., Ogungbemi, O.S., Olateju, O., Olaniyi, O.O., 2024. Augmenting data privacy protocols and enacting regulatory frameworks for cryptocurrencies via advanced blockchain methodologies and artificial intelligence. J. Eng. Res. Rep. 26 (11), 10-9734.",
+        "Ghahramani, M.H., Zhou, M., Hon, C.T., 2017. Toward cloud computing QoS architecture: Analysis of cloud systems and cloud services. IEEE/ CAA J. Autom. Sin. 4 (1), 6-18.",
+        "Grandinetti, L., 2013. Pervasive Cloud Computing Technologies: Future Outlooks and Interdisciplinary Perspectives: Future Outlooks and Interdisciplinary Perspectives. IGI Global.",
+        "Gupta, D., 2024. The Cloud Computing Journey: Design And Deploy Resilient and Secure Multi-Cloud Systems with Practical Guidance. Packt Publishing Ltd.",
+        "Gupta, M., Bhatt, S., Alshehri, A.H., Sandhu, R., 2022a. Access Control Models and Architectures For IoT And Cyber Physical Systems. Springer.",
+        "Gupta, L., Salman, T., Ghubaish, A., Unal, D., Al-Ali, A.K., Jain, R., 2022b. Cybersecurity of multi-cloud healthcare systems: A hierarchical deep learning approach. Appl. Soft Comput. 118, 108439.",
+        "Gupta, I., Singh, A.K., Lee, C.-N., Buyya, R., 2022c. Secure data storage and sharing techniques for data protection in cloud environments: A systematic review, analysis, and future directions. IEEE Access 10, 71247-71277.",
+        "Habbal, A., Ali, M.K., Abuzaraida, M.A., 2024. Artificial intelligence trust, risk and security management (AI trism): Frameworks, applications, challenges and future research directions. Expert Syst. Appl. 240, 122442.",
+        "Habib, G., Sharma, S., Ibrahim, S., Ahmad, I., Qureshi, S., Ishfaq, M., 2022. Blockchain technology: benefits, challenges, applications, and integration of blockchain technology with cloud computing. Futur. Internet 14 (11), 341.",
+        "Habiba, U., Masood, R., Shibli, M.A., Niazi, M.A., 2014. Cloud identity management security issues & solutions: a taxonomy. Complex Adapt. Syst. Model. 2, 1-37.",
+        "Habibzadeh, H., Nussbaum, B.H., Anjomshoa, F., Kantarci, B., Soyata, T., 2019. A survey on cybersecurity, data privacy, and policy issues in cyber-physical system deployments in smart cities. Sustain. Cities Soc. 50, 101660. Hashem, I.A.T., Yaqoob, I., Anuar, N.B., Mokhtar, S., Gani, A., Khan, S.U., 2015. The rise of ''big data'' on cloud computing: Review and open research issues. Inf. Syst. 47, 98-115.",
+        "Hassan, M.U., Rehmani, M.H., Chen, J., 2019. Differential privacy techniques for cyber physical systems: A survey. IEEE Commun. Surv. & Tutorials 22 (1), 746-789. Horváth, M., Kis, T., 2016. Solving resource constrained shortest path problems with LP-based methods. Comput. Oper. Res. 73, 150-164.",
+        "Hoz, A.P., Canales, A.H., Álvarez, E.C., Ruiz, M.O., García, Á.L., 2025. DataLab as a service: Distributed computing framework for multi-interactive analysis environments. IEEE Access.",
+        "Huang, Y., Yu, Y., Li, H., Li, Y., Tian, A., 2022. Blockchain-based continuous data integrity checking protocol with zero-knowledge privacy protection. Digit. Commun. Networks 8 (5), 604-613.Computers & Security 157 (2025) 104599 S. Ali et al.",
+        "Humayun, M., Jhanjhi, N., Alsayat, A., Ponnusamy, V., 2021. Internet of things and ransomware: Evolution, mitigation and prevention. Egypt. Informatics J. 22 (1), 105-117.",
+        "Inayat, Z., 2017. On the Prevention of Cross-VM Cache-based Side Channel Attacks (Doctoral dissertation). University of Malaya (Malaysia).",
+        "Indu, I., Anand, P.R., Bhaskar, V., 2018. Identity and access management in cloud environment: Mechanisms and challenges. Eng. Sci. Technol. an Int. J. 21 (4), 574-588.",
+        "Islam, M.R., 2024. Secure multi-cloud architectures: Best practices for data protection. J. Artif. Intell. Gen. Sci. ( JAIGS) ISSN: 3006- 4023 6 (1), 564-576.",
+        "Jansen, W., Grance, T., et al., 2011. Guidelines on security and privacy in public cloud computing.",
+        "Ji, Z., Lipton, Z.C., Elkan, C., 2014. Differential privacy and machine learning: a survey and review. arXiv preprint arXiv:1412.7584 .",
+        "Jimmy, F., 2024. Cyber security vulnerabilities and remediation through cloud security tools. J. Artif. Intell. Gen. Sci. ( JAIGS) ISSN: 3006- 4023 2 (1), 129-171.",
+        "JohnPaul, A.C., Nwalozie, G., 2024. Investigating and addressing security policy misconfigurations. IOSR Journal of Engineering (IOSRJEN) 14 (4), 1-12, www. iosrjen.org .",
+        "Julakanti, S.R., Sattiraju, N., Julakanti, R., 2022. Multi-cloud security: Strategies for managing hybrid environments. NeuroQuantology 20 (11), 10063-10074.",
+        "Kaaniche, N., Laurent, M., 2017. Data security and privacy preservation in cloud storage environments based on cryptographic mechanisms. Comput. Commun. 111, 120-141.",
+        "Kanagavelu, R., Li, Z., Samsudin, J., Yang, Y., Yang, F., Goh, R.S.M., Cheah, M.,",
+        "Wiwatphonthana, P., Akkarajitsakul, K., Wang, S., 2020. Two-phase multiparty computation enabled privacy-preserving federated learning. In: 2020 20th IEEE/ACM International Symposium on Cluster, Cloud and Internet Computing. CCGRID, IEEE, pp. 410-419.",
+        "Kanbar, A.B., Faraj, K., 2022. Region aware dynamic task scheduling and resource virtualization for load balancing in IoT-fog multi-cloud environment. Future Gener. Comput. Syst. 137, 70-86.",
+        "Karimi, N., Feylizadeh, M.R., Govindan, K., Bagherpour, M., 2022. Fuzzy multi-objective programming: A systematic literature review. Expert Syst. Appl. 196, 116663.",
+        "Karnwal, T., Sivakumar, T., Aghila, G., 2011. Cloud services in different cloud deployment models: An overview. Int. J. Comput. Appl. 34 (8), 30-36.",
+        "Kaul, D., Khurana, R., 2021. AI to detect and mitigate security vulnerabilities in APIs: Encryption, authentication, and anomaly detection in enterprise-level distributed systems. Eig. Rev. Sci. Technol. 5 (1), 34-62.",
+        "Kazempour, N., Mirmohseni, M., Aref, M.R., 2025. Information-theoretic privacypreserving user authentication. Int. J. Inf. Secur. 24 (1), 22.",
+        "Khaleel, M.I., 2024. Enhancing the resilience of error-prone computing environments using a hybrid multi-objective optimization algorithm for edge-centric cloud computing systems. Neural Comput. Appl. 36 (18), 10733-10760.",
+        "Klamroth, K., Jørgen, T., 2007. Constrained optimization using multiple objective programming. J. Global Optim. 37, 325-355.",
+        "Kodakandla, N., 2024. Hybrid cloud strategies: Optimizing resource allocation for competitive advantage in US enterprises. J. Curr. Sci. Res. Rev. 2 (01), 01-17.",
+        "Kommera, A.R., 2013. The role of distributed systems in cloud computing: Scalability, efficiency, and resilience. NeuroQuantology 11 (3), 507-516.",
+        "Kramer, O., Kramer, O., 2017. Genetic Algorithms. Springer.",
+        "Lavin, R., Liu, X., Mohanty, H., Norman, L., Zaarour, G., Krishnamachari, B., 2024. A survey on the applications of zero-knowledge proofs. arXiv preprint arXiv: 2408.00243 .",
+        "Li, L., Fan, Y., Tse, M., Lin, K.-Y., 2020a. A review of applications in federated learning. Comput. Ind. Eng. 149, 106854.",
+        "Li, W., Guo, H., Nejad, M., Shen, C.-C., 2020b. Privacy-preserving traffic management: A blockchain and zero-knowledge proof inspired approach. IEEE Access 8, 181733-181743.",
+        "Liu, S., Chan, F.T., Yang, J., Niu, B., 2018. Understanding the effect of cloud computing on organizational agility: An empirical examination. Int. J. Inf. Manage. 43, 98-111.",
+        "Ma, J., Zhu, C., Fu, Y., Zhang, H., Xiong, W., 2024. Cloud computing resource scheduling method based on optimization theory. Informatica 48 (23). Mannan Javed, N.T., Khan, F.A., Ashraf, M., 2025. 14 access control techniques for cloud computing. Secur. Digit. Realm: Adv. Hardw. Softw. Secur. Commun. Forensics 147.",
+        "Manvi, S.S., Shyam, G.K., 2014. Resource management for infrastructure as a service (iaas) in cloud computing: A survey. J. Netw. Comput. Appl. 41, 424-440.",
+        "Marx, D., Magne, P., Nahid-Mobarakeh, B., Pierfederici, S., Davat, B., 2011. Large signal stability analysis tools in DC power systems with constant power loads and variable power loads-A review. IEEE Trans. Power Electron. 27 (4), 1773-1787.",
+        "Mathur, P., 2024. Cloud computing infrastructure, platforms, and software for scientific research. High Perform. Comput. Biomimetics: Model. Archit. Appl. 89-127.",
+        "Mazhar, A., Alam, S.S., Zheng, W.X., Chen, Y., Nath, S., Xu, T., 2025. Fidelity of cloud emulators: The imitation game of testing cloud-based software. In: 2025 IEEE/ACM 47th International Conference on Software Engineering. ICSE, IEEE Computer Society, 614-614.",
+        "Mbah, G.O., 2024. Data privacy in the era of AI: Navigating regulatory landscapes for global businesses.Merseedi, K.J., Zeebaree, S.R., 2024. The cloud architectures for distributed multicloud computing: a review of hybrid and federated cloud environment. Indones. J. Comput. Sci. 13 (2).",
+        "Mia, A., Chloe, L., 2024. Optimizing hybrid and multi-cloud architectures for real-time analytics and data-driven decisions.",
+        "Mishra, R.K., Agarwal, R., 2024. Impact of digital evolution on various facets of computer science and information technology. Digit. Evol.: Adv. Comput. Sci. Inf. Technol. 17.",
+        "Morrison, D.R., Jacobson, S.H., Sauppe, J.J., Sewell, E.C., 2016. Branch-and-bound algorithms: A survey of recent advances in searching, branching, and pruning. Discrete Optim. 19, 79-102.",
+        "Murray, W., Ng, K.-M., 2010. An algorithm for nonlinear optimization problems with binary variables. Comput. Optim. Appl. 47 (2), 257-288.",
+        "Naik, N., Jenkins, P., 2017. Securing digital identities in the cloud by selecting an apposite federated identity management from SAML, oauth and openid connect. In: 2017 11th International Conference on Research Challenges in Information Science. RCIS, IEEE, pp. 163-174.",
+        "Nair, R.R., Sreevidya, D., Mohan, C.R., Banerjee, J., Chouhan, K., et al., 2024. Comprehensive approaches to securing multi-cloud architectures: Best practices and emerging solutions. In: 2024 7th International Conference on Contemporary Computing and Informatics (IC3I). Vol. 7, IEEE, pp. 1631-1636.",
+        "Nawrocki, P., Smendowski, M., 2025. A survey of cloud resource consumption optimization methods. J. Grid Comput. 23 (1), 5.",
+        "Nazir, S., Shahzad, K., Khan, S.A., 2025. Developing a framework for cloud computing adoption in academic libraries: an empirical investigation from university librarians. Glob. Knowl. Mem. Commun.. Neto, J.P.A., Pianto, D.M., Ralha, C.G., 2019. MULTS: A multi-cloud fault-tolerant architecture to manage transient servers in cloud computing. J. Syst. Archit. 101, 101651.",
+        "Nwatuzie, G.A., Enyejo, L.A., Umeaku, C., 2025. Enhancing cloud data security using a hybrid encryption framework integrating AES, DES, and RC6 with file splitting and steganographic key management. Int. J. Innov. Sci. Res. Technol. 10 (1).",
+        "Obi, O.C., Dawodu, S.O., Daraojimba, A.I., Onwusinkwue, S., Akagha, O.V., Ahmad, I.A.I., 2024. Review of evolving cloud computing paradigms: security, efficiency, and innovations. Comput. Sci. & IT Res. J. 5 (2), 270-292.",
+        "Oladosu, S.A., Ike, C.C., Adepoju, P.A., Afolabi, A.I., Ige, A.B., Amoo, O.O., 2021. Advancing cloud networking security models: Conceptualizing a unified framework for hybrid cloud and on-premises integrations. Magna Sci. Adv. Res. Rev..",
+        "Orabona, F., Crammer, K., Cesa-Bianchi, N., 2015. A generalized online mirror descent with applications to classification and regression. Mach. Learn. 99, 411-435.",
+        "Osinuga, P., Chin, J.-J., Lau, T.S.C., 2025. Implementing identity-based signature schemes for secure data transfer in cloud computing environments. J. Informatics Web Eng. 4 (1), 111-128.",
+        "Otta, S.P., 2023. Novel Multi-Factor Authentication Approach for Multi-Cloud Computing Systems (Doctoral dissertation). BITS PILANI, Hyderabad campus.",
+        "Parmar, H., Gosai, A., 2015. Analysis and study of network security at transport layer. Int. J. Comput. Appl. 121 (13), 21604-24716.",
+        "Patel, H.B., Kansara, N., 2021. Cloud computing deployment models: A comparative study. Int. J. Innov. Res. Comput. Sci. Technol. ( IJIRCST).",
+        "Ponde, P., 2025. Security and privacy considerations in cloud-based education. In: Bridging Academia and Industry Through Cloud Integration in Education. IGI Global Scientific Publishing, pp. 175-194.",
+        "Ponnusamy, A., Spanner, A., 2023. Technology Operating Models for Cloud and Edge: Create Your Purpose-Built Distributed Operating Model for Public, Hybrid, Multicloud, and Edge. Packt Publishing Ltd.",
+        "Poojara, S.R., Dehury, C.K., Jakovits, P., Srirama, S.N., 2022. Serverless data pipeline approaches for IoT data in fog and cloud computing. Future Gener. Comput. Syst. 130, 91-105.",
+        "Powell, B.A., 2020. The epidemiology of lateral movement: exposures and countermeasures with network contagion models. J. Cyber Secur. Technol. 4 (2), 67-105.",
+        "Pozveh, A.J., Mazinani, S.M., Faraji Shoyari, M., 2024. Interoperability and portability in big data analysis based cloud-fog-edge-dew computing. In: Resource Management in Distributed Systems. Springer, pp. 209-245.",
+        "Praveenadevi, D., Saxena, M., Suganya, T., Bhavana, M., Yadav, B.N., Wakuma, L., 2024. Harnessing cloud technologies for secure E-commerce. In: Strategies for E- Commerce Data Security: Cloud, Blockchain, AI, and Machine Learning. IGI Global, pp. 310-332.",
+        "Putri, A., 2025. Multi-cloud strategies for managing big data workflows and ai applications in decentralized government systems. J. Comput. Intell. Hybrid Cloud Edge Comput. Networks 9 (1), 1-11.",
+        "Qazi, F., 2022. Application programming interface (API) security in cloud applications. EAI Endorsed Trans. Cloud Syst. 7 (23), e1-e1.",
+        "Raja, V., et al., 2024. Exploring challenges and solutions in cloud computing: A review of data security and privacy concerns. J. Artif. Intell. Gen. Sci. ( JAIGS) ISSN: 3006- 4023 4 (1), 121-144.",
+        "Reece, M.L., 2024. Multi-cloud identity security utilizing Self-Sovereign Identity (Doctoral dissertation). Mississippi State University.",
+        "Reyna, A., Martín, C., Chen, J., Soler, E., Díaz, M., 2018. On blockchain and its integration with IoT. Challenges and opportunities. Future Gener. Comput. Syst. 88, 173-190.Computers & Security 157 (2025) 104599 S. Ali et al.",
+        "Routh, A.K., Ranjan, P., 2024. Uncovering cloud security complexities-a comprehensive five-perspective taxonomic review.",
+        "Ryan, M., 2021. Ransomware Revolution: the Rise of a Prodigious Cyber Threat. Vol. 85, Springer.",
+        "Sadique, A., Sehar, H., Nasim, S., Nasim, F., 2025. Data exposure risks in hybrid vs. multi-cloud migrations: a comparative analysis. J. Appl. Linguist. TESOL ( JALT) 8 (1), 213-224.",
+        "Sapkal, A., Heisnam, L., Kusi, S.S., 2024. Evolution of cloud computing: Milestones, innovations, and adoption trends.",
+        "Sarimveis, H., Patrinos, P., Tarantilis, C.D., Kiranoudis, C.T., 2008. Dynamic modeling and control of supply chain systems: A review. Comput. Oper. Res. 35 (11), 3530-3561.",
+        "Sarkar, S., Wankar, R., Srirama, S.N., Suryadevara, N.K., 2019. Serverless management of sensing systems for fog computing framework. IEEE Sensors J. 20 (3), 1564-1572.",
+        "Savu, L., 2011. Cloud computing: Deployment models, delivery models, risks and research challenges. In: 2011 International Conference on Computer and Management. CAMAN, IEEE, pp. 1-4.",
+        "Saxena, D., Gupta, R., Singh, A.K., 2021. A survey and comparative study on multicloud architectures: emerging issues and challenges for cloud federation. arXiv preprint arXiv:2108.12831 .",
+        "Segun-Falade, O.D., Osundare, O.S., Kedi, W.E., Okeleke, P.A., Ijomah, T.I., Abdul-",
+        "Azeez, O.Y., 2024. Assessing the transformative impact of cloud computing on software deployment and management. Comput. Sci. & IT Res. J. 5 (8).",
+        "Servos, D., Osborn, S.L., 2017. Current research and open problems in attribute-based access control. ACM Comput. Surv. 49 (4), 1-45.",
+        "Sevencan, C., 2024. Optimizing Web Delivery: The Impact Of Rendering Methods On User Experience Across Network Conditions. (Master's thesis). California Polytechnic State University.",
+        "Shah, N., Bhagat, N., Shah, M., 2021. Crime forecasting: a machine learning and computer vision approach to crime prediction and prevention. Vis. Comput. Ind. Biomed. Art 4 (1), 9.",
+        "Shilpa, M., 2024. Navigating privacy and security in cloud computing. Recent. Trends Parallel Comput. 11 (02), 1-10.",
+        "Shir, O.M., Emmerich, M., 2024. Multi-objective mixed-integer quadratic models: A study on mathematical programming and evolutionary computation. IEEE Trans. Evol. Comput..",
+        "Shrivastava, S., Agrawal, Y., 2024. Multi-cloud deployments and hybrid cloud architecture.",
+        "Shukla, S., Varshney, G., Singh, S., Goel, S., 2024. A passwordless MFA utlizing biometrics, proximity and contactless communication. arXiv preprint arXiv:2406. 09000 .",
+        "Silva, A., Callou, G., 2025. Models for availability evaluation of file servers in private clouds. Computing 107 (1), 1-27.",
+        "Singh, N., Buyya, R., Kim, H., 2024. Securing cloud-based internet of things: challenges and mitigations. Sensors 25 (1), 79.",
+        "Singh, S., Jeong, Y.-S., Park, J.H., 2016. A survey on cloud computing security: Issues, threats, and solutions. J. Netw. Comput. Appl. 75, 200-222.",
+        "Snehi, M., Bhandari, A., 2021. Vulnerability retrospection of security solutions for software-defined cyber-physical system against ddos and IoT-ddos attacks. Comput. Sci. Rev. 40, 100371.",
+        "Somasundaram, P., 2022. Navigating regulatory compliance in multi-cloud environments: Challenges and technological solutions. International Journal of Core Engineering & Management 7 (2).",
+        "Soni, P.K., Dhurwe, H., 2024. Challenges and open issues in cloud computing services. In: Advanced Computing Techniques for Optimization in Cloud. Chapman and Hall/CRC, pp. 19-37.",
+        "Sun, P.J., 2019. Privacy protection and data security in cloud computing: a survey, challenges, and solutions. Ieee Access 7, 147420-147452.",
+        "Sun, X., Yu, F.R., Zhang, P., Sun, Z., Xie, W., Peng, X., 2021. A survey on zero-knowledge proof in blockchain. IEEE Netw. 35 (4), 198-205.",
+        "Sung, C.S., Park, J.Y., 2021. Understanding of blockchain-based identity management system adoption in the public sector. J. Enterp. Inf. Manag. 34 (5), 1481-1505.",
+        "Suresh, P., Keerthika, P., Devi, R.M., Kamalam, G., Logeswaran, K., Sadasivuni, K.K.,",
+        "Devendran, K., 2024. Optimized task scheduling approach with fault tolerant load balancing using multi-objective cat swarm optimization for multi-cloud environment. Appl. Soft Comput. 165, 112129.",
+        "Tahmasebi, M., 2024. Beyond defense: Proactive approaches to disaster recovery and threat intelligence in modern enterprises. J. Inf. Secur. 15 (2), 106-133.",
+        "Tan, Z., Huang, W., 2025. Information-theoretic perspectives on optimizers. arXiv preprint arXiv:2502.20763 .",
+        "Timilehin, O., 2024. Performance engineering for hybrid multi-cloud architectures: Strategies, challenges, and best practices.",
+        "Tomarchio, O., Calcaterra, D., Modica, G.D., 2020. Cloud resource orchestration in the multi-cloud landscape: a systematic review of existing frameworks. J. Cloud Comput. 9 (1), 49.",
+        "Toosi, A.N., Calheiros, R.N., Buyya, R., 2014. Interconnected cloud computing environments: Challenges, taxonomy, and survey. ACM Comput. Surv. 47 (1), 1-47.Tyagi, V., Saraswat, A., Bansal, S., 2023. An analysis of securing internet of things (IoT) devices from man-in-the-middle (MIMA) and denial of service (DoS). In: Smart Cities. CRC Press, pp. 337-357.",
+        "Udkar, S., Vaithianathan, M., Gupta, V., Reddy, M., Expert, B., 2025. Dynamic resource allocation of virtualized GPUs and CPUs for scalable AI workloads in containerized environments. In: 5th International Conference on Expert Clouds & Applications. ICOECA 2025, At: RV College of Engineering, Bengaluru, India, on 6th- 7th March 2025.",
+        "Ullah, F., Edwards, M., Ramdhany, R., Chitchyan, R., Babar, M.A., Rashid, A., 2018. Data exfiltration: A review of external attack vectors and countermeasures. J. Netw. Comput. Appl. 101, 18-54.",
+        "Vankayalapati, R.K., 2025. Hybrid cloud use cases across industries. Synerg. Between Public Priv. Clouds Hybrid Infrastruct. Model.: Real- World Case Stud. Best Pr. 75.",
+        "Vardia, A.S., Chaudhary, A., Agarwal, S., Sagar, A.K., Shrivastava, G., 2025. Cloud security essentials: A detailed exploration. Emerg. Threat. Countermeas. Cybersecur. 413-432.",
+        "Veeraballi, V.R., 2025. Implementing the nist risk management framework in cloud environments: A comprehensive approach. International Journal Of Computer Engineering and Technology (IJCET) 16 (1), 3655-3670.",
+        "Villegas-Ch, W., García-Ortiz, J., 2023. Toward a comprehensive framework for ensuring security and privacy in artificial intelligence. Electron. 12 (18), 3786.",
+        "Voss, W.G., 2019. Cross-border data flows, the GDPR, and data governance. Wash. Int' L LJ 29, 485.",
+        "Wang, H., Liu, T., Kim, B., Lin, C.-W., Shiraishi, S., Xie, J., Han, Z., 2020a. Architectural design alternatives based on cloud/edge/fog computing for connected vehicles. IEEE Commun. Surv. & Tutorials 22 (4), 2349-2377.",
+        "Wang, D., Zhao, J., Wang, Y., 2020b. A survey on privacy protection of blockchain: the technology and application. IEEE Access 8, 108766-108781.",
+        "Waseem, M., Ahmad, A., Liang, P., Akbar, M.A., Khan, A.A., Ahmad, I., Setälä, M.,",
+        "Mikkonen, T., 2024. Containerization in multi-cloud environment: Roles, strategies, challenges, and solutions for effective implementation. arXiv preprint arXiv:2403. 12980 .",
+        "Weerasiri, D., Barukh, M.C., Benatallah, B., Sheng, Q.Z., Ranjan, R., 2017. A taxonomy and survey of cloud resource orchestration techniques. ACM Comput. Surv. 50 (2), 1-41.",
+        "Xie, Q., Jiang, S., Jiang, L., Huang, Y., Zhao, Z., Khan, S., Dai, W., Liu, Z., Wu, K., 2024. Efficiency optimization techniques in privacy-preserving federated learning with homomorphic encryption: A brief survey. IEEE Internet Things J. 11 (14), 24569-24580.",
+        "Xu, Y., Xu, G., Liu, Y., Liu, Y., Shen, M., 2024. A survey of the fusion of traditional data security technology and blockchain. Expert Syst. Appl. 124151.",
+        "Yang, C., Huang, Q., Li, Z., Liu, K., Hu, F., 2017. Big data and cloud computing: innovation opportunities and challenges. Int. J. Digit. Earth 10 (1), 13-53.",
+        "Yang, Q., Liu, Y., Chen, T., Tong, Y., 2019. Federated machine learning: Concept and applications. ACM Trans. Intell. Syst. Technol. ( TIST) 10 (2), 1-19.",
+        "Yang, P., Xiong, N., Ren, J., 2020. Data security and privacy protection for cloud storage: A survey. Ieee Access 8, 131723-131740.",
+        "Yeboah-Ofori, A., Jafar, A., Abisogun, T., Hilton, I., Oseni, W., Musa, A., 2024. Data security and governance in multi-cloud computing environment. In: 2024 11th International Conference on Future Internet of Things and Cloud (FiCloud). IEEE, pp. 215-222.",
+        "Yu, D., Jin, Y., Zhang, Y., Zheng, X., 2019. A survey on security issues in services communication of microservices-enabled fog applications. Concurr. Comput.: Pr. Exp. 31 (22), e4436.",
+        "Zafir, E.I., Akter, A., Islam, M., Hasib, S.A., Islam, T., Sarker, S.K., Muyeen, S., 2024. Enhancing security of internet of robotic things: A review of recent trends, practices, and recommendations with encryption and blockchain techniques. Internet Things 101357.",
+        "Zahra, W.U., Amjad, M.T., Ahsan, A., Mumtaz, G., 2024. Analyzing the limitations and efficiency of configuration strategies in hybrid cloud environments. J. Comput. Biomed. Informatics 7 (02).",
+        "Zaki, N.M., Helal, I., Hassanein, E.E., Awad, A., 2024. Validating temporal compliance patterns: A unified approach with 𝑀𝑇𝐿 _𝑓 over various data models. arXiv preprint arXiv:2406.08530 .",
+        "Zhang, C., Xie, Y., Bai, H., Yu, B., Li, W., Gao, Y., 2021a. A survey on federated learning. Knowl.-Based Syst. 216, 106775.",
+        "Zhang, B., Zeng, Z., Shi, X., Yang, J., Veeravalli, B., Li, K., 2021b. A novel cooperative resource provisioning strategy for multi-cloud load balancing. J. Parallel Distrib. Comput. 152, 98-107.",
+        "Zhao, J., Chen, Y., Zhang, W., 2019. Differential privacy preservation in deep learning: Challenges, opportunities and solutions. IEEE Access 7, 48901-48911.",
+        "Zhu, Y., Cui, G., Liu, A., Jia, Q.-S., Guan, X., Zhai, Q., Guo, Q., Guo, X., 2025. A reinforcement learning embedded surrogate Lagrangian relaxation method for fast solving unit commitment problems. IEEE Trans. Power Syst..",
+        "Zhu, T., Li, G., Zhou, W., Philip, S.Y., 2017. Differential Privacy and Applications. Springer.Computers & Security 157 (2025) 104599"
+      ]
+    },
+    {
+      "id": "urn:article:1-s2-0-s2666603021000063-main",
+      "type": "schema:ScholarlyArticle",
+      "title": "A new data security algorithm for the cloud computing based on genetics techniques and logical-mathematical functions",
+      "authors": [
+        "Fursan Thabit",
+        "Sharaf Alhomdy",
+        "Sudhir Jagtap"
+      ],
+      "year": "",
+      "doi": "10.1016/j.ijin.2021.03.001",
+      "journal": "",
+      "abstract": "With the rapid development of distributed system technologies, one of the biggest challenges facing the digital\nworld is ensuring the security of sensitive and con fidential data during transport and storage, which are\nconsidered the most critical challenges facing cloud computing. There are many techniques to enhance data security on cloud computing storage environment. Encryption is the most signi ficant method for data protection.\nTherefore, many available encryption algorithms are used to provide security, integrity, and authorized access\nusing many methods such as DNA. However, they still have some limitations. In this paper, a novel variant of\ncryptography techniques is designed to improve cloud computing security by using two layers of encryption. Thefirst layer is inspired by Shannon 's theory of diffusion and confusion by the involvement of logical operations,\nsuch as (XOR, XNOR, shifting) with split the original plaintext and key into equal parts. The second layer is\ninspired from structures of genetics based on the Central Dogma of Molecular Biology for cryptographic purpose\nthrough simulation of the natural processes of genetic cryptography (translation from binary to DNA bases),transcription (regeneration from DNA to mRNA), and translation (regeneration from mRNA to protein). The\nexperimental results enhanced data security that can be used to secure applications on cloud computing. The\nproposed algorithm 's experimental results presented a strong security level, an apparent enhancement of cipher\nsize and execution time compared to existing techniques widely used in cloud computing.",
+      "keywords": [
+        "Cloud computing security",
+        "Cryptography",
+        "Genetics techniques",
+        "Logical-mathematical functions"
+      ],
+      "objective": [
+        "Moreover, to enhanced security issues in the cloud, this paper introduces a novel variant of cryptography techniques to improve the security of cloud computing."
+      ],
+      "problem": [
+        "The central population is established depending on the problem under study, and the suitability of each group is evaluated using the fitness function [ 6,7]."
+      ],
+      "methodology": [
+        "For enhancing the security of could computing, there are many techniques such as cryptography which is the primary factor of security data in the cloud.",
+        "Cryptology is a mathematical technique for security information management such as encryption, quality of data and authentication.",
+        "Cryptography offers various morerobust methods, and it is possible to use techniques to provide these security services [ 2]."
+      ],
+      "contributions": [
+        "Therefore, the major contributions of this paper can be summarized as follows: 1) A novel 256-bit cryptography technique based on CDMB technique with logical-mathematical function is introduced in this paper. 2) A novel 256-bit secret key generation technique based on DNA sequence is introduced in this paper 3) Security analysis and experimental results of Purpose work have been explained in this paper to verify its ef ficiency over the existing techniques."
+      ],
+      "futureWork": [
+        "In future work, the proposed algorithm can be improved by reducing the space complexity to meet the memory requirements 'challenge."
+      ],
+      "references": [
+        "[1]F.M. Groom, \"The basics of cloud computing, \"in Enterprise Cloud Computing for Non-Engineers, 2018 .",
+        "[2]F. Thabit, A. Prof, S. Alhomdy, A.H.A. Al-ahdal, Exploration of Security Challenges in Cloud Computing: Issues , Threats , and Attacks with Their Alleviating Techniques Exploration of Security Challenges in Cloud Computing : Issues , Threats , and Attacks with Their Alleviating Techniques 12th, vol. 10, Journal of Information and Computational Science, USA, 2020, pp. 35 -56, 1, December, Submitted for publication .",
+        "[3] M. Zhou, R. Zhang, W. Xie, W. Qian, A. Zhou, Security and Privacy in Cloud Computing: A Survey, 2010, https://doi.org/10.1109/SKG.2010.19 .",
+        "[4] S. Yi, Z. Qin, Q. Li, Security and privacy issues of fog computing, A survey (2015),",
+        "[5] M. Sabry, M. Hashem, T. Nazmy, Three reversible data encoding algorithms based on DNA and amino acids 'structure, Int. J. Comput. Appl. (2012), https://doi.org/ 10.5120/8588-2339 .",
+        "[6] M.R. Biswas, K.M.R. Alam, S. Tamura, Y. Morimoto, A technique for DNA cryptography based on dynamic mechanisms, J. Inf. Secur. Appl. 48 (2019) 102363,",
+        "[7] H.M. Mousa, DNA-genetic encryption technique, Int. J. Comput. Netw. Inf. Secur. 8 (7) (2016) 1 -9,https://doi.org/10.5815/ijcnis.2016.07.01 .",
+        "[8]A. Akanksha, A. Bhopale, J. Sharma, A. Meer Shizan, D. Gautam, Implementation of DNA algorithm for secure voice communication, Int. J. Sci. Eng. Res. 3 (6) (2012) 1-5.",
+        "[9] M. Ali, S.U. Khan, A.V. Vasilakos, Security in cloud computing: opportunities and challenges, Inf. Sci. (2015), https://doi.org/10.1016/j.ins.2015.01.025 .",
+        "[10] N. Kshetri, Privacy and security issues in cloud computing: the role of institutions and institutional evolution, Telecommun. Pol. (2013), https://doi.org/10.1016/ j.telpol.2012.04.011 .",
+        "[11] D. Chen, H. Zhao, Data Security and Privacy Protection Issues in Cloud Computing, 2012, https://doi.org/10.1109/ICCSEE.2012.193 .",
+        "[12] S. Pearson, A. Benameur, Privacy, Security and Trust Issues Arising from Cloud Computing, 2010, https://doi.org/10.1109/CloudCom.2010.66 .",
+        "[13] A. Bhardwaj, G.V.B. Subrahmanyam, V. Avasthi, H. Sastry, Security Algorithms for Cloud Computing, 2016, https://doi.org/10.1016/j.procs.2016.05.215 .F. Thabit et al. International Journal of Intelligent Networks 2 (2021) 18 -33",
+        "[14] P. Dixit, A.K. Gupta, M.C. Trivedi, V.K. Yadav, Traditional and hybrid encryption techniques: a survey, in: Lecture Notes on Data Engineering and Communications Technologies, 2018 .",
+        "[15] S. Chowdhury, S.R. Ghosh, A. Paul, Design and implementation of a novel cryptographic technique for network security using genetic algorithms (gas), Int. J. Innov. Knowl. Concepts 119 (7) (2019) .",
+        "[16] Naccache David, Reiter Michael, Cryptology and network security, Network 9 (10) (2012) 1 -256, 9783319268231, 3319268236 .",
+        "[17] S.S. Khan, P.R. Tuteja, Security in cloud computing using cryptographic algorithms, Int. J. Innov. Res. Comput. Commun. Eng. (2015), https://doi.org/10.15680/ ijircce.2015.0301035 .",
+        "[18] P. N. S. V. Keer, S. I. Ali, \"Hybrid approach of cryptographic algorithms in cloud computing. \".",
+        "[19] S. B. J. Fursan Thabit, Alhomdy, \"A new lightweight cryptographic algorithm for enhancing data security in cloud, \"Glob. Transitions Proc.",
+        "[20] A. Kalaivani, B. Ananthi, S. Sangeetha, Enhanced hierarchical attribute based encryption with modular padding for improved public auditing in cloud computing using semantic ontology, Cluster Comput. (2019), https://doi.org/10.1007/ s10586-018-2346-1 .",
+        "[21] S.K. Pujari, G. Bhattacharjee, S. Bhoi, A Hybridized Model for Image Encryption through Genetic Algorithm and DNA Sequence, 2018, https://doi.org/10.1016/ j.procs.2017.12.023 .",
+        "[22] C. Chunka, R.S. Goswami, S. Banerjee, A Novel Approach to Generate Symmetric Key in Cryptography Using Genetic Algorithm (GA), 2019, https://doi.org/ 10.1007/978-981-13-1951-8_64 .",
+        "[23] S. Kalsi, H. Kaur, V. Chang, DNA cryptography and deep learning using genetic algorithm with NW algorithm for key generation, J. Med. Syst. (2018), https:// doi.org/10.1007/s10916-017-0851-z .",
+        "[24] M. Cimi Thomas, S. Sheeja, Secure symmetric encryption scheme using genetic algorithm, Int. J. Appl. Eng. Res. 12 (21) (2017) 10828 -10833 .",
+        "[25] M. Sohal, S. Sharma, BDNA-A DNA inspired symmetric key cryptographic technique to secure cloud computing, J. King Saud Univ. - Comput. Inf. Sci. (2018), https:// doi.org/10.1016/j.jksuci.2018.09.024 .",
+        "[26] M. Tahir, M. Sardaraz, Z. Mehmood, S. Muhammad, CryptoGA: a cryptosystem based on genetic algorithm for cloud data security, Cluster Comput. 4 (2020),https://doi.org/10.1007/s10586-020-03157-4 .",
+        "[27] A. Aieh, A. Sen, S.R. Dash, S. Dehuri, Deoxyribonucleic Acid (DNA) for a Shared Secret Key Cryptosystem with Dif fie Hellman Key Sharing Technique, 2015, based data security in the cloud computing environment, Comput. Commun. 151 (2020) 539 -547, https://doi.org/10.1016/j.comcom.2019.12.041 .",
+        "[29] N.H. UbaidurRahman, C. Balamurugan, R. Mariappan, A novel DNA computing based encryption and decryption algorithm, Procedia Comput. Sci. 46 (2014) (2015) 463 -475, https://doi.org/10.1016/j.procs.2015.02.045 .",
+        "[30] M.A. Wright, The advanced encryption standard, Netw. Secur. (2001), https:// doi.org/10.1016/S1353-4858(01)01018-2 .",
+        "[31] A.U. Rahman, S.U. Miah, S. Azad, Advanced encryption standard, in: Practical Cryptography: Algorithms and Implementations Using C þþ, 2014 .",
+        "[32] M.N. Valmik, P.V.K. Kshirsagar, \"Blow fish Algorithm, \"IOSR J. Comput. Eng. (2014), https://doi.org/10.9790/0661-162108083 .",
+        "[33] G. Bansod, N. Raval, N. Pisharoty, Implementation of a new lightweight encryption design for embedded security, IEEE Trans. Inf. Forensics Secur. (2015), https:// doi.org/10.1109/TIFS.2014.2365734 .",
+        "[34] M. Thangavel, P. Varalakshmi, Enhanced DNA and elgamal cryptosystem for secure data storage and retrieval in cloud, Cluster Comput. 21 (2) (2018), https://doi.org/ 10.1007/s10586-017-1368-4 .",
+        "[35] S. Narendren, Y.B. Yathish, C.M. B, A cryptosystem using two layers of security - DNA and RSA cryptography 119 (7) (2018) 217 -224.",
+        "[36] R.K. Ahmed, I.J. Mohammed, Developing a new hybrid cipher algorithm using DNA and RC4, Int. J. Adv. Comput. Sci. Appl. 8 (10) (2017) 171 -176. Available: www .ijacsa.thesai.org .",
+        "[37] S. Goyal, S. Jain, A secure cryptographic cloud communication using DNA cryptographic technique, Proc. Int. Conf. Inven. Comput. Technol. ICICT 2016 (2016) 2016, https://doi.org/10.1109/INVENTIVE.2016.7830158 .",
+        "[38] S. Basu, M. Karuppiah, M. Nasipuri, A.K. Halder, N. Radhakrishnan, Bio-inspired cryptosystem with DNA cryptography and neural networks, J. Syst. Architect. 94 (September 2018) (2019) 24 -31,https://doi.org/10.1016/j.sysarc.2019.02.005 .",
+        "[39] C.E. Shannon, A mathematical theory of communication, Bell Syst. Tech. J. (1948),",
+        "[40] A. Fatima, N.K. Nishchal, Discussion on comparative analysis and a new attack on optical asymmetric cryptosystem, J. Opt. Soc. Am. A (2016), https://doi.org/ 10.1364/josaa.33.002034 .",
+        "[41] H. Chen, C. Tanougast, Z. Liu, B. Hao, Securing color image by using hyperchaotic system in gyrator transform domains, Opt. Quant. Electron. (2016), https://doi.org/ 10.1007/s11082-016-0669-9 .",
+        "[42] S.K. Rajput, N.K. Nishchal, Known-plaintext attack on encryption domain independent optical asymmetric cryptosystem, Opt Commun. (2013), https:// doi.org/10.1016/j.optcom.2013.06.036 .F. Thabit et al. International Journal of Intelligent Networks 2 (2021) 18 -33"
+      ]
+    }
+  ],
+  "corpusTopTerms": {
+    "top_uniterms": [
+      [
+        "cloud",
+        392
+      ],
+      [
+        "security",
+        352
+      ],
+      [
+        "data",
+        347
+      ],
+      [
+        "encryption",
+        140
+      ],
+      [
+        "access",
+        126
+      ],
+      [
+        "model",
+        119
+      ],
+      [
+        "system",
+        113
+      ],
+      [
+        "multi-cloud",
+        111
+      ],
+      [
+        "process",
+        109
+      ],
+      [
+        "environment",
+        107
+      ]
+    ],
+    "top_bigrams": [
+      [
+        "hybrid cloud",
+        81
+      ],
+      [
+        "cloud environment",
+        66
+      ],
+      [
+        "multi-cloud hybrid",
+        55
+      ],
+      [
+        "access control",
+        40
+      ],
+      [
+        "cloud compute",
+        37
+      ],
+      [
+        "security privacy",
+        35
+      ],
+      [
+        "data security",
+        25
+      ],
+      [
+        "identity management",
+        24
+      ],
+      [
+        "data protection",
+        24
+      ],
+      [
+        "across cloud",
+        23
+      ]
+    ],
+    "top_trigrams": [
+      [
+        "multi-cloud hybrid cloud",
+        52
+      ],
+      [
+        "hybrid cloud environment",
+        41
+      ],
+      [
+        "computer security ali",
+        19
+      ],
+      [
+        "identity access management",
+        16
+      ],
+      [
+        "international journal intelligent",
+        15
+      ],
+      [
+        "journal intelligent network",
+        15
+      ],
+      [
+        "access management iam",
+        13
+      ],
+      [
+        "thabit international journal",
+        13
+      ],
+      [
+        "perform xor operation",
+        10
+      ],
+      [
+        "federate identity management",
+        9
+      ]
+    ]
+  }
+}

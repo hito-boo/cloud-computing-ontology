@@ -16,7 +16,7 @@ separação dos slides pelas linhas "---" continua funcionando normalmente.
 -->
 
 # Ontologia de Artigos Científicos
-## Computação na Nuvem & Segurança
+## Cloud Computing
 
 Universidade Estadual de Maringá — Departamento de Informática
 Curso: Ciência da Computação
@@ -58,7 +58,7 @@ Equipe: Caetano (RA: 135846), Lorenzo (RA 133076), Vitor da Rocha (RA 132769)
 
 ## Modelagem do problema
 
-Modelamos o artigo científico como uma **ontologia** com os seguintes
+Os artigos científicos foram modelados como uma **ontologia** com os seguintes
 elementos, a serem extraídos automaticamente do PDF:
 
 - Identificação: título, autores, ano, DOI, periódico
@@ -66,7 +66,7 @@ elementos, a serem extraídos automaticamente do PDF:
 - Análise: objetivo, problema, metodologia, contribuições, trabalhos futuros
 - Referências bibliográficas citadas
 
-O software desenvolvido lê um diretório de PDFs e produz, para cada artigo,
+O código desenvolvido lê um diretório de PDFs e produz, para cada artigo,
 uma instância estruturada dessa ontologia.
 
 ---
@@ -120,7 +120,7 @@ uma instância estruturada dessa ontologia.
 | `wordcloud` | Nuvens de palavras |
 
 Nenhuma biblioteca de aprendizado de máquina ou modelo pré-treinado foi
-utilizada, em conformidade com a restrição do enunciado.
+utilizada.
 
 ---
 
@@ -156,7 +156,7 @@ PDFs (12 artigos)
 
 ## Córpus analisado
 
-- **Tema:** Computação na Nuvem
+- **Tema:** Cloud Computing (Computação em Nuvem)
 - **Base:** ScienceDirect
 - **Periódico de origem dos 12 artigos:** *Computers & Security* (Elsevier)
 - **Período de publicação:** 2014 – 2024
@@ -237,7 +237,7 @@ armazenados na nuvem**.
 
 - O heatmap mostra a frequência relativa (%) dos termos mais citados, ano a
   ano, permitindo observar a permanência de termos como *data* e *cloud*
-  ao longo de toda a década analisada. Outros termos mais recentes como IoT acabam sendo mais comuns.
+  ao longo de toda a década analisada. Infelizmente poucos artigos estão sendo usados o que limita a visualização.
 
 ---
 
@@ -259,7 +259,7 @@ armazenados na nuvem**.
 
 ## Visualizações complementares
 
-Além do que foi pedido no enunciado, o sistema também gera:
+Além do que foi pedido, foi gerado:
 
 - **Heatmap de coocorrência**: quais termos aparecem próximos uns dos outros no texto
 - **Similaridade entre artigos**: similaridade de Jaccard entre os conjuntos de termos de cada artigo, em heatmap e em diagrama de rede
@@ -286,24 +286,30 @@ Além do que foi pedido no enunciado, o sistema também gera:
 
 ---
 
-## 🔧 TODO — pendente de execução
+# Demonstração
 
-Esta etapa exige rodar o pipeline em **artigos diferentes dos 12 originais**,
-para demonstrar que o sistema generaliza.
+  - A respeito da categorização estrutural, apenas o Ano de Publicação e o *Journal* não foram extraídos, além do DOI de um deles. Porém o restante foi encontrado. 
+  - Enquanto em um dos artigos não foi achado os objetivos e as contribuições, o outro teve todos os dados inferidos.
+  - É possível observar a importancia de frases padrões como: "the major contributions of this paper..." e "In future work...".
 
-**Passo a passo sugerido:**
+---
 
-1. Baixar 1–2 artigos novos (mesmo tema, ScienceDirect) e colocá-los em uma
-   pasta separada, ex.: `data/ArtigosExtras/`
-2. Criar uma pequena cópia do `main.py` apontando `PAPERS_PATH` para essa
-   pasta, ou executar o pipeline manualmente em um script/notebook
-3. Trazer para este slide:
-   - Trechos de objetivo/problema/metodologia/contribuições extraídos
-   - Se a extração ficou coerente com o conteúdo real do artigo
-   - Algum caso interessante de acerto ou erro
+## Palavras mais citadas nos artigos de Demonstração
 
-🔧 **TODO:** preencher com os resultados reais depois de executar o passo a
-passo acima.
+![bg right:62% fit](output_demonstracao/visualizations/1_bar_top_terms.png)
+
+
+---
+
+## Técnicas mais mencionadas nos artigos de Demonstração
+
+![bg right:65% fit](output_demonstracao/visualizations/3_bar_techniques.png)
+
+---
+
+## Nuvem de palavras geral
+
+![bg right:65% fit](output_demonstracao/visualizations/2_wordcloud_general.png)
 
 ---
 
@@ -313,9 +319,7 @@ passo acima.
 
 ## Metodologia de avaliação
 
-Como o trabalho não permite o uso de modelos de ML, não há um gabarito
-estatístico (ex.: acurácia de um classificador). A avaliação foi
-feita em duas frentes:
+A avaliação foi feita em duas frentes:
 
 1. **Quantitativa** — taxa de cobertura: em quantos artigos cada campo da
    ontologia foi efetivamente extraído (não vazio), calculada diretamente
@@ -428,10 +432,15 @@ um falso positivo típico de uma extração baseada apenas em palavras-chave
   autores, abstract, referências) e **parcialmente confiável para conteúdo
   semântico livre** (objetivo, problema, metodologia, contribuições,
   trabalhos futuros), com cobertura entre 25% e 100% dependendo do campo.
+
+---
+
+## Conclusões
+
 - A ontologia em **JSON-LD** se mostrou um formato prático para representar
   os artigos de forma legível e interoperável com vocabulários da Web
   Semântica (`schema.org`).
-- Limitações claras: dependência do layout do periódico de origem, e
+- Limitações: dependência do layout do periódico de origem, e
   sensibilidade dos padrões de regex a formas alternativas de expressar a
   mesma ideia.
 
@@ -444,9 +453,6 @@ um falso positivo típico de uma extração baseada apenas em palavras-chave
 
 ## Bibliografia
 
-🔧 **TODO:** revisar/completar com as fontes que a equipe efetivamente
-consultou (sites, vídeos, livros, slides de aula etc.). Sugestões de fontes
-técnicas usadas no desenvolvimento:
 
 - PyPDF2 — documentação oficial: https://pypdf2.readthedocs.io/
 - NLTK — documentação oficial: https://www.nltk.org/
@@ -454,7 +460,7 @@ técnicas usadas no desenvolvimento:
 - WordCloud (Python) — https://github.com/amueller/word_cloud
 - JSON-LD — especificação W3C: https://www.w3.org/TR/json-ld/
 - Schema.org — vocabulário para dados estruturados: https://schema.org/
-- Enunciado do trabalho — UEM, Departamento de Informática
+- Enunciado do trabalho e slides do prof. — UEM, Departamento de Informática
 
 ---
 

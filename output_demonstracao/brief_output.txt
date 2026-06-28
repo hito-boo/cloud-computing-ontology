@@ -1,0 +1,28 @@
+Arquivo     : 1-s2.0-S0167404825002883-main.pdf
+Titulo      : Security and privacy in multi-cloud and hybrid cloud environments: Challenges, s...
+Autores     : Dhani Bux Talpur, Adeel Abro, Khulud Salem Alshudukhi, Ghadah Naif Alwakid, Mamoona Humayun, Farhan Bashirg, Shuaib Ahmed Wadhog, Asadullah Shah
+Ano         : ?
+DOI         : ?
+Journal     : ?
+Abstract    : 9433 chars
+Keywords    : ['Multi-cloud security', 'Hybrid cloud privacy', 'Cryptographic techniques', 'Zero-trust architecture', 'AI-driven cybersecurity', 'Post-quantum cryptography', 'Secure data sharing']
+Intro       : 86773 chars
+Conclusao   : 7672 chars
+Corpo total : 137159 chars
+Refs        : 189 referencias extraidas
+------------------------------------------------------------
+
+Arquivo     : 1-s2.0-S2666603021000063-main.pdf
+Titulo      : A new data security algorithm for the cloud computing based on genetics techniqu...
+Autores     : Fursan Thabit, Sharaf Alhomdy, Sudhir Jagtap
+Ano         : ?
+DOI         : 10.1016/j.ijin.2021.03.001
+Journal     : ?
+Abstract    : 1621 chars
+Keywords    : ['Cloud computing security', 'Cryptography', 'Genetics techniques', 'Logical-mathematical functions']
+Intro       : 6918 chars
+Conclusao   : 2923 chars
+Corpo total : 53707 chars
+Refs        : 41 referencias extraidas
+------------------------------------------------------------
+

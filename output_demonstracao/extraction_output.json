@@ -1,0 +1,39 @@
+{
+  "1-s2.0-S0167404825002883-main.pdf": {
+    "objective": [],
+    "problem": [
+      "(5) A discussion of emerging research challenges and open problems, offering insights into future directions for the development of resilient and scalable security architectures.",
+      "In a multi-cloud scenario, we are often interested in load-balancing resource assignments subject to both capacity and cost constraints (Suresh et al., 2024 ; Zhang et al., 2021b ; Kanbar and Faraj , 2022 ), forming a constrained optimization problem: min⃗ 𝑥𝑓𝑐𝑜𝑠𝑡(⃗ 𝑥) subject to 𝐴⃗ 𝑥≤⃗𝑏, where matrix 𝐴∈R𝑚×𝑛 encodes resource limits across clouds and ⃗𝑏∈R𝑚 denotes maximum capacity per region or service type.",
+      "This gives rise to an interoperability graph 𝐺𝑖𝑛𝑡𝑒𝑟𝑜𝑝 , and finding the largest clique in 𝐺𝑖𝑛𝑡𝑒𝑟𝑜𝑝 gives the maximum interoperable subsystem, an NP-complete problem that can be heuristically solved using graph coloring algorithMs. Further, the cloud control and orchestration plane can be abstracted as a finite-state machine (FSM) = (𝑆,𝛴,𝛿,𝑠0,𝐹), where 𝑆 is the set of orchestration states (e.g., ''provisioned'', ''scaling'', ''decommissioning''), 𝛴 is the input set (e.g., demand surge, policy violation), 𝛿 is the transition function, and 𝑠0 and 𝐹 are the initial and terminal states respectively."
+    ],
+    "methodology": [
+      "In today's era of rapid technological advancement and dynamic market conditions, organizations require agile IT frameworks capable of adapting to fluctuating workloads, diverse application requirements, and stringent security protocols (Dugbartey and Kehinde , 2025 ; Mishra and Agarwal , 2024 ).",
+      "Moreover, the emergence of new technologies such as cloud computing has introduced additional security threats and challenges, necessitating the implementation of enhanced and uniform security protocols across cloud platforMs. These include standardized identity and access management (IAM) methods, encryption techniques, and threat detection mechanisms (Singh et al., 2016 ; Praveenadevi et al., 2024 ).",
+      "Framework for addressing cloud security challenges through strategic mitigation and advanced security integration. not just information privacy, but the entire trust infrastructure of the system (Singh et al., 2024 ; Ponde , 2025 ; Akbar et al., 2024 ; Shilpa , 2024 )."
+    ],
+    "contributions": [],
+    "future_work": [
+      "With the advancement of technology and the enforcement of global data privacy laws, organizations are now required to develop comprehensive compliance frameworks capable of monitoring regulatory landscapes in real-time while minimizing the risks associated with cross-border data handling.Computers & Security 157 (2025) 104599 S. Ali et al. Finally, this study defines the open issues and future research directions mentioned extensively in the literature.",
+      "By integrating AI-driven security automation, advanced cryptographic techniques, and policyaware cloud management frameworks, future research and development can significantly improve the resilience and trustworthiness of cloud computing ecosysteMs. Collaboration among organizations, cloud service providers, and the research community will be crucial to driving advancements in cloud security, ultimately fostering a safer, more efficient, and regulation-compliant digital infrastructure."
+    ]
+  },
+  "1-s2.0-S2666603021000063-main.pdf": {
+    "objective": [
+      "Moreover, to enhanced security issues in the cloud, this paper introduces a novel variant of cryptography techniques to improve the security of cloud computing."
+    ],
+    "problem": [
+      "The central population is established depending on the problem under study, and the suitability of each group is evaluated using the fitness function [ 6,7]."
+    ],
+    "methodology": [
+      "For enhancing the security of could computing, there are many techniques such as cryptography which is the primary factor of security data in the cloud.",
+      "Cryptology is a mathematical technique for security information management such as encryption, quality of data and authentication.",
+      "Cryptography offers various morerobust methods, and it is possible to use techniques to provide these security services [ 2]."
+    ],
+    "contributions": [
+      "Therefore, the major contributions of this paper can be summarized as follows: 1) A novel 256-bit cryptography technique based on CDMB technique with logical-mathematical function is introduced in this paper. 2) A novel 256-bit secret key generation technique based on DNA sequence is introduced in this paper 3) Security analysis and experimental results of Purpose work have been explained in this paper to verify its ef ficiency over the existing techniques."
+    ],
+    "future_work": [
+      "In future work, the proposed algorithm can be improved by reducing the space complexity to meet the memory requirements 'challenge."
+    ]
+  }
+}

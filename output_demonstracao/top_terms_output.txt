@@ -1,0 +1,42 @@
+
+══════════════════════════════════════════════════════════════════════
+  10 Termos mais frequentes do córpus - Cloud Computing e Segurança
+══════════════════════════════════════════════════════════════════════
+
+  ---- Unitermos (BoW) ----
+   1. cloud                                 392  ██████████████████████████████
+   2. security                              352  ██████████████████████████
+   3. data                                  347  ██████████████████████████
+   4. encryption                            140  ██████████
+   5. access                                126  █████████
+   6. model                                 119  █████████
+   7. system                                113  ████████
+   8. multi-cloud                           111  ████████
+   9. process                               109  ████████
+  10. environment                           107  ████████
+
+  ---- top_2gramas ----
+   1. hybrid cloud                           81  ██████████████████████████████
+   2. cloud environment                      66  ████████████████████████
+   3. multi-cloud hybrid                     55  ████████████████████
+   4. access control                         40  ██████████████
+   5. cloud compute                          37  █████████████
+   6. security privacy                       35  ████████████
+   7. data security                          25  █████████
+   8. identity management                    24  ████████
+   9. data protection                        24  ████████
+  10. across cloud                           23  ████████
+
+  ---- top_3gramas ----
+   1. multi-cloud hybrid cloud               52  ██████████████████████████████
+   2. hybrid cloud environment               41  ███████████████████████
+   3. computer security ali                  19  ██████████
+   4. identity access management             16  █████████
+   5. international journal intelligent      15  ████████
+   6. journal intelligent network            15  ████████
+   7. access management iam                  13  ███████
+   8. thabit international journal           13  ███████
+   9. perform xor operation                  10  █████
+  10. federate identity management            9  █████
+══════════════════════════════════════════════════════════════════════
+
