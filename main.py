@@ -31,20 +31,20 @@ PAPERS_PATH = "data/Artigos"
 OUTPUT_DIR = "output"
 PAPERS_PATH_DEMONSTRACAO = "data/Demonstracao"
 OUTPUT_DIR_DEMONSTRACAO = "output_demonstracao"
-VISUALIZATIONS_DIR = os.path.join(OUTPUT_DIR_DEMONSTRACAO, "visualizations")
+VISUALIZATIONS_DIR = os.path.join(OUTPUT_DIR, "visualizations")
 
-CATEGORIZED_OUTPUT = os.path.join(OUTPUT_DIR_DEMONSTRACAO, "categorized_output.json")
-BRIEF_OUTPUT = os.path.join(OUTPUT_DIR_DEMONSTRACAO, "brief_output.txt")
-TOP_TERMS_OUTPUT = os.path.join(OUTPUT_DIR_DEMONSTRACAO, "top_terms_output.txt")
-EXTRACTION_OUTPUT = os.path.join(OUTPUT_DIR_DEMONSTRACAO, "extraction_output.json")
-ONTOLOGY_OUTPUT = os.path.join(OUTPUT_DIR_DEMONSTRACAO, "ontology_corpus.jsonld")
+CATEGORIZED_OUTPUT = os.path.join(OUTPUT_DIR, "categorized_output.json")
+BRIEF_OUTPUT = os.path.join(OUTPUT_DIR, "brief_output.txt")
+TOP_TERMS_OUTPUT = os.path.join(OUTPUT_DIR, "top_terms_output.txt")
+EXTRACTION_OUTPUT = os.path.join(OUTPUT_DIR, "extraction_output.json")
+ONTOLOGY_OUTPUT = os.path.join(OUTPUT_DIR, "ontology_corpus.jsonld")
 
-os.makedirs(OUTPUT_DIR_DEMONSTRACAO, exist_ok=True)
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Etapa 1a - Leitura dos PDFs
 print("=" * 60)
 print("[1] Lendo PDFs...")
-raw_papers = read_papers(PAPERS_PATH_DEMONSTRACAO)
+raw_papers = read_papers(PAPERS_PATH)
 print(f"    {len(raw_papers)} artigos lidos.\n")
 
 # Etapa 1b - Categorizacao (titulo, autores, secoes, referencias)
