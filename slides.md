@@ -9,7 +9,7 @@ size: 16:9
 Estes slides seguem a estrutura exigida pelo enunciado (Etapa 5) e incorporam
 a Etapa 4 (avaliação de desempenho) dentro do item 7.
 Marcadores 🔧 TODO indicam informação que o(a) autor(a) do trabalho precisa
-preencher manualmente — não temos esse dado disponível.
+preencher manualmente - não temos esse dado disponível.
 Se a ferramenta de slides usada no VS Code não for o Marp, basta remover o
 bloco de front-matter acima (entre as duas primeiras linhas "---"); a
 separação dos slides pelas linhas "---" continua funcionando normalmente.
@@ -18,7 +18,7 @@ separação dos slides pelas linhas "---" continua funcionando normalmente.
 # Ontologia de Artigos Científicos
 ## Cloud Computing
 
-Universidade Estadual de Maringá — Departamento de Informática
+Universidade Estadual de Maringá - Departamento de Informática
 Curso: Ciência da Computação
 Disciplina: IIA - Introdução à Inteligência Artificial
 Professor: Prof. Dr. Wagner Igarashi
@@ -246,7 +246,7 @@ armazenados na nuvem**.
 ![bg right:55% fit](output/visualizations/5a_bar_future_work.png)
 
 - A seção de trabalhos futuros foi identificada explicitamente em apenas
-  **3 dos 12 artigos (25%)** — muitos artigos do córpus não têm uma
+  **3 dos 12 artigos (25%)** - muitos artigos do córpus não têm uma
   subseção de "future work" claramente demarcada na conclusão
 
 ---
@@ -321,32 +321,32 @@ Além do que foi pedido, foi gerado:
 
 A avaliação foi feita em duas frentes:
 
-1. **Quantitativa** — taxa de cobertura: em quantos artigos cada campo da
+1. **Quantitativa** - taxa de cobertura: em quantos artigos cada campo da
    ontologia foi efetivamente extraído (não vazio), calculada diretamente
    sobre as saídas reais do sistema (`categorized_output.json` e
    `extraction_output.json`) para os 12 artigos do córpus
-2. **Qualitativa** — leitura manual de uma amostra das frases extraídas,
+2. **Qualitativa** - leitura manual de uma amostra das frases extraídas,
    comparando-as com o conteúdo real do artigo, para identificar acertos e
    limitações dos padrões de regex utilizados
 
 ---
 
-## Resultado quantitativo — Etapa 1 (categorização)
+## Resultado quantitativo - Etapa 1 (categorização)
 
 | Campo | Cobertura |
 |---|---|
 | Título | 100% (12/12) |
-| Autores | 100% (12/12) — média de 3,9 autores/artigo |
-| Abstract | 100% (12/12) — média de 1.367 caracteres |
-| Palavras-chave | 100% (12/12) — média de 5,4 termos/artigo |
+| Autores | 100% (12/12) - média de 3,9 autores/artigo |
+| Abstract | 100% (12/12) - média de 1.367 caracteres |
+| Palavras-chave | 100% (12/12) - média de 5,4 termos/artigo |
 | Ano de publicação | 100% (12/12) |
 | DOI | 83% (10/12) |
-| Referências bibliográficas | 100% (12/12) — 476 no total, média 39,7/artigo |
+| Referências bibliográficas | 100% (12/12) - 476 no total, média 39,7/artigo |
 
 
 ---
 
-## Resultado quantitativo — Etapa 1 (categorização)
+## Resultado quantitativo - Etapa 1 (categorização)
 
 A categorização estrutural (campos bibliográficos) teve **desempenho muito
 alto**, pois esses campos seguem um padrão visual/textual bastante regular
@@ -354,7 +354,7 @@ nos artigos da Elsevier/ScienceDirect.
 
 ---
 
-## Resultado quantitativo — Etapa 2 (extração de informação)
+## Resultado quantitativo - Etapa 2 (extração de informação)
 
 | Campo | Cobertura | Méd. frases/artigo |
 |---|---|---|
@@ -377,7 +377,7 @@ simultaneamente.**
 > of cloud computing."
 
 > **Trabalhos futuros** *(mesmo artigo)*:
-> "Conclusions and future work — Network security is a major concern for
+> "Conclusions and future work - Network security is a major concern for
 > wide adoption of the cloud computing."
 
 Esses padrões ("in this paper, we propose...", "future work") são bastante
@@ -393,7 +393,7 @@ reconhece com boa precisão.
 > proposed a novel scheme, named Panda."
 
 Esta frase descreve o problema resolvido por um **trabalho relacionado**
-(Wang et al., 2015), não necessariamente o problema do próprio artigo —
+(Wang et al., 2015), não necessariamente o problema do próprio artigo -
 um falso positivo típico de uma extração baseada apenas em palavras-chave
 ("problem"), sem compreensão de quem é o sujeito da frase.
 
@@ -406,10 +406,10 @@ um falso positivo típico de uma extração baseada apenas em palavras-chave
 ## Discussão dos resultados
 
 - O sistema tem **alto desempenho em campos estruturais e bem padronizados**
-  (título, autores, abstract, keywords, referências) — domínio onde regex
+  (título, autores, abstract, keywords, referências) - domínio onde regex
   sobre o layout do PDF funciona muito bem.
 - O sistema tem **desempenho variável em campos semânticos livres**
-  (objetivo, problema, metodologia, contribuições, trabalhos futuros) —
+  (objetivo, problema, metodologia, contribuições, trabalhos futuros) -
   domínio onde a linguagem natural tem muito mais variação, e uma
   abordagem por regras não consegue cobrir todos os estilos de escrita.
 - Os padrões "amplos" (fallback) implementados em `extraction.py` aumentam a
@@ -454,13 +454,13 @@ um falso positivo típico de uma extração baseada apenas em palavras-chave
 ## Bibliografia
 
 
-- PyPDF2 — documentação oficial: https://pypdf2.readthedocs.io/
-- NLTK — documentação oficial: https://www.nltk.org/
-- Matplotlib — documentação oficial: https://matplotlib.org/
-- WordCloud (Python) — https://github.com/amueller/word_cloud
-- JSON-LD — especificação W3C: https://www.w3.org/TR/json-ld/
-- Schema.org — vocabulário para dados estruturados: https://schema.org/
-- Enunciado do trabalho e slides do prof. — UEM, Departamento de Informática
+- PyPDF2 - documentação oficial: https://pypdf2.readthedocs.io/
+- NLTK - documentação oficial: https://www.nltk.org/
+- Matplotlib - documentação oficial: https://matplotlib.org/
+- WordCloud (Python) - https://github.com/amueller/word_cloud
+- JSON-LD - especificação W3C: https://www.w3.org/TR/json-ld/
+- Schema.org - vocabulário para dados estruturados: https://schema.org/
+- Enunciado do trabalho e slides do prof. - UEM, Departamento de Informática
 
 ---
 
