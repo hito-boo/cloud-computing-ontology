@@ -1,4 +1,4 @@
-# Ontologia de Artigos Científicos — Cloud Computing & Segurança
+# Ontologia de Artigos Científicos - Cloud Computing & Segurança
 
 Trabalho de Inteligência Artificial (Processamento de Linguagem Natural) da
 Universidade Estadual de Maringá (UEM), Departamento de Informática. O
@@ -18,7 +18,7 @@ um pipeline de PLN que, a partir de um córpus de PDFs, seja capaz de:
 O enunciado proíbe o uso de bibliotecas de aprendizado de máquina ou modelos
 pré-treinados (scikit-learn, spaCy, Transformers, BERT, Word2Vec etc.). Por
 isso, todo o pipeline é construído com expressões regulares, heurísticas de
-texto e estatística simples de frequência — sem nenhum modelo treinado.
+texto e estatística simples de frequência - sem nenhum modelo treinado.
 
 ## Córpus analisado
 
@@ -55,57 +55,57 @@ output/                         Gerado pela execução do pipeline (não version
 
 | Etapa do enunciado | Onde está implementada | Observações |
 |---|---|---|
-| 1 — Leitura de PDF, pré-processamento, modelos de linguagem, 10 termos mais citados, extração de referências | `pipeline/reading.py`, `text_cleaning.py`, `categorization.py`, `preprocessing.py`, `language_models.py` | Leitura em paralelo (ThreadPoolExecutor); stop-words removidas com NLTK + lista acadêmica própria; lematização via WordNet; stemming opcional (desligado por padrão) |
-| 2 — Objetivo, problema, metodologia, contribuições | `pipeline/extraction.py` | Casamento de padrões regex sobre as frases do abstract/introdução, corpo e conclusão |
-| 3 — Ontologia em arquivo (RDF/XML, Turtle, OWL, Frames ou JSON-LD) | `pipeline/ontology_export.py` | Formato escolhido: **JSON-LD**, com vocabulário `schema.org` para os campos bibliográficos e um vocabulário próprio (`concepts:`) para os campos extraídos na etapa 2 |
-| Observações — visualizações (palavras mais citadas, nuvem de palavras, técnicas mais mencionadas, evolução temporal, trabalhos futuros) | `pipeline/visualization.py` | Implementadas 8 visualizações (ver tabela abaixo), cobrindo todos os itens pedidos e mais algumas complementares (coocorrência, similaridade entre artigos) |
-| 4 — Avaliação de desempenho do sistema de extração | *não está no código* | Etapa de avaliação qualitativa/quantitativa a ser feita manualmente sobre `extraction_output.json`, para apresentação nos slides |
-| 5 — Apresentação (slides) | *não está no código* | Entregável separado, fora do escopo deste repositório |
+| 1 - Leitura de PDF, pré-processamento, modelos de linguagem, 10 termos mais citados, extração de referências | `pipeline/reading.py`, `text_cleaning.py`, `categorization.py`, `preprocessing.py`, `language_models.py` | Leitura em paralelo (ThreadPoolExecutor); stop-words removidas com NLTK + lista acadêmica própria; lematização via WordNet; stemming opcional (desligado por padrão) |
+| 2 - Objetivo, problema, metodologia, contribuições | `pipeline/extraction.py` | Casamento de padrões regex sobre as frases do abstract/introdução, corpo e conclusão |
+| 3 - Ontologia em arquivo (RDF/XML, Turtle, OWL, Frames ou JSON-LD) | `pipeline/ontology_export.py` | Formato escolhido: **JSON-LD**, com vocabulário `schema.org` para os campos bibliográficos e um vocabulário próprio (`concepts:`) para os campos extraídos na etapa 2 |
+| Observações - visualizações (palavras mais citadas, nuvem de palavras, técnicas mais mencionadas, evolução temporal, trabalhos futuros) | `pipeline/visualization.py` | Implementadas 8 visualizações (ver tabela abaixo), cobrindo todos os itens pedidos e mais algumas complementares (coocorrência, similaridade entre artigos) |
+| 4 - Avaliação de desempenho do sistema de extração | *não está no código* | Etapa de avaliação qualitativa/quantitativa a ser feita manualmente sobre `extraction_output.json`, para apresentação nos slides |
+| 5 - Apresentação (slides) | *não está no código* | Entregável separado, fora do escopo deste repositório |
 
 ## Detalhamento das etapas
 
-### Etapa 1 — Leitura, categorização e modelos de linguagem
+### Etapa 1 - Leitura, categorização e modelos de linguagem
 
-- **`reading.py`** — lê todos os PDFs de `data/Artigos/` em paralelo
+- **`reading.py`** - lê todos os PDFs de `data/Artigos/` em paralelo
   (`ThreadPoolExecutor`) usando `PyPDF2`, concatenando o texto de todas as
   páginas de cada artigo.
-- **`text_cleaning.py`** — remove ruído típico de PDFs de periódico
+- **`text_cleaning.py`** - remove ruído típico de PDFs de periódico
   (numeração de página, cabeçalho/rodapé do journal, DOI, copyright, datas de
   submissão), normaliza caracteres Unicode e reconecta palavras quebradas por
   hifenização no fim da linha.
-- **`categorization.py`** — usa heurísticas de regex para reconstruir a
+- **`categorization.py`** - usa heurísticas de regex para reconstruir a
   estrutura lógica do artigo a partir do texto plano: título, autores,
   abstract, keywords, introdução, corpo, conclusão e lista de referências
   bibliográficas, além de metadados (ano, DOI, periódico).
-- **`preprocessing.py`** — normaliza o texto (minúsculas, remoção de
+- **`preprocessing.py`** - normaliza o texto (minúsculas, remoção de
   acentos, URLs, e-mails, citações `[12]`/`(Silva et al., 2020)`, números),
   tokeniza, remove stop-words (NLTK + lista própria de termos acadêmicos
   pouco informativos) e aplica lematização (WordNet) e, opcionalmente,
   stemming (Porter ou Snowball).
-- **`language_models.py`** — constrói o modelo de **bag-of-words** e de
+- **`language_models.py`** - constrói o modelo de **bag-of-words** e de
   **n-gramas** (bigramas e trigramas) de cada artigo e do córpus agregado, e
   identifica os termos mais frequentes (excluindo as referências
   bibliográficas, que ficam fora do `body_text` usado nesta etapa).
 
-### Etapa 2 — Extração de informação
+### Etapa 2 - Extração de informação
 
 `extraction.py` divide o texto em frases (com tratamento de abreviações como
 "et al.", "e.g." e iniciais de nomes) e procura, por casamento de padrões:
 
-- **Objetivo** — frases como *"the objective/aim/goal of this paper is to..."*
+- **Objetivo** - frases como *"the objective/aim/goal of this paper is to..."*
   ou, na ausência destas, padrões mais amplos como *"in this paper, we propose..."*;
-- **Problema** — frases que mencionam "problem" ou que combinam um desafio
+- **Problema** - frases que mencionam "problem" ou que combinam um desafio
   ("challenge", "issue", "gap", "limitation") com um verbo de enfrentamento
   ("address", "solve", "overcome", "tackle");
-- **Metodologia** — frases com termos como "method", "approach", "framework",
+- **Metodologia** - frases com termos como "method", "approach", "framework",
   "dataset", ou que descrevem entrevistas/surveys/experimentos conduzidos;
-- **Contribuições** — frases com "contributes to" ou, como alternativa,
+- **Contribuições** - frases com "contributes to" ou, como alternativa,
   "the main/key contributions of this paper", excluindo as frases já usadas
   como Objetivo;
-- **Trabalhos futuros** — frases na conclusão com "future work/research",
+- **Trabalhos futuros** - frases na conclusão com "future work/research",
   "we plan to", "open problem/issue", entre outras.
 
-### Etapa 3 — Ontologia do córpus em JSON-LD
+### Etapa 3 - Ontologia do córpus em JSON-LD
 
 `ontology_export.py` combina os dados da categorização (Etapa 1) com os da
 extração (Etapa 2) em um documento JSON-LD:
@@ -142,7 +142,7 @@ extração (Etapa 2) em um documento JSON-LD:
 | `PyPDF2` | Extração de texto dos PDFs |
 | `nltk` | Stop-words, lematização (WordNet), stemming (Porter/Snowball) |
 | `matplotlib` + `numpy` | Gráficos e heatmaps |
-| `wordcloud` | Nuvens de palavras (opcional — se ausente, essas duas visualizações são puladas) |
+| `wordcloud` | Nuvens de palavras (opcional - se ausente, essas duas visualizações são puladas) |
 
 Nenhuma biblioteca de aprendizado de máquina ou modelo pré-treinado é usada,
 em conformidade com a restrição do enunciado.
@@ -194,6 +194,6 @@ NLTK/PyPDF2 instalada.
   não em compreensão semântica do texto; frases fora desses padrões podem não
   ser capturadas.
 - A avaliação de desempenho do sistema de extração (Etapa 4 do enunciado) não
-  está automatizada no código — deve ser feita manualmente, comparando
+  está automatizada no código - deve ser feita manualmente, comparando
   `extraction_output.json` com uma leitura humana dos artigos, para compor a
   apresentação (Etapa 5).
