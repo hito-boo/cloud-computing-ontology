@@ -86,8 +86,8 @@ def print_top_terms(top: Dict, title: str = "Termos Mais Frequentes do Corpus") 
 
     labels = {
         "top_uniterms": "Unitermos (BoW)",
-        "top_2grams": "Bigramas",
-        "top_3grams": "Trigramas",
+        "top_2gramas": "Bigramas",
+        "top_3gramas": "Trigramas",
     }
 
     for key, terms in top.items():
