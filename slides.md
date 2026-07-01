@@ -174,11 +174,11 @@ critérios de seleção dos 12 artigos (ex.: filtros de data, citações, etc.).
 | Título (resumido) | Ano | Refs. |
 |---|---|---|
 | SNAPS: snapshot based provenance system for VMs in the cloud | 2019 | 11 |
-| Security analysis of a public auditing scheme for secure data storage | 2023 | 17 |
+| Security analysis of a public auditing scheme for secure data storage | 2023 | 16 |
 | Efficient security framework for detecting intrusions in virtual networks | 2019 | 35 |
-| Trust or consequences? Causal effects of perceived risk... | 2017 | 55 |
-| Self-Attention conditional GAN for... | 2024 | 34 |
-| A survey of cloud computing data integrity schemes | 2017 | 100 |
+| Trust or consequences? Causal effects of perceived risk... | 2017 | 53 |
+| Self-Attention conditional GAN for... | 2024 | 32 |
+| A survey of cloud computing data integrity schemes | 2017 | 96 |
 
 ---
 
@@ -186,14 +186,14 @@ critérios de seleção dos 12 artigos (ex.: filtros de data, citações, etc.).
 
 | Título (resumido) | Ano | Refs. |
 |---|---|---|
-| Sticky policies approach within cloud computing | 2017 | 45 |
+| Sticky policies approach within cloud computing | 2017 | 41 |
 | Optimized extreme learning machine for detecting DDoS attacks | 2021 | 32 |
-| Cloud computing security: a survey of service-based models | 2022 | 59 |
-| Parallel search over encrypted data under attribute-based encryption | 2015 | 24 |
-| Achieving an effective, scalable and privacy-preserving data... | 2014 | 30 |
+| Cloud computing security: a survey of service-based models | 2022 | 58 |
+| Parallel search over encrypted data under attribute-based encryption | 2015 | 22 |
+| Achieving an effective, scalable and privacy-preserving data... | 2014 | 29 |
 | A self-protecting agents based model for high-performance mobile-cloud | 2018 | 34 |
 
-**Total: 12 artigos, 476 referências bibliográficas extraídas no total.**
+**Total: 12 artigos, 459 referências bibliográficas extraídas no total.**
 
 ---
 
@@ -206,10 +206,10 @@ critérios de seleção dos 12 artigos (ex.: filtros de data, citações, etc.).
 ![bg right:62% fit](output/visualizations/1_bar_top_terms.png)
 
 Termos mais frequentes do córpus (unitermos, excluindo as referências):
-**data** (1192), **cloud** (1035), **security** (439), **user** (354),
-**access** (341), **model** (331), **scheme** (330)...
+**data** (1097), **cloud** (986), **user** (610), **scheme** (473),
+**security** (469), **attack** (396), **model** (394)...
 
-Bigrama mais citado: **"data integrity"** (157) e **"cloud computing"** (149).
+Bigrama mais citado: **"cloud compute"** (142) e **"data integrity"** (122).
 
 ---
 
@@ -336,12 +336,12 @@ A avaliação foi feita em duas frentes:
 | Campo | Cobertura |
 |---|---|
 | Título | 100% (12/12) |
-| Autores | 100% (12/12) - média de 3,9 autores/artigo |
-| Abstract | 100% (12/12) - média de 1.367 caracteres |
+| Autores | 100% (12/12) - média de 4,0 autores/artigo |
+| Abstract | 100% (12/12) - média de 1.364 caracteres |
 | Palavras-chave | 100% (12/12) - média de 5,4 termos/artigo |
 | Ano de publicação | 100% (12/12) |
 | DOI | 83% (10/12) |
-| Referências bibliográficas | 100% (12/12) - 476 no total, média 39,7/artigo |
+| Referências bibliográficas | 100% (12/12) - 459 no total, média 38,2/artigo |
 
 
 ---
@@ -359,9 +359,9 @@ nos artigos da Elsevier/ScienceDirect.
 | Campo | Cobertura | Méd. frases/artigo |
 |---|---|---|
 | Objetivo | 92% (11/12) | 1,2 |
-| Problema | 100% (12/12) | 2,2 |
+| Problema | 100% (12/12) | 2,0 |
 | Metodologia | 100% (12/12) | 3,0 |
-| Contribuições | 58% (7/12) | 0,8 |
+| Contribuições | 50% (6/12) | 0,7 |
 | Trabalhos futuros | 25% (3/12) | 0,2 |
 
 **Apenas 2 dos 12 artigos (17%) tiveram os 5 campos extraídos
@@ -397,7 +397,7 @@ Esta frase descreve o problema resolvido por um **trabalho relacionado**
 um falso positivo típico de uma extração baseada apenas em palavras-chave
 ("problem"), sem compreensão de quem é o sujeito da frase.
 
-- **Contribuições** (58% de cobertura) e **trabalhos futuros** (25%) tiveram
+- **Contribuições** (50% de cobertura) e **trabalhos futuros** (25%) tiveram
   desempenho mais baixo: a frase exata "contributes to" é rara, e nem todos
   os artigos têm uma subseção de "future work" explícita.
 
