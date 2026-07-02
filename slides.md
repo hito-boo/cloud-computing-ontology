@@ -164,8 +164,10 @@ PDFs (12 artigos)
   criptografia baseada em atributos, detecção de intrusão em redes virtuais,
   forense digital, segurança em IoT, computação móvel-nuvem
 
-🔧 **TODO:** informar o termo de busca exato utilizado no ScienceDirect e os
-critérios de seleção dos 12 artigos (ex.: filtros de data, citações, etc.).
+Termos de Busca: Cloud Computing
+Article Type: Research Articles
+Publication Title: Computers & Security
+Subject Areas: Computer Science
 
 ---
 
